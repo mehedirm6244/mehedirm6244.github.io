@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+	font-family: "DM Sans", sans-serif;
+}
+
+.logo {
+	height: 128px;
+	width: 128px;
+}
+
+.section-img {
+	height: 256px;
+	width: 256px;
+	object-fit:cover
+}
+
+.reveal {
+	position: relative;
+	transform: translateY(50px);
+	opacity: 0;
+	transition: all 1s ease;
+}
+
+.reveal.active {
+	transform: translateY(0px);
+	opacity: 1;
+}
