@@ -551,13 +551,14 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.m-12 {
-  margin: 3rem;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.my-12 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .mt-3 {
@@ -580,14 +581,6 @@ video {
   margin-top: 1.5rem;
 }
 
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-
-.block {
-  display: block;
-}
-
 .flex {
   display: flex;
 }
@@ -598,10 +591,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.max-w-sm {
-  max-width: 24rem;
 }
 
 .items-center {
@@ -620,6 +609,12 @@ video {
   --tw-space-x-reverse: 0;
   margin-right: calc(1rem * var(--tw-space-x-reverse));
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-x-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .space-y-3 > :not([hidden]) ~ :not([hidden]) {
@@ -665,17 +660,8 @@ video {
   background-color: rgb(20 27 30 / var(--tw-bg-opacity));
 }
 
-.bg-bg {
-  --tw-bg-opacity: 1;
-  background-color: rgb(35 42 45 / var(--tw-bg-opacity));
-}
-
-.p-12 {
-  padding: 3rem;
-}
-
-.p-6 {
-  padding: 1.5rem;
+.p-10 {
+  padding: 2.5rem;
 }
 
 .p-8 {
@@ -720,27 +706,13 @@ video {
   line-height: 1.75rem;
 }
 
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
 .font-medium {
   font-weight: 500;
-}
-
-.font-normal {
-  font-weight: 400;
 }
 
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(218 218 218 / var(--tw-text-opacity));
-}
-
-.text-lightGray {
-  --tw-text-opacity: 1;
-  color: rgb(179 185 184 / var(--tw-text-opacity));
 }
 
 .text-blue {
@@ -804,6 +776,10 @@ html, body {
   opacity: 1;
 }
 
+.github-repo {
+  width: 375px;
+}
+
 .selection\:bg-blue *::-moz-selection {
   --tw-bg-opacity: 1;
   background-color: rgb(103 176 232 / var(--tw-bg-opacity));
@@ -865,11 +841,6 @@ html, body {
   background-color: rgb(229 199 107 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-bgDark:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(20 27 30 / var(--tw-bg-opacity));
-}
-
 .hover\:text-bg:hover {
   --tw-text-opacity: 1;
   color: rgb(35 42 45 / var(--tw-text-opacity));
@@ -903,6 +874,12 @@ html, body {
     --tw-space-x-reverse: 0;
     margin-right: calc(3rem * var(--tw-space-x-reverse));
     margin-left: calc(3rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .md\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
   }
 
   .md\:p-16 {

@@ -28,3 +28,7 @@ html, body {
 	transform: translateY(0px);
 	opacity: 1;
 }
+
+.github-repo {
+	width: 375px;
+}
