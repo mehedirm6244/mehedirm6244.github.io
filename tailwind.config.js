@@ -10,22 +10,23 @@ module.exports = {
     },
     extend: {
       colors: {
-        red: '#e57474',
-        green: '#8ccf7e',
-        yellow: '#e5c76b',
-        blue: '#67b0e8',
-        magenta: '#c47fd5',
-        cyan: '#6cbfbf',
-        lightGray: '#b3b9b8',
-        white: '#dadada',
-        bg: '#232a2d',
-        bgDark: '#141b1e',
-        bgDarker: '#0f1619',
-      },
-      boxShadow: {
-        'full': '0 0 15px rgba(0, 0, 0, 0.3)',
+        red: '#f7768e',
+        green: '#9ece6a',
+        yellow: '#e0af68',
+        blue: '#7aa2f7',
+        magenta: '#c58af9',
+        cyan: '#7dcfff',
+        teal: '#1abc9c',
+        lightGray: '#a9b1d6',
+        white: '#c0caf5',
+        bg: '#343545',
+        bgDark: '#242431',
+        bgDarker: '#1b1b27',
       },
     },
   },
-  plugins: [],
+
+  plugins: [
+    require('tailwind-scrollbar'),
+  ],
 }

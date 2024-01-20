@@ -3,18 +3,7 @@
 @tailwind utilities;
 
 html, body {
-	font-family: "DM Sans", sans-serif;
-}
-
-.logo {
-	height: 128px;
-	width: 128px;
-}
-
-.section-img {
-	height: 256px;
-	width: 256px;
-	object-fit:cover
+	font-family: "Lato", sans-serif;
 }
 
 .reveal {
@@ -27,8 +16,4 @@ html, body {
 .reveal.active {
 	transform: translateY(0px);
 	opacity: 1;
-}
-
-.github-repo {
-	width: 375px;
 }

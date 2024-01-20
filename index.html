@@ -9,103 +9,100 @@
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<!-- DM sans font -->
-	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+	<!-- Lato font -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 
 	<!-- Font Awesome CDN -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 	<!-- CSS Only -->
-	<link rel="stylesheet" href="./src/main.css" />
+	<link rel="stylesheet" href="./src/output.css" />
 </head>
 
-<body class="bg-bgDarker text-white selection:bg-blue selection:text-bg">
+<body class="bg-gradient-to-r from-bgDarker to-bg text-white selection:bg-blue selection:text-bg scrollbar-thin scrollbar-thumb-blue scrollbar-track-bgDark">
 
 	<!-- Header -->
-	<section class="p-10 md:p-16 bg-bgDark shadow-lg">
-		<div class="md:flex align-middle items-center justify-center md:space-x-6">
-			<img class="logo rounded-full shadow-lg" src="./assets/pfp.png" alt="logo">
+	<section class="flex align-middle justify-center p-12 md:p-16">
+		<div class="w-[768px] md:w-100 md:flex align-middle items-center justify-center md:space-x-8">
+			<img class="h-[100px] md:h-[200px] rounded-full shadow-lg shadow-white/10" src="./assets/pfp.png" alt="logo">
 			<div class="mt-3 md:mt-0">
-				<h1 class="text-3xl font-medium">mehedirm6244</h1>
-				<p class="text-lg">I write r/badcode</p>
+				<h1 class="text-3xl font-bold" id="myName"></h1>
+				<p class="text-base font-semibold text-lightGray">aka mehedirm6244 || mebesus</p>
+        <p class="text-md mt-2">
+          I'm just another random high school going boy from Dhaka, BD.
+          I'm not a serious coder or something... I watch cat videos on my Archlinux powered PC.
+          I do love cats <i class="fa fa-cat"></i>.
+        </p>
+
+        <!-- Quick links -->
+        <nav class="mt-4">
+          <button class="text-xl px-2 py-1 text-white rounded-md duration-100 hover:bg-blue/10 hover:text-blue">
+            <a href="https://discordapp.com/users/1054038285380497428"><i class="fa-brands fa-discord"></i></a>
+          </button>
+          <button class="text-xl px-2 py-1 text-white rounded-md duration-100 hover:bg-magenta/10 hover:text-magenta">
+            <a href="https://github.com/mehedirm6244"><i class="fa-brands fa-github"></i></a>
+          </button>
+          <button class="text-xl px-2 py-1 text-white rounded-md duration-100 hover:bg-cyan/10 hover:text-cyan">
+            <a href="https://t.me/mehedirm6244"><i class="fa-brands fa-telegram"></i></a>
+          </button>
+          <button class="text-xl px-2 py-1 text-white rounded-md duration-100 hover:bg-yellow/10 hover:text-yellow">
+            <a href="mailto:mehedirm6244@protonmail.com"><i class="fa fa-envelope"></i></a>
+          </button>
+        </nav>
 			</div>
 		</div>
-
-		<!-- Quick links -->
-		<nav class="flex justify-center space-x-4 mt-12">
-			<button class="font-medium px-4 py-2 border-2 border-blue text-white rounded-lg duration-100 hover:bg-blue hover:text-bg">
-				<a href="#"><i class="fa-brands fa-discord"></i> p0tato#5936</a>
-			</button>
-			<button class="font-medium px-4 py-2 border-2 border-magenta text-white rounded-lg duration-100 hover:bg-magenta hover:text-bg">
-  				<a href="https://github.com/mehedirm6244"><i class="fa-brands fa-github"></i> Github</a>
-  			</button>
-  			<button class="font-medium px-4 py-2 border-2 border-yellow text-white rounded-lg duration-100 hover:bg-yellow hover:text-bg">
-				<a href="mailto:mehedirm6244@protonmail.com"><i class="fa fa-envelope"></i> Mail</a>
-			</button>
-		</nav>
-
 	</section>
 
-	<!-- About me -->
-	<section class="px-[5%] py-8 md:px-[10%] md:py-12 md:flex align-middle justify-between md:space-x-12 reveal">
-		<div class="w-full">
-			<h1 class="text-3xl mb-3 mt-4">About Me</h1>
-			<p class="text-lg">
-				Hello world! I'm <span class="font-medium">Mehedi Rahman Mahi</span>, another random high school student from Dhaka, Bangladesh. I'm a lazy learner who's currently learning nothing actually. I'm passionate about sleeping. I do love cats <i class="fa fa-cat"></i>
-			</p>
-		</div>
+  <!-- My Projects -->  
+  <section class="px-[5%] py-8 md:px-[10%] md:py-12 reveal">
+      <h1 class="text-3xl mb-1 mt-4 text-center">Some stuffs I've made</h1>
+      <p class="text-lg text-center">about which I tell <i>her mother</i>.</p>
 
-		<img src="https://camo.githubusercontent.com/b9cd93f043d2b23ecd008e42864126427359d1f78ffc5bd2f23a53847b845f61/68747470733a2f2f632e74656e6f722e636f6d2f445a4b63587670752d643841414141432f626f6e676f2d6361742d637574652d706e672e676966" class="rounded-full shadow-xl section-img mx-auto mt-6 md:mt-0">
-	</section>
+      <div class="shadow mt-8 flex align-middle space-x-8 overflow-auto p-8 bg-white/5 rounded-lg scrollbar-thin scrollbar-thumb-blue scrollbar-track-bgDark">
 
-	<!-- My Skills -->
-	<section class="px-[5%] py-8 md:px-[10%] md:py-12 flex align-middle justify-between md:space-x-12 reveal">
-		<img src="https://res.cloudinary.com/people-matters/image/upload/q_auto,f_auto/v1536251178/1536251033.jpg" class="rounded-full shadow-xl section-img hidden md:block">
+        <div class="bg-white/10 border border-white/30 mr-58 p-8 rounded-lg max-w-[512px] min-w-[512px] hover:scale-105 duration-100">
+          <h1 class="text-2xl mb-3 font-semibold">Sysfex</h1>
+          <p class="text-md mb-2">
+            There was once a time in <a href="https://www.reddit.com/r/unixporn/" class="text-blue hover:underline">r/unixporn</a> when people suddenly fell into love making their own fetch tools similar to Neofetch, but not remotely close to it I guess. Inspired from others, I also started working on my very own fetch tool - Sysfex!<br>
+            Sysfex is another system information fetching tool written in C++
+          </p>
+          <button class="text-sm px-4 py-2 text-white rounded-md duration-100 bg-blue/10 text-blue hover:bg-blue/20">
+            <a href="https://github.com/mehedirm6244/sysfex"><i class="fa fa-link"></i> Github repository</a>
+          </button>
+        </div>
 
-		<div class="w-full">
-			<h1 class="text-3xl mb-3 mt-4">My Skills</h1>
-			<p class="text-lg">
-				My skills are supposed to be written here. Oh, I forgot, I have none :(
-			</p>
-		</div>
-	</section>
-
-	<!-- My Achievements -->
-	<section class="px-[5%] py-8 md:px-[10%] md:py-12 flex align-middle justify-between md:space-x-12 reveal">
-		<div class="w-full">
-			<h1 class="text-3xl mb-3 mt-4">My Achievements</h1>
-			<p class="text-lg">
-				I have no achievement either :( Hope to write something soon tho
-			</p>
-		</div>
-
-		<img src="https://media.istockphoto.com/vectors/low-poly-illustration-of-the-winner-cup-a-golden-dust-effect-with-vector-id1059244468?k=20&m=1059244468&s=612x612&w=0&h=sfU7A4AGe-MbRbL8EMR0bMknamoriwTPI6RLzX_E4tA=" class="rounded-full shadow-xl section-img hidden md:block">
-	</section>
-
-	<!-- My Projects -->	
-	<section class="px-[5%] py-8 md:px-[10%] md:py-12 reveal">
-			<h1 class="text-3xl mb-3 mt-4 text-center">My Projects</h1>
-
-			<div class="my-12 space-x-6 space-y-3 md:space-y-0 md:flex justify-center align-middle items-center">
-				<a href="https://github.com/mehedirm6244/My_XFCE_dotties">
-					<img src="https://opengraph.githubassets.com/1/mehedirm6244/My_XFCE_dotties" class="github-repo  mx-auto rounded-lg shadow-md hover:scale-105 duration-100">
-				</a>
-				<a href="https://github.com/mehedirm6244/sysfex">
-					<img src="https://opengraph.githubassets.com/1/mehedirm6244/sysfex" class="github-repo mx-auto rounded-lg shadow-md hover:scale-105 duration-100">
-				</a>
-			</div>
-
-	</section>
-
+        <div class="bg-white/10 border border-white/30 p-8 rounded-lg max-w-[512px] min-w-[512px] hover:scale-105 duration-100">
+          <h1 class="text-2xl mb-3 font-semibold">Miserable XFCE</h1>
+          <p class="text-md mb-2">
+            To most of the people using Linux, <a href="https://www.xfce.org/" class="text-blue hover:underline">Xfce</a> is just miserable. <a href="https://www.reddit.com/r/unixporn/" class="text-blue hover:underline">r/unixporn</a> was actually my main reason to switch to Linux, back in 2020. All those neat desktops there often made me jealous and so.<br>
+            So here I am! With some of my very own highly customized Xfce desktops
+          </p>
+          <button class="text-sm px-4 py-2 text-white rounded-md duration-100 bg-blue/10 text-blue hover:bg-blue/20">
+            <a href="https://github.com/mehedirm6244/My_XFCE_dotties"><i class="fa fa-link"></i> Github repository</a>
+          </button>
+        </div>
+      </div>
+  </section>
+	
 	<!-- Footer -->
-	<footer class="p-8 shadow-full bg-bgDark">
+	<footer class="p-8 bg-white/5">
 		<p class="text-center">
-			Made with <i class="fa fa-heart"></i> by <span class="font-medium">@mehedirm6244</span><br>
-			Used <a href="https://tailwindcss.com" class="text-blue hover:underline">Tailwind.css</a> and <a href="https://www.github.com/Everblush" class="text-blue hover:underline">Everblush</a> colorscheme
+			Made with <i class="fa fa-heart"></i> by <span class="font-bold">@mehedirm6244</span><br>
+      <span class="text-lightGray text-xs">(Please don't check the source code of this page I beg you, I'm not even a serious coder)</span>
 		</p>
 	</footer>
 
 	<script type="text/javascript">
+    var i = 0, userName = 'Mehedi Rahman Mahi';
+    function typeWriter() {
+      if (i < userName.length) {
+        document.getElementById("myName").innerHTML += userName.charAt(i);
+        i++;
+        setTimeout(typeWriter, 150);
+      }
+    }
+
+    typeWriter();
 		reveal();
 
 		// Thanks to https://www.codingsnow.com/2021/01/reveal-webpage-elements-on-scroll-on.html
