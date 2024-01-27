@@ -20,9 +20,7 @@ function reveal() {
 
 // Events for desktop and touch
 // Thanks to https://dev.to/shantanu_jana/custom-right-click-context-menu-in-javascript-4112
-let events = ["contextmenu", "touchstart"];
-var timeout;
-var lastTap = 0;
+let events = ["contextmenu"];
 let contextMenu = document.getElementById("context-menu");
 
 events.forEach((eventType) => {
@@ -56,20 +54,6 @@ events.forEach((eventType) => {
   );
 });
 
-document.addEventListener("touchend", function (e) {
-  var currentTime = new Date().getTime();
-  var tapLength = currentTime - lastTap;
-  clearTimeout(timeout);
-  if (tapLength < 500 && tapLength > 0) {
-    contextMenu.style.visibility = "hidden";
-    e.preventDefault();
-  } else {
-    timeout = setTimeout(function () {
-      clearTimeout(timeout);
-    }, 500);
-  }
-  lastTap = currentTime;
-});
 
 document.addEventListener("click", function (e) {
   if (!contextMenu.contains(e.target)) {
