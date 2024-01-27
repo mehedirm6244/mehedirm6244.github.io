@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+}
+
 html, body {
 	font-family: "Lato", sans-serif;
 }
@@ -16,4 +20,9 @@ html, body {
 .reveal.active {
 	transform: translateY(0px);
 	opacity: 1;
+}
+
+#context-menu {
+ position: fixed;
+ visibility: hidden;
 }

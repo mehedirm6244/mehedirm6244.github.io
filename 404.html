@@ -19,9 +19,9 @@
   <link rel="stylesheet" href="./src/output.css" />
 </head>
 
-<body class="bg-gradient-to-r from-bgDarker to-bg text-white selection:bg-blue selection:text-bg scrollbar-thin scrollbar-thumb-blue scrollbar-track-bgDark">
+<body class="bg-bgDark text-white selection:bg-blue selection:text-bg scrollbar-thin scrollbar-thumb-blue scrollbar-track-bgDark">
 
-  <section class="flex align-middle items-center justify-between p-1 md:p-2 bg-white/5 border-b border-white/30">
+  <section class="sticky top-0 left-0 right-0 z-40 flex align-middle items-center justify-between p-1 md:p-2 bg-bg/90 backdrop-blur-sm border-b border-white/30">
     <a href="https://mehedirm6244.github.io/" class="duration-100 hover:bg-blue/10 hover:text-blue">
       <div class="flex align-middle items-center space-x-2 px-3 py-2">
         <div><img class="h-[32px] rounded-full" src="./assets/pfp.png" alt="Pfp"></div>
@@ -34,9 +34,29 @@
   </section>
 
   <section class="text-center mt-[50px] lg:mt-[5%]">
-    <p class="text-7xl md:text-8xl lg:text-9xl">404</p>
-    <p class="text-2xl md:text-3xl">Page not found!</p>
+    <p class="text-7xl md:text-8xl">404</p>
+    <p class="text-2xl">Page not found!</p>
+    <div class="mt-8"></div>
+    <button class="text-sm px-4 py-2 text-white border border-blue/20 rounded-md duration-100 bg-blue/10 text-blue hover:bg-blue/20">
+      <a href="https://mehedirm6244.github.io/"><i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>Return home</a>
+    </button>
   </section>
+
+  <!-- Context Menu -->
+  <div id="context-menu" class="z-50 bg-bg/90 w-48 backdrop-blur-sm shadow border border-white/30 p-2 rounded-lg">
+    <button class="px-3 py-1 text-sm block w-full text-left rounded hover:text-blue hover:bg-blue/10" onclick="document.execCommand('copy')">
+      <i class="fa-solid fa-copy mr-2"></i>Copy
+    </button>
+    <button class="px-3 py-1 text-sm block w-full text-left rounded hover:text-blue hover:bg-blue/10" onclick="location.reload()">
+      <i class="fa-solid fa-rotate-right mr-2"></i>Reload
+    </button>
+    <div class="border-t border-white/30 m-2"></div>
+    <button class="px-3 py-1 text-sm block w-full text-left rounded hover:text-blue hover:bg-blue/10">
+      <a href="https://github.com/mehedirm6244/mehedirm6244.github.io"><i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>View source</a>
+    </button>
+  </div>
+
+  <script src="./scripts/script.js"></script>
 
 </body>
 </html>
