@@ -7,17 +7,19 @@
 }
 
 html, body {
-	font-family: "Lato", sans-serif;
+	font-family: 'Barlow', sans-serif;
 }
 
 .reveal {
 	position: relative;
 	transform: translateY(50px);
-	opacity: 0;
+  scale: 0.75;
+	opacity: 0.25;
 	transition: all 1s ease;
 }
 
 .reveal.active {
+  scale: 1;
 	transform: translateY(0px);
 	opacity: 1;
 }

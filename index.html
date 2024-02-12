@@ -6,14 +6,17 @@
 	<meta name="viewport" content="width=device-width" initial-scale="1.0">
 
 	<title>mehedirm6244</title>
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<!-- Lato font -->
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600&display=swap" rel="stylesheet">
 
 	<!-- Font Awesome CDN -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Devicon CDN -->
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
 	<!-- CSS Only -->
 	<link rel="stylesheet" href="./src/output.css" />
@@ -24,37 +27,50 @@
 	<!-- Header -->
 	<section class="flex align-middle justify-center p-12 md:p-16">
 		<div class="w-[768px] md:w-100 md:flex align-middle items-center justify-center md:space-x-8">
-			<img class="h-[100px] md:h-[200px] rounded-full shadow-lg shadow-white/10" src="./assets/pfp.png" alt="Pfp">
+			<img class="h-[100px] md:h-[200px] rounded-full" src="./assets/pfp.png" alt="Profile picture">
 			<div class="mt-3 md:mt-0">
+        <p class="text-base font-semibold text-lightGray">Hello, I'm</p>
 				<h1 class="text-3xl font-bold" id="myName"></h1>
-				<p class="text-base font-semibold text-lightGray">aka mehedirm6244 || mebesus</p>
+				<p class="text-base font-semibold text-lightGray">as ["mehedirm6244", "mebesus"]</p>
         <p class="text-md mt-2">
-          I'm just another random high schooler boy from Dhaka, BD.
-          I'm not a serious coder or something... I watch cat videos on my Archlinux powered PC.
-          Yes, I do love cats <i class="fa fa-cat"></i>.
+          who's just another high schooler from Dhaka, BD,
+          who watches cat videos on his Arch Linux powered PC.
         </p>
 
-        <!-- Quick links -->
+        <!-- Social links -->
         <nav class="mt-4">
-          <button class="text-xl px-2 py-1 text-white rounded-md duration-100 hover:bg-blue/10 hover:text-blue">
-            <a href="https://discordapp.com/users/1054038285380497428"><i class="fa-brands fa-discord"></i></a>
-          </button>
-          <button class="text-xl px-2 py-1 text-white rounded-md duration-100 hover:bg-magenta/10 hover:text-magenta">
-            <a href="https://github.com/mehedirm6244"><i class="fa-brands fa-github"></i></a>
-          </button>
-          <button class="text-xl px-2 py-1 text-white rounded-md duration-100 hover:bg-cyan/10 hover:text-cyan">
-            <a href="https://t.me/mehedirm6244"><i class="fa-brands fa-telegram"></i></a>
-          </button>
-          <button class="text-xl px-2 py-1 text-white rounded-md duration-100 hover:bg-yellow/10 hover:text-yellow">
-            <a href="mailto:mehedirm6244@protonmail.com"><i class="fa fa-envelope"></i></a>
-          </button>
+          <a href="https://discordapp.com/users/1054038285380497428">
+            <button class="text-xl px-2 py-1 text-white rounded-md duration-100 hover:bg-blue/10 hover:text-blue">
+              <i class="fa-brands fa-discord"></i>
+            </button>
+          </a>
+          <a href="https://github.com/mehedirm6244">
+            <button class="text-xl px-2 py-1 text-white rounded-md duration-100 hover:bg-magenta/10 hover:text-magenta">
+              <i class="fa-brands fa-github"></i>
+            </button>
+          </a>
+          <a href="https://t.me/mehedirm6244">
+            <button class="text-xl px-2 py-1 text-white rounded-md duration-100 hover:bg-cyan/10 hover:text-cyan">
+              <i class="fa-brands fa-telegram"></i>
+            </button>
+          </a>
+          <a href="https://www.reddit.com/user/mebesus/">
+            <button class="text-xl px-2 py-1 text-white rounded-md duration-100 hover:bg-red/10 hover:text-red">
+              <i class="fa-brands fa-reddit-alien"></i>
+            </button>
+          </a>
+          <a href="mailto:mehedirm6244@protonmail.com">
+            <button class="text-xl px-2 py-1 text-white rounded-md duration-100 hover:bg-yellow/10 hover:text-yellow">
+              <i class="fa fa-envelope"></i>
+            </button>
+          </a>
         </nav>
 			</div>
 		</div>
 	</section>
 
   <!-- My Projects -->  
-  <section class="px-[5%] py-8 md:px-[10%] md:py-12 reveal">
+  <section class="px-[5%] py-8 md:px-[10%] reveal">
     <h1 class="text-3xl mb-1 mt-4 text-center">Some stuffs I've made</h1>
     <p class="text-lg text-center">About which I tell <i>her mother</i>.</p>
 
@@ -66,9 +82,11 @@
           There was once a time in <a href="https://www.reddit.com/r/unixporn/" class="text-blue hover:underline">r/unixporn</a> when people suddenly fell into love making their own fetch tools similar to Neofetch, but not remotely close to it I guess. Inspired from others, I also started working on my very own fetch tool - Sysfex!<br>
           Sysfex is another system information fetching tool written in C++
         </p>
-        <button class="text-sm px-4 py-2 text-white border border-blue/20 rounded-md duration-100 bg-blue/10 text-blue hover:bg-blue/20">
-          <a href="https://github.com/mehedirm6244/sysfex"><i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>View on Github</a>
-        </button>
+        <a href="https://github.com/mehedirm6244/sysfex">
+          <button class="text-sm px-4 py-2 text-white border border-blue/20 rounded-md duration-100 bg-blue/10 text-blue hover:bg-blue/20">
+            <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>View on Github
+          </button>
+        </a>
       </div>
 
       <div class="bg-white/10 border border-white/30 p-8 rounded-lg max-w-[512px] min-w-[512px] hover:scale-105 duration-100">
@@ -77,22 +95,78 @@
           To most of the people using Linux, <a href="https://www.xfce.org/" class="text-blue hover:underline">Xfce</a> is just miserable. <a href="https://www.reddit.com/r/unixporn/" class="text-blue hover:underline">r/unixporn</a> was actually my main reason to switch to Linux, back in 2020. All those neat desktops there often made me jealous and so.<br>
           So here I am! With some of my very own highly customized Xfce desktops
         </p>
-        <button class="text-sm px-4 py-2 text-white border border-blue/20 rounded-md duration-100 bg-blue/10 text-blue hover:bg-blue/20">
-          <a href="https://github.com/mehedirm6244/My_XFCE_dotties"><i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>View on Github</a>
-        </button>
+        <a href="https://github.com/mehedirm6244/My_XFCE_dotties">
+          <button class="text-sm px-4 py-2 text-white border border-blue/20 rounded-md duration-100 bg-blue/10 text-blue hover:bg-blue/20">
+            <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>View on Github
+          </button>
+        </a>
       </div>
     </div>
+  </section>
+
+  <!-- Stuffs I'm used to -->  
+  <section class="px-[5%] py-8 md:px-[10%] reveal">
+    <h1 class="text-3xl mb-1 mt-4 text-center">Jack of a few trades</h1>
+    <p class="text-lg text-center mb-4">Master of none</p>
+
+    <div class="space-x-4 space-y-4">
+
+      <div class="text-center bg-white/10 border border-white/30 px-6 py-4 rounded-lg inline-block">
+        <div class="flex items-center">
+          <div class="text-4xl mr-2"><i class="devicon-c-plain"></i></div>
+          <div class="font-semibold text-lg">C</div>
+        </div>
+      </div>
+
+      <div class="text-center bg-white/10 border border-white/30 px-6 py-4 rounded-lg inline-block">
+        <div class="flex items-center">
+          <div class="text-4xl mr-2"><i class="devicon-cplusplus-plain"></i></div>
+          <div class="font-semibold text-lg">C++</div>
+        </div>
+      </div>
+
+      <div class="text-center bg-white/10 border border-white/30 px-6 py-4 rounded-lg inline-block">
+        <div class="flex items-center">
+          <div class="text-4xl mr-2"><i class="devicon-archlinux-plain"></i></div>
+          <div class="font-semibold text-md"><span class="text-blue">Arch</span>Linux</div>
+        </div>
+      </div>
+
+      <div class="text-center bg-white/10 border border-white/30 px-6 py-4 rounded-lg inline-block">
+        <div class="flex items-center">
+          <div class="text-4xl mr-2"><i class="devicon-bash-plain"></i></div>
+          <div class="font-semibold text-lg">Bash</div>
+        </div>
+      </div>
+
+      <div class="text-center bg-white/10 border border-white/30 px-6 py-4 rounded-lg inline-block">
+        <div class="flex items-center">
+          <div class="text-4xl mr-2"><i class="devicon-html5-plain"></i></div>
+          <div class="font-semibold text-md">HTML and CSS</div>
+        </div>
+      </div>
+
+      <div class="text-center bg-white/10 border border-white/30 px-6 py-4 rounded-lg inline-block">
+        <div class="flex items-center">
+          <div class="text-4xl mr-2"><i class="fa-solid fa-medal"></i></div>
+          <div class="font-semibold text-md">Codeforces <span class="text-sm text-green">Pupil</span></div>
+        </div>
+      </div>
+
+    </div>
+
   </section>
 	
 	<!-- Footer -->
 	<footer class="mt-8 p-8 bg-white/5 border-t border-white/30">
 		<p class="text-center">
-			Made with <i class="fa fa-heart"></i> by <span class="font-bold">@mehedirm6244</span>
+			Made with <i class="fa fa-heart"></i> by <span class="font-bold">@mehedirm6244</span><br>
+      Icons from <a href="https://fontawesome.com/" class="text-blue hover:underline"><i class="fa-regular fa-font-awesome ml-1 mr-1"></i>Font Awesome</a> and <a href="https://devicon.dev/" class="text-blue hover:underline"><i class="devicon-devicon-plain ml-1 mr-1"></i>Devicon</a>
 		</p>
 	</footer>
 
   <!-- Context Menu -->
-  <div id="context-menu" class="z-50 bg-bg/90 w-48 backdrop-blur-sm shadow border border-white/30 p-2 rounded-lg">
+  <div id="context-menu" class="z-50 bg-bg/90 w-48 backdrop-blur-sm shadow border border-white/30 p-2 rounded-lg select-none">
     <button class="px-3 py-1 text-sm block w-full text-left rounded hover:text-blue hover:bg-blue/10" onclick="document.execCommand('copy')">
       <i class="fa-solid fa-copy mr-2"></i>Copy
     </button>
@@ -100,9 +174,11 @@
       <i class="fa-solid fa-rotate-right mr-2"></i>Reload
     </button>
     <div class="border-t border-white/30 m-2"></div>
-    <button class="px-3 py-1 text-sm block w-full text-left rounded hover:text-blue hover:bg-blue/10">
-      <a href="https://github.com/mehedirm6244/mehedirm6244.github.io"><i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>View source</a>
-    </button>
+    <a href="https://github.com/mehedirm6244/mehedirm6244.github.io">
+      <button class="px-3 py-1 text-sm block w-full text-left rounded hover:text-blue hover:bg-blue/10">
+        <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>View source
+      </button>
+    </a>
   </div>
 
 	<script type="text/javascript">
