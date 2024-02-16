@@ -613,16 +613,16 @@ video {
   margin-bottom: 0.25rem;
 }
 
-.mb-3 {
-  margin-bottom: 0.75rem;
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .mb-2 {
   margin-bottom: 0.5rem;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
+.mt-6 {
+  margin-top: 1.5rem;
 }
 
 .ml-1 {
@@ -707,6 +707,12 @@ video {
   margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.space-x-1 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .overflow-auto {
   overflow: auto;
 }
@@ -745,6 +751,10 @@ video {
 
 .border-blue\/20 {
   border-color: rgb(122 162 247 / 0.2);
+}
+
+.border-white\/20 {
+  border-color: rgb(192 202 245 / 0.2);
 }
 
 .bg-bgDark {
@@ -904,6 +914,11 @@ video {
   color: rgb(169 177 214 / var(--tw-text-opacity));
 }
 
+.text-cyan {
+  --tw-text-opacity: 1;
+  color: rgb(125 207 255 / var(--tw-text-opacity));
+}
+
 .text-green {
   --tw-text-opacity: 1;
   color: rgb(158 206 106 / var(--tw-text-opacity));
@@ -923,59 +938,6 @@ video {
 
 .duration-100 {
   transition-duration: 100ms;
-}
-
-.scrollbar {
-  scrollbar-color: var(--scrollbar-thumb, initial) var(--scrollbar-track, initial);
-}
-
-.scrollbar::-webkit-scrollbar-track {
-  background-color: var(--scrollbar-track);
-  border-radius: var(--scrollbar-track-radius);
-}
-
-.scrollbar::-webkit-scrollbar-track:hover {
-  background-color: var(--scrollbar-track-hover, var(--scrollbar-track));
-}
-
-.scrollbar::-webkit-scrollbar-track:active {
-  background-color: var(--scrollbar-track-active, var(--scrollbar-track-hover, var(--scrollbar-track)));
-}
-
-.scrollbar::-webkit-scrollbar-thumb {
-  background-color: var(--scrollbar-thumb);
-  border-radius: var(--scrollbar-thumb-radius);
-}
-
-.scrollbar::-webkit-scrollbar-thumb:hover {
-  background-color: var(--scrollbar-thumb-hover, var(--scrollbar-thumb));
-}
-
-.scrollbar::-webkit-scrollbar-thumb:active {
-  background-color: var(--scrollbar-thumb-active, var(--scrollbar-thumb-hover, var(--scrollbar-thumb)));
-}
-
-.scrollbar::-webkit-scrollbar-corner {
-  background-color: var(--scrollbar-corner);
-  border-radius: var(--scrollbar-corner-radius);
-}
-
-.scrollbar::-webkit-scrollbar-corner:hover {
-  background-color: var(--scrollbar-corner-hover, var(--scrollbar-corner));
-}
-
-.scrollbar::-webkit-scrollbar-corner:active {
-  background-color: var(--scrollbar-corner-active, var(--scrollbar-corner-hover, var(--scrollbar-corner)));
-}
-
-.scrollbar {
-  scrollbar-width: auto;
-}
-
-.scrollbar::-webkit-scrollbar {
-  display: block;
-  width: var(--scrollbar-width, 16px);
-  height: var(--scrollbar-height, 16px);
 }
 
 .scrollbar-thin {
@@ -1134,6 +1096,10 @@ html, body {
 
 .hover\:bg-yellow\/10:hover {
   background-color: rgb(224 175 104 / 0.1);
+}
+
+.hover\:bg-white\/20:hover {
+  background-color: rgb(192 202 245 / 0.2);
 }
 
 .hover\:text-blue:hover {

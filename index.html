@@ -80,32 +80,60 @@
     <div class="shadow mt-8 flex align-middle space-x-8 overflow-auto p-8 bg-white/5 rounded-lg scrollbar-thin scrollbar-thumb-blue scrollbar-track-bgDark">
 
       <div class="bg-white/10 border border-white/30 p-8 rounded-lg max-w-[512px] min-w-[512px] hover:scale-105 duration-100">
-        <h1 class="text-2xl mb-3 font-semibold">Sysfex</h1>
+        <div class="flex align-middle justify-between items-center mb-4">
+          <h1 class="text-2xl font-semibold">Sysfex</h1>
+          <div id="sysfex" class="space-x-1"></div>
+        </div>
         <p class="text-md mb-2">
-          There was once a time in <a href="https://www.reddit.com/r/unixporn/" class="text-blue hover:underline">r/unixporn</a> when people suddenly fell into love making their own fetch tools similar to Neofetch, but not remotely close to it I guess. Inspired from others, I also started working on my very own fetch tool - Sysfex!<br>
-          Sysfex is another system information fetching tool written in C++
+          There was once a time in <a href="https://www.reddit.com/r/unixporn/" class="text-blue hover:underline">r/unixporn</a> when people suddenly fell into love making their own fetch tools similar to Neofetch, but not remotely close to it I guess. Inspired from others, I and <a href="https://github.com/mdgaziur" class="text-blue hover:underline">@mdgaziur</a> also started working on this fetch tool - Sysfex!
         </p>
-        <a href="https://github.com/mehedirm6244/sysfex">
-          <button class="text-sm px-4 py-2 text-white border border-blue/20 rounded-md duration-100 bg-blue/10 text-blue hover:bg-blue/20">
-            <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>View on Github
-          </button>
-        </a>
+        <div class="space-x-2 mt-6">
+          <a href="https://github.com/mehedirm6244/sysfex">
+            <button class="text-sm px-4 py-2 border border-blue/20 rounded-md duration-100 bg-blue/10 text-blue hover:bg-blue/20">
+              <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>View on Github
+            </button>
+          </a>
+        </div>
       </div>
 
       <div class="bg-white/10 border border-white/30 p-8 rounded-lg max-w-[512px] min-w-[512px] hover:scale-105 duration-100">
-        <h1 class="text-2xl mb-3 font-semibold">Miserable XFCE</h1>
+        <div class="flex align-middle justify-between items-center mb-4">
+          <h1 class="text-2xl font-semibold">Miserable XFCE</h1>
+          <div id="xfceRice" class="space-x-1"></div>
+        </div>
         <p class="text-md mb-2">
-          To most of the people using Linux, <a href="https://www.xfce.org/" class="text-blue hover:underline">Xfce</a> is just miserable. <a href="https://www.reddit.com/r/unixporn/" class="text-blue hover:underline">r/unixporn</a> was actually my main reason to switch to Linux, back in 2020. All those neat desktops there often made me jealous and so.<br>
-          So here I am! With some of my very own highly customized Xfce desktops
+          To most of the people using Linux, <a href="https://www.xfce.org/" class="text-blue hover:underline">Xfce</a> is just miserable. <a href="https://www.reddit.com/r/unixporn/" class="text-blue hover:underline">r/unixporn</a> was actually my main reason to switch to Linux, back in 2020. All those neat desktops there often made me jealous and so. So here I am! With some of my very own highly customized Xfce desktops
         </p>
-        <a href="https://github.com/mehedirm6244/My_XFCE_dotties">
-          <button class="text-sm px-4 py-2 text-white border border-blue/20 rounded-md duration-100 bg-blue/10 text-blue hover:bg-blue/20">
-            <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>View on Github
-          </button>
-        </a>
+        <div class="space-x-2 mt-6">
+          <a href="https://github.com/mehedirm6244/My_XFCE_dotties">
+            <button class="text-sm px-4 py-2 border border-blue/20 rounded-md duration-100 bg-blue/10 text-blue hover:bg-blue/20">
+              <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>View on Github
+            </button>
+          </a>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- God forgive me -->
+  <script>
+    async function getGithubRepoStar(repo, id) {
+      const repo_info = await fetch(`https://api.github.com/repos/mehedirm6244/` + repo),
+            json = await repo_info.json();
+      document.getElementById(id).innerHTML+=`
+        <button class="text-sm px-4 py-2 border border-white/20 rounded-md duration-100 bg-white/10 text-white hover:bg-white/20">
+          <i class="fa-solid fa-star mr-2"></i><span>${json.stargazers_count}</span>
+        </button>
+        <button class="text-sm px-4 py-2 border border-white/20 rounded-md duration-100 bg-white/10 text-white hover:bg-white/20">
+          <i class="fa-solid fa-code-fork mr-2"></i><span>${json.forks_count}</span>
+        </button>
+        `;
+    }
+
+    getGithubRepoStar("sysfex", "sysfex");
+    getGithubRepoStar("Miserable_XFCE", "xfceRice");
+
+  </script>
 
   <!-- Stuffs I'm used to -->  
   <section class="px-[5%] py-8 md:px-[10%] reveal">
@@ -149,16 +177,43 @@
         </div>
       </div>
 
-      <div class="text-center bg-white/10 border border-white/30 px-6 py-4 rounded-lg">
-        <div class="flex items-center">
-          <div class="text-4xl mr-2"><i class="fa-solid fa-medal"></i></div>
-          <div class="font-semibold text-md">Codeforces <span class="text-sm text-green">Pupil</span></div>
+      <a href="https://codeforces.com/profile/mehedirm6244">
+        <div class="text-center bg-white/10 border border-white/30 px-6 py-4 rounded-lg hover:bg-white/20 hover:scale-105 duration-100">
+          <div class="flex items-center">
+            <div class="text-4xl mr-2"><i class="fa-solid fa-medal"></i></div>
+            <div class="font-semibold text-md">Codeforces <span id="codeforcesRating">...</span></div>
+          </div>
         </div>
-      </div>
-
+      </a>
     </div>
-
   </section>
+
+  <!-- God forgive me pt.2 -->
+  <script>
+    const getCfMaxRating = async () => {
+      let rating = 0;
+
+      const repo_info = await fetch(`https://codeforces.com/api/user.info?handles=mehedirm6244&checkHistoricHandles=false`),
+            json = await repo_info.json();
+      const data = json.result;
+      data.forEach(function (element) {
+        rating = element.maxRating;
+      })
+
+      let color;
+      // haha er upor possible e na amar jnno
+      if (rating >= 1600) {
+        color = "text-blue";
+      } else if (rating >= 1400) {
+        color = "text-cyan";
+      } else if (rating >= 1200) {
+        color = "text-green";
+      }
+      document.getElementById("codeforcesRating").classList += color;
+      document.getElementById("codeforcesRating").innerHTML = rating;
+    }
+    getCfMaxRating();
+  </script>
 	
 	<!-- Footer -->
 	<footer class="mt-8 p-8 bg-white/5 border-t border-white/30">
