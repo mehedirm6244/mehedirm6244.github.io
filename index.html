@@ -28,7 +28,7 @@
 	<!-- Header -->
 	<section class="flex align-middle justify-center p-12 md:p-16">
 		<div class="w-[768px] md:w-100 md:flex align-middle items-center justify-center md:space-x-8">
-			<img class="h-[100px] md:h-[200px] rounded-full" src="./assets/pfp.png" alt="Profile picture">
+			<img class="h-[100px] mb-4 md:mb-0 md:h-[200px] rounded-full" src="./assets/pfp.png" alt="Profile picture">
 			<div class="mt-3 md:mt-0">
         <p class="text-base font-semibold text-lightGray">Hello, I'm</p>
 				<h1 class="text-3xl font-bold" id="myName"></h1>
@@ -121,10 +121,10 @@
       const repo_info = await fetch(`https://api.github.com/repos/mehedirm6244/` + repo),
             json = await repo_info.json();
       document.getElementById(id).innerHTML+=`
-        <button class="text-sm px-4 py-2 border border-white/20 rounded-md duration-100 bg-white/10 text-white hover:bg-white/20">
+        <button class="text-sm px-4 py-2 border border-white/20 rounded-md duration-100 bg-white/10 text-white hover:cursor-default">
           <i class="fa-solid fa-star mr-2"></i><span>${json.stargazers_count}</span>
         </button>
-        <button class="text-sm px-4 py-2 border border-white/20 rounded-md duration-100 bg-white/10 text-white hover:bg-white/20">
+        <button class="text-sm px-4 py-2 border border-white/20 rounded-md duration-100 bg-white/10 text-white hover:cursor-default">
           <i class="fa-solid fa-code-fork mr-2"></i><span>${json.forks_count}</span>
         </button>
         `;
@@ -197,7 +197,7 @@
             json = await repo_info.json();
       const data = json.result;
       data.forEach(function (element) {
-        rating = element.maxRating;
+        rating = element.rating;
       })
 
       let color;
@@ -250,9 +250,9 @@
     }
 
     typeWriter();
-    </script>
+  </script>
 
-    <script src="./scripts/script.js"></script>
+  <script src="./scripts/script.js"></script>
 
 </body>
 </html>
