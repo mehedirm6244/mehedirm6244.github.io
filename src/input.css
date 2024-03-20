@@ -3,28 +3,24 @@
 @tailwind utilities;
 
 * {
-  box-sizing: border-box;
+  @apply box-border;
 }
 
-html, body {
-	font-family: 'Barlow', sans-serif;
+::-webkit-scrollbar {
+  @apply bg-bgDarker w-2 h-2;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-blue;
 }
 
 .reveal {
-	position: relative;
-	transform: translateY(50px);
-  scale: 0.75;
-	opacity: 0.25;
-	transition: all 1s ease;
+  @apply relative translate-x-[-50px] blur-sm opacity-0;
 }
 
 .reveal.active {
-  scale: 1;
-	transform: translateY(0px);
-	opacity: 1;
+  @apply scale-100 translate-x-0 blur-0 opacity-100 duration-1000;
 }
 
 #context-menu {
- position: fixed;
- visibility: hidden;
+  @apply fixed invisible;
 }

@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./*.html'],
+  content: ['./*.html', './scripts/contextmenu.js'],
   theme: {
     screens: {
       sm: '480px',
@@ -23,10 +23,21 @@ module.exports = {
         bgDark: '#11111d',
         bgDarker: '#0c0c18',
       },
+      fontFamily: {
+        sans: ['Barlow', 'sans-serif'],
+      },
+      keyframes: {
+        blink: {
+          '0%, 100%': { opacity: 0 },
+          '50%': { opacity: 1 },
+        }
+      },
+      animation: {
+        blink: 'blink 1s infinite',
+      },
     },
   },
 
   plugins: [
-    require('tailwind-scrollbar'),
   ],
 }
