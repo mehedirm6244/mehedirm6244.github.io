@@ -29,7 +29,7 @@
 <body class="bg-bgDark text-white selection:bg-blue selection:text-bg">
 
 	<!-- Header -->
-	<section class="flex align-middle justify-center p-12 md:p-16 h-screen flex align-middle justify-between items-center bg-fixed bg-cover border-b border-white/30" style="background-image: url('./assets/bg.png');">
+	<section class="flex align-middle justify-center p-12 md:p-16 h-screen flex align-middle justify-between items-center bg-fixed bg-cover bg-bottom border-b border-white/30" style="background-image: url('./assets/bg.png');">
     <div class="p-2 md:p-8">
       <div class="w-full md:w-[480px]">
     		<img class="h-[100px] md:h-[125px] mb-4 md:mb-6 rounded-full reveal" src="./assets/pfp.png" alt="Profile picture">
@@ -94,14 +94,33 @@
     var parallaxInstanceClouds = new Parallax(clouds);
   </script>
 
+  <div class="h-6"></div>
+
+  <!-- My Projects -->  
+  <section class="px-[5%] py-16 md:px-[10%] reveal">
+    <h1 class="text-3xl mb-1 mt-4 text-center">About Me</h1>
+    <p class="text-lg text-center">An average boi</p>
+    <div class="text-lg px-[5%] md:px-[10%] py-8 reveal delay-[200ms] space-y-2">
+      <div class="border-l-2 border-blue px-4 py-2 text-sm bg-white/5 rounded-md">
+        I used to play GTA Vice City on this good old ideapad laptop until one day, in 2017, when my sibling sparked my curious mind with the urge to learning to code.
+      </div>
+      <p>
+        I'm <b>Mehedi Rahman Mahi</b>, currently studying general science at 12th grade in Bangladesh. I'm interested in UI designing, competitive programming and computer science. I've been a passionate linux user since 2020. I often code when I'm relaxed, just to destroy my sanity
+      </p>
+      <p>
+        No, I can't fix printers or hack social media accounts
+      </p>
+    </div>
+  </section>
+
   <!-- My Projects -->  
   <section class="px-[5%] py-16 md:px-[10%] reveal">
     <h1 class="text-3xl mb-1 mt-4 text-center">Some stuffs I've made</h1>
     <p class="text-lg text-center">About which I tell <i>her mother</i>.</p>
 
-    <div class="shadow mt-8 flex align-middle space-x-8 overflow-auto p-8 bg-white/5 rounded-lg">
+    <div class="shadow mt-8 flex align-middle space-x-8 overflow-auto p-8 bg-white/5 rounded-lg reveal delay-[200ms]">
 
-      <div class="bg-white/10 border border-white/30 p-8 rounded-lg max-w-[512px] min-w-[512px] hover:scale-105 duration-100">
+      <div class="bg-white/10 border border-white/30 p-8 rounded-lg max-w-[512px] min-w-[512px] hover:scale-105 duration-100 delay-200">
         <div class="flex align-middle justify-between items-center mb-4">
           <h1 class="text-2xl font-semibold">Sysfex</h1>
           <div id="sysfex" class="space-x-1"></div>
@@ -118,7 +137,7 @@
         </div>
       </div>
 
-      <div class="bg-white/10 border border-white/30 p-8 rounded-lg max-w-[512px] min-w-[512px] hover:scale-105 duration-100">
+      <div class="bg-white/10 border border-white/30 p-8 rounded-lg max-w-[512px] min-w-[512px] hover:scale-105 duration-100 delay-200">
         <div class="flex align-middle justify-between items-center mb-4">
           <h1 class="text-2xl font-semibold">Miserable XFCE</h1>
           <div id="xfceRice" class="space-x-1"></div>
@@ -162,44 +181,44 @@
     <h1 class="text-3xl mb-1 mt-4 text-center">Jack of a few trades</h1>
     <p class="text-lg text-center mb-4">Master of none</p>
 
-    <div class="flex flex-wrap items-center justify-center align-middle gap-5">
+    <div class="flex flex-wrap items-center justify-center align-middle gap-5 reveal delay-200">
 
-      <div class="text-center bg-white/10 border border-white/30 px-6 py-4 rounded-lg reveal delay-200">
+      <div class="text-center bg-white/10 border border-white/30 px-6 py-4 rounded-lg">
         <div class="flex items-center">
           <div class="text-4xl mr-2"><i class="devicon-c-plain"></i></div>
           <div class="font-semibold text-lg">C</div>
         </div>
       </div>
 
-      <div class="text-center bg-white/10 border border-white/30 px-6 py-4 rounded-lg reveal delay-[400ms]">
+      <div class="text-center bg-white/10 border border-white/30 px-6 py-4 rounded-lg">
         <div class="flex items-center">
           <div class="text-4xl mr-2"><i class="devicon-cplusplus-plain"></i></div>
           <div class="font-semibold text-lg">C++</div>
         </div>
       </div>
 
-      <div class="text-center bg-white/10 border border-white/30 px-6 py-4 rounded-lg reveal delay-[600ms]">
+      <div class="text-center bg-white/10 border border-white/30 px-6 py-4 rounded-lg">
         <div class="flex items-center">
           <div class="text-4xl mr-2"><i class="devicon-archlinux-plain"></i></div>
           <div class="font-semibold text-md"><span class="text-blue">Arch</span>Linux</div>
         </div>
       </div>
 
-      <div class="text-center bg-white/10 border border-white/30 px-6 py-4 rounded-lg reveal delay-[800ms]">
+      <div class="text-center bg-white/10 border border-white/30 px-6 py-4 rounded-lg">
         <div class="flex items-center">
           <div class="text-4xl mr-2"><i class="devicon-bash-plain"></i></div>
           <div class="font-semibold text-lg">Bash</div>
         </div>
       </div>
 
-      <div class="text-center bg-white/10 border border-white/30 px-6 py-4 rounded-lg reveal delay-[1000ms]">
+      <div class="text-center bg-white/10 border border-white/30 px-6 py-4 rounded-lg">
         <div class="flex items-center">
           <div class="text-4xl mr-2"><i class="devicon-html5-plain"></i></div>
           <div class="font-semibold text-md">HTML and CSS</div>
         </div>
       </div>
 
-      <a href="https://codeforces.com/profile/mehedirm6244" class="reveal delay-[1200ms]">
+      <a href="https://codeforces.com/profile/mehedirm6244">
         <div class="text-center bg-white/10 border border-white/30 px-6 py-4 rounded-lg hover:bg-white/20 hover:scale-105 duration-100">
           <div class="flex items-center">
             <div class="text-4xl mr-2"><i class="fa-solid fa-medal"></i></div>
@@ -207,6 +226,13 @@
           </div>
         </div>
       </a>
+
+      <div class="text-center bg-white/10 border border-white/30 px-6 py-4 rounded-lg">
+        <div class="flex items-center">
+          <div class="text-4xl mr-2"><i class="devicon-tailwindcss-original"></i></div>
+          <div class="font-semibold text-md">Tailwind CSS</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -279,7 +305,7 @@
   </script>
 
   <script src="./scripts/contextmenu.js"></script>
-  <script src="./scripts/script.js"></script>
+  <script src="./scripts/animate.js"></script>
 
 </body>
 </html>
