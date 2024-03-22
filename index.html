@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="scroll-smooth">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -96,12 +96,12 @@
 
   <div class="h-6"></div>
 
-  <!-- My Projects -->  
+  <!-- My info -->  
   <section class="px-[5%] py-16 md:px-[10%] reveal">
     <h1 class="text-3xl mb-1 mt-4 text-center">About Me</h1>
     <p class="text-lg text-center">An average boi</p>
     <div class="text-lg px-[5%] md:px-[10%] py-8 reveal delay-[200ms] space-y-2">
-      <div class="border-l-2 border-blue px-4 py-2 text-sm bg-white/5 rounded-md">
+      <div class="border border-white/30 px-4 py-2 mb-5 text-sm bg-white/5 rounded-md">
         I used to play GTA Vice City on this good old ideapad laptop until one day, in 2017, when my sibling sparked my curious mind with the urge to learning to code.
       </div>
       <p>
@@ -161,7 +161,7 @@
     async function getGithubRepoStar(repo, id) {
       const repo_info = await fetch(`https://api.github.com/repos/mehedirm6244/` + repo),
             json = await repo_info.json();
-      document.getElementById(id).innerHTML+=`
+      document.getElementById(id).innerHTML += `
         <button class="text-sm px-4 py-2 border border-white/20 rounded-md duration-100 bg-white/10 text-white hover:cursor-default">
           <i class="fa-solid fa-star mr-2"></i><span>${json.stargazers_count}</span>
         </button>
@@ -179,7 +179,7 @@
   <!-- Stuffs I'm used to -->  
   <section class="px-[5%] py-16 md:px-[10%] reveal">
     <h1 class="text-3xl mb-1 mt-4 text-center">Jack of a few trades</h1>
-    <p class="text-lg text-center mb-4">Master of none</p>
+    <p class="text-lg text-center mb-8">Master of none</p>
 
     <div class="flex flex-wrap items-center justify-center align-middle gap-5 reveal delay-200">
 
@@ -239,7 +239,8 @@
   <!-- God forgive me pt.2 -->
   <script>
     const getCfMaxRating = async () => {
-      let rating = 0;
+      let rating, color;
+      const targetDiv = document.getElementById("codeforcesRating");
 
       const repo_info = await fetch(`https://codeforces.com/api/user.info?handles=mehedirm6244&checkHistoricHandles=false`),
             json = await repo_info.json();
@@ -248,7 +249,6 @@
         rating = element.rating;
       })
 
-      let color;
       // haha er upor possible e na amar jnno
       if (rating >= 1600) {
         color = "text-blue";
@@ -257,8 +257,8 @@
       } else if (rating >= 1200) {
         color = "text-green";
       }
-      document.getElementById("codeforcesRating").classList += color;
-      document.getElementById("codeforcesRating").innerHTML = rating;
+      targetDiv.classList += color;
+      targetDiv.innerHTML = rating;
     }
     getCfMaxRating();
   </script>
@@ -283,7 +283,6 @@
         setTimeout(typeWriter, 150);
       } else {
         setTimeout(function() {
-          //myName.innerHTML = "";
           i = (i+1) % userName.length;
           j = 0;
           typeWriterErase();
@@ -295,8 +294,7 @@
       myName.innerHTML = myName.innerHTML.substring(0, myName.innerHTML.length - 1)
       if (myName.innerHTML.length == 0) {
         setTimeout(typeWriter, 50);
-      }
-      else {
+      } else {
         setTimeout(typeWriterErase, 50);
       }
     }
@@ -305,6 +303,7 @@
   </script>
 
   <script src="./scripts/contextmenu.js"></script>
+  <script src="./scripts/scroll_to_top.js"></script>
   <script src="./scripts/animate.js"></script>
 
 </body>
