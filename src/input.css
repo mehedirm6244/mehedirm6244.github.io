@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 * {
-  @apply box-border;
+  @apply box-border outline-none;
 }
 
 ::-webkit-scrollbar {
-  @apply bg-bgDarker w-2 h-2;
+  @apply bg-bg-600 w-2 h-2;
 }
 ::-webkit-scrollbar-thumb {
   @apply bg-blue;

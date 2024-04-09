@@ -24,12 +24,12 @@ const menuData = [
 function drawContextMenu() {
   const contextMenu = document.createElement("div");
   contextMenu.id = "context-menu";
-  contextMenu.classList = "z-50 bg-bg/90 w-48 backdrop-blur-sm shadow border border-white/30 p-2 rounded-lg select-none";
+  contextMenu.classList = "z-50 bg-bg-400/90 w-52 backdrop-blur-sm shadow border border-white/30 p-2 rounded-lg select-none";
   document.body.appendChild(contextMenu);
 
   menuData.forEach(function(entry) {
     var button = document.createElement("button");
-    button.classList = "px-3 py-1 text-sm block w-full text-left rounded hover:text-blue hover:bg-blue/10";
+    button.classList = "px-4 py-1.5 text-sm block w-full text-left rounded hover:text-blue hover:bg-blue/10";
     button.innerHTML = entry.text;
     if (entry.action) {
       button.addEventListener('click', entry.action);

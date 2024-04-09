@@ -26,53 +26,56 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 </head>
 
-<body class="bg-bgDark text-white selection:bg-blue selection:text-bg">
+<body class="bg-bg-500 text-white selection:bg-blue selection:text-bg-500">
 
 	<!-- Header -->
-	<section class="flex align-middle justify-center p-12 md:p-16 h-screen flex align-middle justify-between items-center bg-fixed bg-cover bg-bottom border-b border-white/30" style="background-image: url('./assets/bg.png');">
+	<section class="p-12 md:p-16 h-screen flex align-middle justify-between items-center bg-fixed bg-cover bg-bottom border-b border-white/30" style="background-image: url('./assets/bg.png');">
+
+    <!-- IDK what this div does now but the layout breaks if I remove it -->
     <div class="p-2 md:p-8">
       <div class="w-full md:w-[480px]">
     		<img class="h-[100px] md:h-[125px] mb-4 md:mb-6 rounded-full reveal" src="./assets/pfp.png" alt="Profile picture">
     		<div class="mt-3 md:mt-0 reveal delay-[200ms]">
-          <p class="sm:text-base text-md font-semibold text-lightGray">Hello, I'm</p>
-    			<h1 class="text-3xl md:text-4xl mt-1 mb-2 font-bold"><span id="myName"></span><span class="animate-blink">_</span></h1>
-          <p class="text-md">Just another high schooler from Dhaka, BD, who watches cat videos on his Arch Linux powered PC.</p>
+          <p class="text-md font-semibold text-lightGray">Hello, I'm</p>
+    			<h1 class="text-3xl md:text-4xl mt-1 mb-2 font-bold">
+            <span id="myName"></span>
+            <span class="animate-blink">_</span>
+          </h1>
+          <p class="text-md">
+            Just another high schooler from Dhaka, BD, who watches cat videos on his Arch Linux powered PC.
+          </p>
 
           <!-- Social links -->
-          <nav class="mt-6 bg-white/5 border border-white/30 inline-block backdrop-blur-sm p-2 space-x-1 rounded-md reveal delay-[400ms]">
-            <!-- Discord -->
+          <div class="mt-6 bg-white/5 border border-white/30 inline-block backdrop-blur-sm p-2 space-x-1 rounded-md reveal delay-[400ms]">
             <a href="https://discordapp.com/users/1054038285380497428">
               <button class="text-xl px-2 py-1 text-white rounded-md duration-100 hover:bg-blue/10 hover:text-blue">
                 <i class="fa-brands fa-discord"></i>
               </button>
             </a>
-            <!-- Github -->
             <a href="https://github.com/mehedirm6244">
               <button class="text-xl px-2 py-1 text-white rounded-md duration-100 hover:bg-magenta/10 hover:text-magenta">
                 <i class="fa-brands fa-github"></i>
               </button>
             </a>
-            <!-- Telegram -->
             <a href="https://t.me/mehedirm6244">
               <button class="text-xl px-2 py-1 text-white rounded-md duration-100 hover:bg-cyan/10 hover:text-cyan">
                 <i class="fa-brands fa-telegram"></i>
               </button>
             </a>
-            <!-- Reddit -->
             <a href="https://www.reddit.com/user/mebesus/">
               <button class="text-xl px-2 py-1 text-white rounded-md duration-100 hover:bg-red/10 hover:text-red">
                 <i class="fa-brands fa-reddit-alien"></i>
               </button>
             </a>
-            <!-- Direct mail -->
             <a href="mailto:mehedirm6244@protonmail.com">
               <button class="text-xl px-2 py-1 text-white rounded-md duration-100 hover:bg-yellow/10 hover:text-yellow">
                 <i class="fa fa-envelope"></i>
               </button>
             </a>
-          </nav>
+          </div>
     		</div>
     	</div>
+
       <!-- Parallax JS div -->
       <div class="absolute top-0 right-0 h-screen p-14 overflow-hidden flex align-middle items-start md:items-center">
         <div class="reveal mr-0 md:mr-[-220px] lg:mr-0">
@@ -85,7 +88,9 @@
         </div>
       </div>
     </div>
+
 	</section>
+
   <!-- Initialize parallax effect -->
   <script>
     var moon = document.getElementById('moon');
@@ -94,41 +99,71 @@
     var parallaxInstanceClouds = new Parallax(clouds);
   </script>
 
+  <!-- Navigation bar -->
+  <nav class="fixed top-0 left-0 right-0 z-40 flex align-middle items-center justify-between p-2 bg-bg-400/90 backdrop-blur-sm border-b border-white/30 translate-y-[-100px] duration-500" id="navbar">
+
+    <!-- Left section -->
+    <a href="https://mehedirm6244.github.io/" class="duration-100 rounded-md hover:bg-blue/10 hover:text-blue">
+      <div class="flex align-middle items-center space-x-2 px-3 py-2">
+        <div><img class="h-[32px] rounded-full" src="./assets/pfp.png" alt="Pfp"></div>
+        <div class="text-md font-bold">mehedirm6244</div>
+      </div>
+    </a>
+
+    <!-- Right section -->
+    <div class="pr-2">
+
+      <!-- Show this button only on small screens -->
+      <button class="block md:hidden h-8 w-8 rounded-md hover:bg-bg-300 text-center leading-7" id="navbtn" onclick="toggleNavbar()">
+        <i class="fa fa-bars"></i>
+      </button>
+
+      <div class="absolute top-12 right-5 p-2 w-52 bg-bg-400 border rounded-lg border-white/30 hidden md:static md:top-0 md:right-0 md:p-0 md:w-auto md:block md:space-x-2 md:bg-transparent md:border-0" id="navlinks">
+        <a href="#about" class="block px-2 py-1 md:inline-block md:p-0 hover:underline">About Me</a>
+        <a href="#project" class="block px-2 py-1 md:inline-block md:p-0 hover:underline">Projects</a>
+        <a href="#skill" class="block px-2 py-1 md:inline-block md:p-0 hover:underline">Skills</a>
+      </div>
+
+    </div>
+  </nav>
+
   <div class="h-6"></div>
 
   <!-- My info -->  
-  <section class="px-[5%] py-16 md:px-[10%] reveal">
+  <section class="px-[5%] py-16 md:px-[10%] reveal" id="about">
     <h1 class="text-3xl mb-1 mt-4 text-center">About Me</h1>
     <p class="text-lg text-center">An average boi</p>
+
     <div class="text-lg px-[5%] md:px-[10%] py-8 reveal delay-[200ms] space-y-2">
-      <div class="border border-white/30 px-4 py-2 mb-5 text-sm bg-white/5 rounded-md">
+      <div class="border border-white/30 px-4 py-2 mb-5 text-sm bg-bg-400 rounded-md">
         I used to play GTA Vice City on this good old ideapad laptop until one day, in 2017, when my sibling sparked my curious mind with the urge to learning to code.
       </div>
       <p>
-        I'm <b>Mehedi Rahman Mahi</b>, currently studying general science at 12th grade in Bangladesh. I'm interested in UI designing, competitive programming and computer science. I've been a passionate linux user since 2020. I often code when I'm relaxed, just to destroy my sanity
+        I'm <b>Mehedi Rahman Mahi</b>, currently studying general science at 12th grade in Bangladesh. I'm interested in UI designing, competitive programming and computer science. I've been a passionate linux user since 2020. I often code when I'm relaxed, just to destroy my sanity.
       </p>
       <p>
-        No, I can't fix printers or hack social media accounts
+        No, I can't fix printers or hack social media accounts.
       </p>
     </div>
+
   </section>
 
   <!-- My Projects -->  
-  <section class="px-[5%] py-16 md:px-[10%] reveal">
+  <section class="px-[5%] py-16 md:px-[10%] reveal" id="project">
     <h1 class="text-3xl mb-1 mt-4 text-center">Some stuffs I've made</h1>
     <p class="text-lg text-center">About which I tell <i>her mother</i>.</p>
 
-    <div class="shadow mt-8 flex align-middle space-x-8 overflow-auto p-8 bg-white/5 rounded-lg reveal delay-[200ms]">
+    <div class="mt-8 flex flex-wrap align-middle items-center justify-center gap-5 reveal delay-[200ms]">
 
-      <div class="bg-white/10 border border-white/30 p-8 rounded-lg max-w-[512px] min-w-[512px] hover:scale-105 duration-100 delay-200">
+      <div class="bg-bg-300 border border-white/30 p-8 rounded-lg w-[460px] hover:bg-bg-200 duration-100 delay-[200ms]">
         <div class="flex align-middle justify-between items-center mb-4">
           <h1 class="text-2xl font-semibold">Sysfex</h1>
-          <div id="sysfex" class="space-x-1"></div>
+          <div id="sysfex"></div>
         </div>
-        <p class="text-md mb-2">
-          There was once a time in <a href="https://www.reddit.com/r/unixporn/" class="text-blue hover:underline">r/unixporn</a> when people suddenly fell into love making their own fetch tools similar to Neofetch, but not remotely close to it I guess. Inspired from others, I and <a href="https://github.com/mdgaziur" class="text-blue hover:underline">@mdgaziur</a> also started working on this fetch tool - Sysfex!
+        <p class="text-md mb-2 h-16 overflow-auto">
+          Inspired from the massive fetch-madness on <a href="https://www.reddit.com/r/unixporn/" class="text-blue hover:underline">r/unixporn</a>, I and <a href="https://github.com/mdgaziur" class="text-blue hover:underline">@mdgaziur</a> also started working on this fetch tool.
         </p>
-        <div class="space-x-2 mt-6">
+        <div class="mt-4">
           <a href="https://github.com/mehedirm6244/sysfex">
             <button class="text-sm px-4 py-2 border border-blue/20 rounded-md duration-100 bg-blue/10 text-blue hover:bg-blue/20">
               <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>View on Github
@@ -137,15 +172,15 @@
         </div>
       </div>
 
-      <div class="bg-white/10 border border-white/30 p-8 rounded-lg max-w-[512px] min-w-[512px] hover:scale-105 duration-100 delay-200">
+      <div class="bg-bg-300 border border-white/30 p-8 rounded-lg w-[460px] hover:bg-bg-200 duration-100 delay-[200ms]">
         <div class="flex align-middle justify-between items-center mb-4">
           <h1 class="text-2xl font-semibold">Miserable XFCE</h1>
-          <div id="xfceRice" class="space-x-1"></div>
+          <div id="xfceRice"></div>
         </div>
-        <p class="text-md mb-2">
-          To most of the people using Linux, <a href="https://www.xfce.org/" class="text-blue hover:underline">Xfce</a> is just miserable. <a href="https://www.reddit.com/r/unixporn/" class="text-blue hover:underline">r/unixporn</a> was actually my main reason to switch to Linux, back in 2020. All those neat desktops there often made me jealous and so. So here I am! With some of my very own highly customized Xfce desktops
+        <p class="text-md mb-2 h-16 overflow-auto">
+          My attempt to prove many WM fanboys that it's their skill issue to fail to make <a href="https://www.xfce.org/" class="text-blue hover:underline">Xfce</a> pretty.
         </p>
-        <div class="space-x-2 mt-6">
+        <div class="mt-4">
           <a href="https://github.com/mehedirm6244/My_XFCE_dotties">
             <button class="text-sm px-4 py-2 border border-blue/20 rounded-md duration-100 bg-blue/10 text-blue hover:bg-blue/20">
               <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>View on Github
@@ -153,6 +188,24 @@
           </a>
         </div>
       </div>
+
+      <div class="bg-bg-300 border border-white/30 p-8 rounded-lg w-[460px] hover:bg-bg-200 duration-100 delay-[200ms]">
+        <div class="flex align-middle justify-between items-center mb-4">
+          <h1 class="text-2xl font-semibold">Jash</h1>
+          <div id="jash"></div>
+        </div>
+        <p class="text-md mb-2 h-16 overflow-auto">
+          Jash stands for "Just Another SHell", through which I'm supposed to learn some C stuffs
+        </p>
+        <div class="mt-4">
+          <a href="https://github.com/mehedirm6244/jash">
+            <button class="text-sm px-4 py-2 border border-blue/20 rounded-md duration-100 bg-blue/10 text-blue hover:bg-blue/20">
+              <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>View on Github
+            </button>
+          </a>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -162,78 +215,77 @@
       const repo_info = await fetch(`https://api.github.com/repos/mehedirm6244/` + repo),
             json = await repo_info.json();
       document.getElementById(id).innerHTML += `
-        <button class="text-sm px-4 py-2 border border-white/20 rounded-md duration-100 bg-white/10 text-white hover:cursor-default">
-          <i class="fa-solid fa-star mr-2"></i><span>${json.stargazers_count}</span>
-        </button>
-        <button class="text-sm px-4 py-2 border border-white/20 rounded-md duration-100 bg-white/10 text-white hover:cursor-default">
-          <i class="fa-solid fa-code-fork mr-2"></i><span>${json.forks_count}</span>
+        <button class="text-sm px-4 bg-bg-200 border border-white/20 py-2 rounded-md duration-100 text-white hover:cursor-default">
+          <i class="fa-solid fa-star mr-1"></i><span>${json.stargazers_count}</span>
         </button>
         `;
     }
 
     getGithubRepoStar("sysfex", "sysfex");
     getGithubRepoStar("Miserable_XFCE", "xfceRice");
+    getGithubRepoStar("jash", "jash");
 
   </script>
 
   <!-- Stuffs I'm used to -->  
-  <section class="px-[5%] py-16 md:px-[10%] reveal">
+  <section class="px-[5%] py-16 md:px-[10%] reveal" id="skill">
     <h1 class="text-3xl mb-1 mt-4 text-center">Jack of a few trades</h1>
     <p class="text-lg text-center mb-8">Master of none</p>
 
     <div class="flex flex-wrap items-center justify-center align-middle gap-5 reveal delay-200">
 
-      <div class="text-center bg-white/10 border border-white/30 px-6 py-4 rounded-lg">
+      <div class="text-center bg-bg-300 border border-white/30 px-5 py-3 rounded-lg">
         <div class="flex items-center">
-          <div class="text-4xl mr-2"><i class="devicon-c-plain"></i></div>
+          <div class="text-3xl mr-2"><i class="devicon-c-plain"></i></div>
           <div class="font-semibold text-lg">C</div>
         </div>
       </div>
 
-      <div class="text-center bg-white/10 border border-white/30 px-6 py-4 rounded-lg">
+      <div class="text-center bg-bg-300 border border-white/30 px-5 py-3 rounded-lg">
         <div class="flex items-center">
-          <div class="text-4xl mr-2"><i class="devicon-cplusplus-plain"></i></div>
+          <div class="text-3xl mr-2"><i class="devicon-cplusplus-plain"></i></div>
           <div class="font-semibold text-lg">C++</div>
         </div>
       </div>
 
-      <div class="text-center bg-white/10 border border-white/30 px-6 py-4 rounded-lg">
+      <div class="text-center bg-bg-300 border border-white/30 px-5 py-3 rounded-lg">
         <div class="flex items-center">
-          <div class="text-4xl mr-2"><i class="devicon-archlinux-plain"></i></div>
+          <div class="text-3xl mr-2"><i class="devicon-archlinux-plain"></i></div>
           <div class="font-semibold text-md"><span class="text-blue">Arch</span>Linux</div>
         </div>
       </div>
 
-      <div class="text-center bg-white/10 border border-white/30 px-6 py-4 rounded-lg">
+      <div class="text-center bg-bg-300 border border-white/30 px-5 py-3 rounded-lg">
         <div class="flex items-center">
-          <div class="text-4xl mr-2"><i class="devicon-bash-plain"></i></div>
+          <div class="text-3xl mr-2"><i class="devicon-bash-plain"></i></div>
           <div class="font-semibold text-lg">Bash</div>
         </div>
       </div>
 
-      <div class="text-center bg-white/10 border border-white/30 px-6 py-4 rounded-lg">
+      <div class="text-center bg-bg-300 border border-white/30 px-5 py-3 rounded-lg">
         <div class="flex items-center">
-          <div class="text-4xl mr-2"><i class="devicon-html5-plain"></i></div>
+          <div class="text-3xl mr-2"><i class="devicon-html5-plain"></i></div>
           <div class="font-semibold text-md">HTML and CSS</div>
         </div>
       </div>
 
       <a href="https://codeforces.com/profile/mehedirm6244">
-        <div class="text-center bg-white/10 border border-white/30 px-6 py-4 rounded-lg hover:bg-white/20 hover:scale-105 duration-100">
+        <div class="text-center bg-bg-300 border border-white/30 px-5 py-3 rounded-lg hover:bg-bg-200 hover:scale-105 duration-100">
           <div class="flex items-center">
-            <div class="text-4xl mr-2"><i class="fa-solid fa-medal"></i></div>
+            <div class="text-3xl mr-2"><i class="fa-solid fa-medal"></i></div>
             <div class="font-semibold text-md">Codeforces <span id="codeforcesRating">...</span></div>
           </div>
         </div>
       </a>
 
-      <div class="text-center bg-white/10 border border-white/30 px-6 py-4 rounded-lg">
+      <div class="text-center bg-bg-300 border border-white/30 px-5 py-3 rounded-lg">
         <div class="flex items-center">
-          <div class="text-4xl mr-2"><i class="devicon-tailwindcss-original"></i></div>
+          <div class="text-3xl mr-2"><i class="devicon-tailwindcss-original"></i></div>
           <div class="font-semibold text-md">Tailwind CSS</div>
         </div>
       </div>
     </div>
+
   </section>
 
   <!-- God forgive me pt.2 -->
@@ -264,17 +316,26 @@
   </script>
 	
 	<!-- Footer -->
-	<footer class="mt-8 p-8 bg-white/5 border-t border-white/30">
+	<footer class="mt-8 p-8 bg-bg-400 border-t border-white/30">
 		<p class="text-center">
 			Made with <i class="fa fa-heart"></i> by <span class="font-bold">@mehedirm6244</span><br>
       Icons from <a href="https://fontawesome.com/" class="text-blue hover:underline"><i class="fa-regular fa-font-awesome ml-1 mr-1"></i>Font Awesome</a> and <a href="https://devicon.dev/" class="text-blue hover:underline"><i class="devicon-devicon-plain ml-1 mr-1"></i>Devicon</a>
 		</p>
 	</footer>
 
+  <!-- Scroll to top button -->
+  <button class="fixed bottom-6 right-6 h-9 w-9 rounded-full bg-blue/20 text-blue border border-blue/50 backdrop-blur-sm text-center leading-8 translate-x-[100px] duration-500 hover:cursor-pointer hover:-translate-y-2 hover:shadow-md hover:shadow-white/20" id="scrollToTop" onclick="window.scrollTo(0, 0);">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
 	<script type="text/javascript">
     var i = 0, j = 0;
-    var userName = ['Mehedi Rahman Mahi', 'mebesus', 'mehedirm6244'];
+    const userName = ['Mehedi Rahman Mahi', 'mebesus', 'mehedirm6244'];
     const myName = document.getElementById("myName");
+    const navbar = document.getElementById("navbar");
+    const navlinks = document.getElementById("navlinks");
+    const navbtn = document.getElementById("navbtn");
+    const scrollToTop = document.getElementById("scrollToTop");
 
     function typeWriter() {
       if (j < userName[i].length) {
@@ -299,11 +360,35 @@
       }
     }
 
+    function toggleNavbar() {
+      if (navlinks.classList.contains("hidden") == 1) {
+        navlinks.classList.remove("hidden");
+        navbtn.classList.add("bg-bg-200");
+        navbtn.innerHTML = `<i class="fa fa-xmark"></i>`;
+      } else {
+        navlinks.classList.add("hidden");
+        navbtn.classList.remove("bg-bg-200");
+        navbtn.innerHTML = `<i class="fa fa-bars"></i>`;
+      }
+    }
+
+    window.onscroll = function() {
+      if (document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight) {
+        scrollToTop.classList.remove("translate-x-[100px]")
+        navbar.classList.remove("translate-y-[-100px]")
+      } else {
+        scrollToTop.classList.add("translate-x-[100px]")
+        navbar.classList.add("translate-y-[-100px]");
+        if (navlinks.classList.contains("hidden") == 0) {
+          toggleNavbar();
+        }
+      }
+    };
+
     typeWriter();
   </script>
 
   <script src="./scripts/contextmenu.js"></script>
-  <script src="./scripts/scroll_to_top.js"></script>
   <script src="./scripts/animate.js"></script>
 
 </body>

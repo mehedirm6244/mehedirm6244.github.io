@@ -19,9 +19,15 @@ module.exports = {
         teal: '#1abc9c',
         lightGray: '#a9b1d6',
         white: '#c0caf5',
-        bg: '#1b1b27',
-        bgDark: '#11111d',
-        bgDarker: '#0c0c18',
+        bg: {
+          100: '#2c2c40',
+          200: '#252536',
+          300: '#1e1e2c',
+          400: '#151524',
+          500: '#11111d',
+          600: '#0c0c16',
+          700: '#09090f',
+        },
       },
       fontFamily: {
         sans: ['Barlow', 'sans-serif'],
