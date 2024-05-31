@@ -28,6 +28,11 @@
 
 <body class="bg-bg-500 text-white selection:bg-blue selection:text-bg-500">
 
+  <!-- Loading screen -->
+  <div id="loading_screen" class="fixed top-0 left-0 h-screen w-screen bg-bg-700 flex align-middle justify-center items-center">
+    <p class="text-lg">Please wait till the page loads...</p>
+  </div>
+
 	<!-- Header -->
 	<section class="p-12 md:p-16 h-screen flex align-middle justify-between items-center bg-fixed bg-cover bg-bottom border-b border-white/30" style="background-image: url('./assets/bg.png');">
 
@@ -154,78 +159,12 @@
     <p class="text-lg text-center">About which I tell <i>her mother</i>.</p>
 
     <div class="mt-8 flex flex-wrap align-middle items-center justify-center gap-5 reveal delay-[200ms]">
-
-      <div class="bg-bg-300 border border-white/30 p-8 rounded-lg w-[460px] hover:bg-bg-200 duration-100 delay-[200ms]">
-        <div class="flex align-middle justify-between items-center mb-4">
-          <h1 class="text-2xl font-semibold">Sysfex</h1>
-          <div id="sysfex"></div>
-        </div>
-        <p class="text-md mb-2 h-16 overflow-auto">
-          Inspired from the massive fetch-madness on <a href="https://www.reddit.com/r/unixporn/" class="text-blue hover:underline">r/unixporn</a>, I and <a href="https://github.com/mdgaziur" class="text-blue hover:underline">@mdgaziur</a> also started working on this fetch tool.
-        </p>
-        <div class="mt-4">
-          <a href="https://github.com/mehedirm6244/sysfex">
-            <button class="text-sm px-4 py-2 border border-blue/20 rounded-md duration-100 bg-blue/10 text-blue hover:bg-blue/20">
-              <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>View on Github
-            </button>
-          </a>
-        </div>
-      </div>
-
-      <div class="bg-bg-300 border border-white/30 p-8 rounded-lg w-[460px] hover:bg-bg-200 duration-100 delay-[200ms]">
-        <div class="flex align-middle justify-between items-center mb-4">
-          <h1 class="text-2xl font-semibold">Miserable XFCE</h1>
-          <div id="xfceRice"></div>
-        </div>
-        <p class="text-md mb-2 h-16 overflow-auto">
-          My attempt to prove many WM fanboys that it's their skill issue to fail to make <a href="https://www.xfce.org/" class="text-blue hover:underline">Xfce</a> pretty.
-        </p>
-        <div class="mt-4">
-          <a href="https://github.com/mehedirm6244/My_XFCE_dotties">
-            <button class="text-sm px-4 py-2 border border-blue/20 rounded-md duration-100 bg-blue/10 text-blue hover:bg-blue/20">
-              <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>View on Github
-            </button>
-          </a>
-        </div>
-      </div>
-
-      <div class="bg-bg-300 border border-white/30 p-8 rounded-lg w-[460px] hover:bg-bg-200 duration-100 delay-[200ms]">
-        <div class="flex align-middle justify-between items-center mb-4">
-          <h1 class="text-2xl font-semibold">Jash</h1>
-          <div id="jash"></div>
-        </div>
-        <p class="text-md mb-2 h-16 overflow-auto">
-          Jash stands for "Just Another SHell", through which I'm supposed to learn some C stuffs
-        </p>
-        <div class="mt-4">
-          <a href="https://github.com/mehedirm6244/jash">
-            <button class="text-sm px-4 py-2 border border-blue/20 rounded-md duration-100 bg-blue/10 text-blue hover:bg-blue/20">
-              <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>View on Github
-            </button>
-          </a>
-        </div>
-      </div>
-
+      <!-- Check `./scripts/github.card.js` to know what's going on here -->
+      <div class="github-card delay-[200ms]" repository="mehedirm6244/sysfex"></div>
+      <div class="github-card delay-[200ms]" repository="mehedirm6244/miserable_xfce"></div>
+      <div class="github-card delay-[200ms]" repository="mehedirm6244/jash"></div>
     </div>
   </section>
-
-  <!-- God forgive me -->
-  <script>
-    async function getGithubRepoStar(repo, id) {
-      const repo_info = await fetch(`https://api.github.com/repos/mehedirm6244/` + repo),
-            json = await repo_info.json();
-      document.getElementById(id).innerHTML += `
-        <button class="text-sm px-4 bg-bg-200 border border-white/20 py-2 rounded-md duration-100 text-white hover:cursor-default">
-          <i class="fa-solid fa-star mr-1"></i><span>${json.stargazers_count}</span>
-        </button>
-        `;
-    }
-
-    getGithubRepoStar("sysfex", "sysfex");
-    getGithubRepoStar("Miserable_XFCE", "xfceRice");
-    getGithubRepoStar("jash", "jash");
-
-  </script>
 
   <!-- Stuffs I'm used to -->  
   <section class="px-[5%] py-16 md:px-[10%] reveal" id="skill">
@@ -385,9 +324,14 @@
       }
     };
 
+    window.onload = function() {
+      document.getElementById("loading_screen").style.display = "none";
+    }
+
     typeWriter();
   </script>
 
+  <script src="./scripts/github_card.js"></script>
   <script src="./scripts/contextmenu.js"></script>
   <script src="./scripts/animate.js"></script>
 

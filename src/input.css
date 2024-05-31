@@ -14,11 +14,11 @@
 }
 
 .reveal {
-  @apply relative translate-x-[-50px] blur-sm opacity-0;
+  @apply opacity-0;
 }
 
 .reveal.active {
-  @apply scale-100 translate-x-0 blur-0 opacity-100 duration-1000;
+  @apply opacity-100 duration-1000;
 }
 
 #context-menu {
