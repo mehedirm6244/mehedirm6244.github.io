@@ -2,7 +2,7 @@ const githubCards = document.querySelectorAll('.github-card');
 
 githubCards.forEach(card => {
   const repo = card.getAttribute('repository');
-  card.classList += " bg-bg-300 border border-white/30 p-8 rounded-lg w-[400px] hover:bg-bg-200 duration-100";
+  card.classList += " bg-bg-300 border border-white/30 p-6 md:p-8 rounded-lg w-[375px] md:w-[400px] hover:bg-bg-200 duration-100";
 
   fetch(`https://api.github.com/repos/${repo}`, {
     headers: {
@@ -12,13 +12,13 @@ githubCards.forEach(card => {
     .then(data => {
       // Cursed shit. I should learn JS frontend badly
       card.innerHTML = `
-        <div class="flex align-middle justify-between items-center mb-2">
-            <h1 class="text-2xl font-semibold">${data.name}</h1>
+        <div class="flex align-middle justify-between items-center mb-1 md:mb-2">
+            <p class="text-xl md:text-2xl font-semibold">${data.name}</p>
             <button class="text-sm px-4 bg-bg-200 border border-white/20 py-2 rounded-md duration-100 text-white hover:cursor-default">
               <i class="fa-solid fa-star mr-1"></i><span>${data.stargazers_count}</span>
             </button>
           </div>
-          <p class="text-md mb-2 h-14 overflow-auto">
+          <p class="text-md mb-2 h-12 md:h-14 overflow-auto">
             ${data.description}
           </p>
           <div class="mt-4">

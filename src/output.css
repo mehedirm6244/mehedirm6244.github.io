@@ -716,16 +716,12 @@ video {
   height: 2.25rem;
 }
 
-.h-14 {
-  height: 3.5rem;
-}
-
-.h-64 {
-  height: 16rem;
-}
-
 .h-12 {
   height: 3rem;
+}
+
+.w-screen {
+  width: 100vw;
 }
 
 .w-full {
@@ -752,12 +748,8 @@ video {
   width: 2.25rem;
 }
 
-.w-\[400px\] {
-  width: 400px;
-}
-
-.w-screen {
-  width: 100vw;
+.w-\[375px\] {
+  width: 375px;
 }
 
 .translate-y-\[-100px\] {
@@ -768,6 +760,23 @@ video {
 .translate-x-\[100px\] {
   --tw-translate-x: 100px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+@-webkit-keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-\[spin_2s_linear_infinite\] {
+  -webkit-animation: spin 2s linear infinite;
+          animation: spin 2s linear infinite;
 }
 
 @-webkit-keyframes blink {
@@ -935,21 +944,6 @@ video {
   background-color: rgb(33 33 56 / var(--tw-bg-opacity));
 }
 
-.bg-red {
-  --tw-bg-opacity: 1;
-  background-color: rgb(247 118 142 / var(--tw-bg-opacity));
-}
-
-.bg-bg-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(37 37 54 / var(--tw-bg-opacity));
-}
-
-.bg-bg-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(9 9 15 / var(--tw-bg-opacity));
-}
-
 .bg-cover {
   background-size: cover;
 }
@@ -976,6 +970,10 @@ video {
 
 .p-8 {
   padding: 2rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
 }
 
 .px-3 {
@@ -1069,6 +1067,11 @@ video {
   line-height: 1.25rem;
 }
 
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -1085,10 +1088,6 @@ video {
 
 .font-semibold {
   font-weight: 600;
-}
-
-.italic {
-  font-style: italic;
 }
 
 .leading-7 {
@@ -1351,6 +1350,10 @@ video {
     margin-top: -96px;
   }
 
+  .md\:mb-2 {
+    margin-bottom: 0.5rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -1367,6 +1370,10 @@ video {
     height: 125px;
   }
 
+  .md\:h-14 {
+    height: 3.5rem;
+  }
+
   .md\:w-\[480px\] {
     width: 480px;
   }
@@ -1381,6 +1388,10 @@ video {
 
   .md\:w-auto {
     width: auto;
+  }
+
+  .md\:w-\[400px\] {
+    width: 400px;
   }
 
   .md\:items-center {
@@ -1431,6 +1442,11 @@ video {
   .md\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 
