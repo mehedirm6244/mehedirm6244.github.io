@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width" initial-scale="1.0">
+  <meta name="author" content="Mehedi Rahman Mahi">
+  <meta name="description" content="Personal website of Mehedi Rahman Mahi">
+  <meta name="keywords" content="Mehedi Rahman Mahi, mehedirm6244, mebesus">
+
+  <title>mehedirm6244</title>
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Barlow font from Google API -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Devicon CDN -->
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+  <!-- CSS Only -->
+  <link rel="stylesheet" href="../src/output.css" />
+</head>
+
+<body class="bg-bg-500 text-white selection:bg-blue selection:text-bg-500">
+
+  <!-- Loading screen -->
+  <div id="loading_screen" class="z-50 fixed top-0 left-0 h-screen w-screen bg-bg-500 flex items-center justify-center">
+    <i class="fa fa-gear text-6xl animate-[spin_2s_linear_infinite]"></i>
+  </div>
+
+  <!-- Navigation bar -->
+  <nav class="sticky top-0 left-0 right-0 z-40 flex align-middle items-center justify-between p-2 border-b border-transparent duration-500" id="navbar">
+
+    <!-- Left section -->
+    <a href="https://mehedirm6244.github.io/" class="duration-100 rounded-md hover:bg-blue/10 hover:text-blue">
+      <div class="flex align-middle items-center space-x-2 px-3 py-2">
+        <div><img class="h-[32px] rounded-full" src="../assets/pfp.png" alt="Pfp"></div>
+        <div class="text-md font-bold">mehedirm6244</div>
+      </div>
+    </a>
+
+    <!-- Right section -->
+    <div class="pr-2">
+
+      <!-- Show this button only on small screens -->
+      <button class="block md:hidden h-8 w-8 rounded-md hover:bg-bg-300 text-center leading-7" id="navbtn" onclick="toggleNavbar()">
+        <i class="fa fa-bars"></i>
+      </button>
+
+      <div class="absolute top-12 right-5 p-2 w-52 bg-bg-400 border rounded-lg border-white/30 hidden md:static md:top-0 md:right-0 md:p-0 md:w-auto md:block md:space-x-3 md:bg-transparent md:border-0" id="navlinks">
+        <a href="https://github.com/mehedirm6244">
+          <button class="text-xl px-2 py-1 text-white rounded-md duration-100 hover:bg-magenta/10 hover:text-magenta">
+            <i class="fa-brands fa-github"></i>
+          </button>
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Banner -->
+  <div class="relative h-72 lg:h-80 md:mx-6 lg:mx-10 md:mt-2 md:rounded-lg shadow-2xl bg-cover bg-center overflow-hidden" style="background-image: url(../assets/altumcode-dMUt0X3f59Q-unsplash.jpg)">
+    <!-- Banner content -->
+    <div class="h-full w-full bg-gradient-to-r from-bg-500/90 to-bg-700/50 flex align-middle justify-between items-center">
+      <div class="md:w-[60%] px-8 md:px-16">
+        <p class="text-3xl md:text-4xl mb-1 font-bold">CP&&CP (Part 1)</p>
+        <p class="text-lg mb-4">CP&&CP stands for "Computer Programming and Competitive Programming"</p>
+        <p class="text-md mb-1">
+          <i class="fa fa-pen mr-2"></i><a href="https://mehedirm6244.github.io" class="text-blue hover:underline">Mehedi Rahman Mahi</a>
+        </p>
+        <p class="text-md mb-1"><i class="fa fa-calendar mr-2"></i>5 November, 2023</p>
+        <p class="text-md"><i class="fa fa-clock mr-2 mb-4"></i>Read time: 3 mins</p>
+        (Photo by <a href="https://unsplash.com/@altumcode?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" class="text-blue">AltumCode</a> on <a href="https://unsplash.com/photos/macbook-pro-dMUt0X3f59Q?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" class="text-blue">Unsplash</a>)
+  
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <section class="px-[5%] py-12 md:px-[10%] space-y-10 text-lg reveal">
+    <p>
+      Also read this on <a href="https://web.facebook.com/share/p/sgHLqxinLZPokAGi/" class="text-blue hover:underline">Facebook</a>
+    </p>
+
+    <p>
+      <span class="text-3xl">প্রো</span>গ্রামিং কি সেটা আমরা সবাই কমবেশি জানি।  তবে এখনো আমাদের অনেকের মধ্যেই এটা নিয়ে এক বিরাট আকারের মিসকনসেপ্ট এবং ভীতি কাজ করে। CP&&CP সিরিজের মধ্য দিয়ে  আমরা বিষয়টাকে জানার, বোঝার, এবং ভেতর থেকে ফিল করার চেষ্টা করবো (তবে এটা মনে করা ভুল হবে যে এই সিরিজ তোমাকে শূণ্য থেকে প্রোগ্রামিং করতে শেখাবে)।
+    </p>
+
+    <div class="space-y-3">
+      <p class="border-l-4 border-blue px-4 py-2 text-xl font-semibold mb-2">প্রোগ্রামিং জিনিসটা আসলে কি? দরকার কি এটার?</p>
+      <p>
+        সোজা কথায়, কম্পিউটার প্রোগ্রামিং করা মানেই কম্পিউটারকে হুকুম দেওয়া। আচ্ছা... আমরা যখন কম্পিউটার চালাই, সবসময়ই তো কোনো না কোনো সফটওয়্যার দিয়ে সেটাকে কমান্ড দিতে থাকি, তাহলে প্রোগ্রামিং আলাদা করে শেখার কি দরকার? হ্যাঁ এটা ঠিক, তবে এখানে কাজটা করছে (পড়া উচিৎ "করাচ্ছে") সফটওয়্যারটা, তুমি না। সফটওয়্যারটার প্রোগ্রামার ওটাকে যতটুকু ক্ষমতা দিয়েছে, ওটা ঠিক ততটুকুই কাজ করতে পারবে, এর চেয়ে বেশি কখনোই না! এখন তাহলে নিশ্চই অনুমান করতে পারছো  নিজে প্রোগ্রাম বানাতে জানলে তোমার লাভটা কোথায়? Exactly! তুমি ঠিক যা চাও, তোমার কম্পিউটারকে দিয়ে ঠিক তাই করাতে পারবে। তবে এই প্রসঙ্গে একটা কথা প্রায়ই বলা হয়: "With great power, comes great responsibility"। বুঝলে তো?
+      </p>
+      <p>
+        তুমি যতদিন পর্যন্ত প্রোগ্রামিং করতে না জানবে ততদিন তুমি কম্পিউটার ব্যবহার করবেনা, উল্টো তোমার কম্পিউটারটাই তোমায় ব্যবহার করবে বলতে পারো।
+      </p>
+    </div>
+
+    <div class="space-y-3">
+      <p class="border-l-4 border-blue px-4 py-2 text-xl font-semibold mb-2">প্রোগ্রামিংটা আসলে কিভাবে (কাজ) করে?</p>
+      <p>
+        এটা শুরু করার আগে আমরা অল্প করে জেনে নেই কম্পিউটার কিভাবে কাজ করে। কম্পিউটারে যা-ই আছে, সবই বেসিক্যালি একেকটা ফাইল। জ্বি, অডিও, ভিডিও থেকে শুরু করে ডাইরেক্টোরি, সবই ফাইল (হ্যাঁ, লিনাক্সে ডাইরেক্টরিও ফাইল)। ফাইলগুলিও আবার আসলে 0 আর 1 ছাড়া কিচ্ছু না। এখানে 0 মানে ভোল্টেজ নেই আর 1 মানে ভোল্টেজ আছে (ইলেকট্রনিক মানেই ত ইলেকট্রন রিলেটেড হাবিজাবি যেমন - ডায়োড, ট্রানজিস্টর ইত্যাদি নিয়ে কাজ করবে)। তার মানে কম্পিউটার 0 এবং 1 ছাড়া কিছুই বোঝেনা! বোকা বাক্স একটা!! কম্পিউটারের প্রত্যেকটা প্রোগ্রামই মেশিন কোডে (মানে 0 আর 1 দিয়ে) লেখা।
+      </p>
+      <p>
+        এবার একটা মজার কথা চিন্তা করো! আমরা অনেকেই অনেক প্রোগ্রামিং ল্যাঙ্গুয়েজের নাম শুনেছি, যেমন: C, C++, Rust, Python, Java ইত্যাদি। এগুলো কি আকাশ থেকে সৃষ্টি হয়েছে? না। আবার দেখো, এদের মূল কাজ কিন্তু একটাই - কম্পিউটার প্রোগ্রাম তৈরি, কিন্তু  কাজের ধরণ আলাদা ("কীভাবে তৈরি")। তোমার মনে হতে পারে যে একই কাজের জন্য এতগুলো ল্যাঙ্গুয়েজের কি দরকার, একটা থাকলেই ত হয়? আচ্ছা বলো তো, স্বাভাবিকভাবে ভাষার কাজ কি? মনের ভাব প্রকাশ করা, তাইতো? বিশ্বে প্রায় ৩ হাজার ভাষা রয়েছে, যাদের মূল কাজ মনের ভাব প্রকাশ। তবে এই ভাষাগুলোর অক্ষর, ব্যকরণ ইত্যাদি একটি আরেকটির চেয়ে কমবেশি আলাদা। স্থান-কাল-পাত্রভেদে ভাষার পরিবর্তন-পরিবর্ধন হতে হতে আজ এত ভাষা! প্রোগ্রামিং ল্যাঙ্গুয়েজগুলোর ক্ষেত্রেও তা-ই। প্রত্যেকটা ল্যাঙ্গুয়েজই কোনো না কোনো ল্যাঙ্গুয়েজের উপর ভিত্তি করে বানানো (যেমন- C++, C বেজড)। আবার, কিছু কিছু প্রোগ্রামিং ল্যাঙ্গুয়েজ বিভিন্ন কাজের জন্য স্পেশালাইজড (যেমন: Fortran)। আমরা যদি প্রোগ্রামিং ল্যাঙ্গুয়েজগুলোকে নিয়ে একটা ট্রি বা গাছ কল্পনা করি, তবে এর মূলটা হবে মেশিন ল্যাঙ্গুয়েজ (আরকি, 0 আর 1), বাকি যা আছে সব একেকটা ডালপালা, আবার এই ডালপালারও ডালপালা থাকতে পারে। আবার, কম্পিউটার ত 0 আর 1 বাদে কিছুই বোঝেনা, তাহলে কম্পিউটারের সব প্রোগ্রাম নিশ্চই মেশিন ভাষায় লেখা, তা-ই হবার কথা না? তুমি যদি প্রোগ্রামিং করা দেখে থাকো তাহলে এখানে এভাবে আপত্তি করতে পারো যে: একেক প্রোগ্রাম তো একেক প্রোগ্রামিং ভাষায় লেখা, তাহলে মেশিন ভাষায় লেখা হলো কিভাবে?
+      </p>
+      <p>
+        ধরো, তুমি C ল্যাঙ্গুয়েজ ব্যবহার করে একটি কোড লিখলে। এরপর সেটা বিল্ড বা কম্পাইল করলে। তাহলে দেখবে একটি নতুন .exe (Windows এর ক্ষেত্রে) বা ঐ কোডের নামের ফাইল (লিনাক্সে) তৈরি হয়েছে। সেটা তখন তুমি রান বা এক্সিকিউট করতে পারবে। তুমি কোড লিখলা C তে, সেটা কিভাবে 0 আর 1 হয়ে গেলো? এই যাদুটা করলো ট্রান্সলেটর (কম্পাইলার বা ইন্টারপ্রেটার)। একটু আগে বলা C কোডের ক্ষেত্রে "কম্পাইলার", তোমার কোডটাকে মেশিন ল্যাঙ্গুয়েজে রুপান্তর করে দিয়েছে যেন কম্পিউটার সেটা বুঝতে পারে।
+      </p>
+      <p>
+        এসব নিয়ে বিস্তারিত পরে আলোচনা হবে।
+      </p>
+    </div>
+
+    <div class="space-y-3">
+      <p class="border-l-4 border-blue px-4 py-2 text-xl font-semibold">সবই বুঝলাম। তবে প্রোগ্রামিং জানলে আমার আল্টিমেট লাভটা কি?</p>
+      <p>
+        ঐযে বললাম শুরুতে, প্রোগ্রামিং জানলে তুমি তোমার কম্পিউটারটাকে নিজের মতো করে ব্যবহার করতে পারবে, নিজের ক্রিয়েটিভিটি কাজে লাগানোর জন্য আরেকটা স্কোপ আবিষ্কার করবে। জবের কথা বাদই দিলাম, এটা একটা মারাত্মক লেভেলের এক্সট্রাকারিকুলার এক্টিভিটি। তোমরা যারা গণিত পছন্দ করো, তারা প্রোগ্রামিংটাকেও পছন্দ করবে। প্রোগ্রামিং জানলে তুমি ইলেকট্রনিক ডিভাইসগুলোকে নতুনভাবে ফিল করতে পারবে যেটা ১০১টি বই পড়ে কখনো ফিল করতে পারবেনা।
+      </p>
+    </div>
+
+    <div class="space-y-3">
+      <p class="border-l-4 border-blue px-4 py-2 text-xl font-semibold">এতগুলো প্রোগ্রামিং ল্যাঙ্গুয়েজের মধ্যে আমি কোনটা শিখবো?</p>
+      <p>
+        স্ট্যান্ডার্ড কোনো একটা ল্যাঙ্গুয়েজ দিয়ে শুরু করলেই হয়। অনেকেই C/C++ বা Python দিয়ে প্রোগ্রামিং শুরু করে। Python, স্টার্টারদের জন্য তুলনামূলক সহজ। আবার, ভেতরের জিনিসপাতি ভালোভাবে বুঝতে অনেকে C শিখে থাকে।  মজার কথা হলো, একটি ল্যাঙ্গুয়েজ ভালোভাবে শিখে ফেললে এরকম আরো অনেক ল্যাঙ্গুয়েজ সহজেই আয়ত্ত করা যায় (অনেকটা স্প্যানিশ জানা থাকলে ফ্রেঞ্চ বা অন্যান্য কিছু ইউরোপিয়ান ভাষা কমবেশি বোঝা যায়, তেমন)।  প্রোগ্রামিং এর ক্ষেত্রে সচরাচর একটা টার্ম ব্যবহার করা হয়: "Psuedocode", যার মানে এটা দেখতে কোডের মতো, কিন্তু আসলে কোড না। স্যুডোকোড দেখে তুমি সহজেই বুঝতে পারবে যে এখানে আসলে হচ্ছেটা কি। তাই, স্যুডোকোড জানা থাকলে যেকোনো প্রোগ্রামিং ভাষা ব্যবহার করে স্যুডোকোডের ঐ প্রোসেস ব্যবহার করে তুমি একটি নির্দিষ্ট প্রোগ্রাম সহজেই লিখতে পারবে। 
+      </p>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="mt-8 p-8 bg-bg-400 border-t border-white/30">
+    <p class="text-center">
+      Made with <i class="fa fa-heart"></i> by <span class="font-bold">@mehedirm6244</span><br>
+    </p>
+  </footer>
+
+  <!-- Scroll to top button -->
+  <button class="fixed bottom-6 right-6 h-9 w-9 rounded-full bg-blue/20 text-blue border border-blue/50 backdrop-blur-sm text-center leading-8 translate-x-[100px] duration-500 hover:cursor-pointer hover:-translate-y-2 hover:shadow-md hover:shadow-white/20" id="scrollToTop" onclick="window.scrollTo(0, 0);">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script type="text/javascript">
+    const navbar = document.getElementById("navbar");
+    const navlinks = document.getElementById("navlinks");
+    const navbtn = document.getElementById("navbtn");
+    const scrollToTop = document.getElementById("scrollToTop");
+
+    function toggleNavbar() {
+      if (navlinks.classList.contains("hidden") == 1) {
+        navlinks.classList.remove("hidden");
+        navbtn.classList.add("bg-bg-200");
+        navbtn.innerHTML = `<i class="fa fa-xmark"></i>`;
+      } else {
+        navlinks.classList.add("hidden");
+        navbtn.classList.remove("bg-bg-200");
+        navbtn.innerHTML = `<i class="fa fa-bars"></i>`;
+      }
+    }
+
+    window.onscroll = function() {
+      if (document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight) {
+        scrollToTop.classList.remove("translate-x-[100px]")
+      } else {
+        scrollToTop.classList.add("translate-x-[100px]")
+      }
+
+      if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+        navbar.classList.add("bg-bg-400/90");
+        navbar.classList.add("backdrop-blur-sm");
+        navbar.classList.remove("border-transparent");
+        navbar.classList.add("border-white/30");
+      } else {
+        navbar.classList.remove("bg-bg-400/90");
+        navbar.classList.remove("backdrop-blur-sm");
+        navbar.classList.add("border-transparent");
+        navbar.classList.remove("border-white/30");
+      }
+    };
+
+    window.onload = function() {
+      document.getElementById("loading_screen").style.display = "none";
+    }
+  </script>
+
+  <script src="../scripts/contextmenu.js"></script>
+  <script src="../scripts/animate.js"></script>
+
+</body>
+</html>

@@ -45,12 +45,10 @@
     		<img class="h-[100px] md:h-[125px] mb-4 md:mb-6 rounded-full reveal" src="./assets/pfp.png" alt="Profile picture">
     		<div class="mt-3 md:mt-0 reveal delay-[200ms]">
           <p class="text-md font-semibold text-lightGray">Hello, I'm</p>
-    			<h1 class="text-3xl md:text-4xl mt-1 mb-2 font-bold">
-            <span id="myName"></span>
+    			<p class="text-3xl md:text-4xl font-semibold">Mehedi Rahman Mahi</p>
+          <p class="text-2xl">
+            A <span id="typewriter" class="text-green"></span>
             <span class="animate-blink">_</span>
-          </h1>
-          <p class="text-md">
-            Just another high schooler from Dhaka, BD, who watches cat videos on his Arch Linux powered PC.
           </p>
 
           <!-- Social links -->
@@ -82,6 +80,7 @@
             </a>
           </div>
     		</div>
+
     	</div>
 
       <!-- Parallax JS div -->
@@ -130,9 +129,8 @@
         <a href="#about" class="block px-2 py-1 md:inline-block md:p-0 hover:underline">About Me</a>
         <a href="#project" class="block px-2 py-1 md:inline-block md:p-0 hover:underline">Projects</a>
         <a href="#skill" class="block px-2 py-1 md:inline-block md:p-0 hover:underline">Skills</a>
-        <a href="#contact" class="block px-2 py-1 md:inline-block md:p-0 hover:underline">Contact Me</a>
+        <a href="#contact" class="block px-2 py-1 md:inline-block md:p-0 hover:underline">My Links</a>
       </div>
-
     </div>
   </nav>
 
@@ -144,11 +142,11 @@
     <p class="text-lg text-center">An average boi</p>
 
     <div class="text-lg px-[5%] md:px-[10%] py-8 reveal delay-[200ms] space-y-2">
-      <div class="border border-white/30 px-4 py-2 mb-5 text-sm bg-bg-400 rounded-md">
-        I used to play GTA Vice City on this good old ideapad laptop until one day, in 2017, when my sibling sparked my curious mind with the urge to learning to code.
+      <div class="border border-white/30 border-l-[6px] px-4 py-2 mb-5 text-sm bg-bg-400 rounded-md">
+        I used to play GTA Vice City on this good old ideapad until one day, in 2017, when my sibling sparked my curious mind with the urge to learning to code.
       </div>
       <p>
-        I'm <b>Mehedi Rahman Mahi</b>, currently studying general science at 12th grade in Bangladesh. I'm interested in UI designing, competitive programming and computer science. I've been a passionate linux user since 2020. I often code when I'm relaxed, just to destroy my sanity.
+        I'm <b>Mehedi Rahman Mahi</b>, currently studying general science at 12th grade in Bangladesh. I'm interested in UI designing, competitive programming and computer science. I've been a passionate linux user since 2020 (I use <span class="text-blue">Arch</span> btw). I often code when I'm relaxed, just to destroy my sanity. I'm looking forward to learning more geeky stuff and contributing to FOSS.
       </p>
       <p>
         No, I can't fix printers or hack social media accounts.
@@ -260,40 +258,49 @@
 
   <!-- Contact Me -->  
   <section class="px-[5%] py-16 md:px-[10%] reveal" id="contact">
-    <h1 class="text-3xl mb-1 mt-4 text-center">Contact Me</h1>
-    <p class="text-lg text-center">Why would anyone want to?</p>
+    <h1 class="text-3xl mb-1 mt-4 text-center">My Links</h1>
+    <p class="text-lg text-center">Why would anyone want to connect to me?</p>
     <div class="mt-8 flex flex-wrap align-middle items-center justify-center gap-5 reveal delay-[200ms]">
-      <a class="flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 w-80 hover:bg-bg-300 duration-100" href="mailto:mehedirm6244@protonmail.com">
+      <a class="flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 w-64 hover:bg-bg-300 duration-100" href="mailto:mehedirm6244@protonmail.com">
         <button class="bg-bg-200 h-16 w-16 rounded-full border border-white/30 text-center leading-5">
           <i class="fa fa-envelope text-xl"></i>
         </button>
-        <div class="px-4 w-64">
+        <div class="px-4 w-48">
           <p class="text-lg font-semibold">Mail</p>
-          <p class="-mt-1 text-sm">mehedirm6244@protonmail.com</p>
+          <p class="-mt-1 text-sm truncate">mehedirm6244@protonmail.com</p>
         </div>
       </a>
-      <a class="flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 w-80 hover:bg-bg-300 duration-100" href="https://discordapp.com/users/1054038285380497428">
+      <a class="flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 w-64 hover:bg-bg-300 duration-100" href="https://discordapp.com/users/1054038285380497428">
         <button class="bg-bg-200 h-16 w-16 rounded-full border border-white/30 text-center leading-5">
           <i class="fa-brands fa-discord text-xl"></i>
         </button>
-        <div class="px-4 w-64">
+        <div class="px-4 w-48">
           <p class="text-lg font-semibold">Discord</p>
         </div>
       </a>
-      <a class="flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 w-80 hover:bg-bg-300 duration-100" href="https://www.reddit.com/user/mebesus/">
+      <a class="flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 w-64 hover:bg-bg-300 duration-100" href="https://www.github.com/mehedirm6244">
+        <button class="bg-bg-200 h-16 w-16 rounded-full border border-white/30 text-center leading-5">
+          <i class="fa-brands fa-github text-xl"></i>
+        </button>
+        <div class="px-4 w-48">
+          <p class="text-lg font-semibold">Github</p>
+          <p class="-mt-1 text-sm">mehedirm6244</p>
+        </div>
+      </a>
+      <a class="flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 w-64 hover:bg-bg-300 duration-100" href="https://www.reddit.com/user/mebesus/">
         <button class="bg-bg-200 h-16 w-16 rounded-full border border-white/30 text-center leading-5">
           <i class="fa-brands fa-reddit-alien text-xl"></i>
         </button>
-        <div class="px-4 w-64">
+        <div class="px-4 w-48">
           <p class="text-lg font-semibold">Reddit</p>
           <p class="-mt-1 text-sm">mebesus</p>
         </div>
       </a>
-      <a class="flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 w-80 hover:bg-bg-300 duration-100" href="https://t.me/mehedirm6244">
+      <a class="flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 w-64 hover:bg-bg-300 duration-100" href="https://t.me/mehedirm6244">
         <button class="bg-bg-200 h-16 w-16 rounded-full border border-white/30 text-center leading-5">
           <i class="fa-brands fa-telegram text-xl"></i>
         </button>
-        <div class="px-4 w-64">
+        <div class="px-4 w-48">
           <p class="text-lg font-semibold">Telegram</p>
           <p class="-mt-1 text-sm">mehedirm6244</p>
         </div>
@@ -316,21 +323,21 @@
 
 	<script type="text/javascript">
     var i = 0, j = 0;
-    const userName = ['Mehedi Rahman Mahi', 'mebesus', 'mehedirm6244'];
-    const myName = document.getElementById("myName");
+    const intro = ['student at morning', 'learner at noon', 'coder at midnight'];
+    const myName = document.getElementById("typewriter");
     const navbar = document.getElementById("navbar");
     const navlinks = document.getElementById("navlinks");
     const navbtn = document.getElementById("navbtn");
     const scrollToTop = document.getElementById("scrollToTop");
 
-    function typeWriter() {
-      if (j < userName[i].length) {
-        myName.innerHTML += userName[i].charAt(j);
+    function typeWriterWrite() {
+      if (j < intro[i].length) {
+        myName.innerHTML += intro[i].charAt(j);
         j++;
-        setTimeout(typeWriter, 150);
+        setTimeout(typeWriterWrite, 100);
       } else {
         setTimeout(function() {
-          i = (i+1) % userName.length;
+          i = (i+1) % intro.length;
           j = 0;
           typeWriterErase();
         }, 2000);
@@ -340,7 +347,7 @@
     function typeWriterErase() {
       myName.innerHTML = myName.innerHTML.substring(0, myName.innerHTML.length - 1)
       if (myName.innerHTML.length == 0) {
-        setTimeout(typeWriter, 50);
+        setTimeout(typeWriterWrite, 50);
       } else {
         setTimeout(typeWriterErase, 50);
       }
@@ -375,7 +382,7 @@
       document.getElementById("loading_screen").style.display = "none";
     }
 
-    typeWriter();
+    typeWriterWrite();
   </script>
 
   <script src="./scripts/github_card.js"></script>
