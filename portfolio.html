@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width" initial-scale="1.0">
+  <meta name="author" content="Mehedi Rahman Mahi">
+  <meta name="description" content="Personal website of Mehedi Rahman Mahi">
+  <meta name="keywords" content="Mehedi Rahman Mahi, mehedirm6244, mebesus">
+
+  <title>mehedirm6244: Portfolio</title>
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Barlow font from Google API -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Devicon CDN -->
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+  <!-- CSS Only -->
+  <link rel="stylesheet" href="./src/output.css" />
+</head>
+
+<body class="bg-bg-500 text-white selection:bg-blue selection:text-bg-500">
+
+  <!-- Loading screen -->
+  <div id="loading_screen" class="z-50 fixed top-0 left-0 h-screen w-screen bg-bg-500 flex items-center justify-center">
+    <i class="fa fa-gear text-6xl animate-[spin_2s_linear_infinite]"></i>
+  </div>
+
+  <!-- Navigation bar -->
+  <nav class="sticky top-0 left-0 right-0 z-40 p-2 bg-bg-400/90 backdrop-blur-sm border-b border-white/30 flex align-middle items-center justify-between duration-500">
+
+    <!-- Left section -->
+    <div class="flex items-center align-middle justify-between space-x-2">
+      <a href="https://mehedirm6244.github.io/" class="duration-100 rounded-md hover:bg-blue/10 hover:text-blue">
+        <div class="flex align-middle items-center space-x-2 px-3 py-2">
+          <div><img class="h-[32px] rounded-full" src="./assets/pfp.png" alt="Pfp"></div>
+          <div class="text-md font-bold">mehedirm6244</div>
+        </div>
+      </a>
+      <p class="font-semibold text-lightGray">
+        Portfolio
+      </p>
+    </div>
+
+    <!-- Right section -->
+    <div class="pr-2">
+
+      <!-- Show this button only on small screens -->
+      <button class="block md:hidden h-8 w-8 rounded-md hover:bg-bg-300 text-center leading-7" id="navbtn" onclick="toggleNavbar()">
+        <i class="fa fa-bars"></i>
+      </button>
+
+      <div class="absolute top-12 right-5 p-2 w-52 bg-bg-400 border rounded-lg border-white/30 hidden md:static md:top-0 md:right-0 md:p-0 md:w-auto md:block md:space-x-3 md:bg-transparent md:border-0" id="navlinks">
+        <a href="#about" class="block px-2 py-1 md:inline-block md:p-0 hover:underline">About Me</a>
+        <a href="#project" class="block px-2 py-1 md:inline-block md:p-0 hover:underline">Projects</a>
+        <a href="#skill" class="block px-2 py-1 md:inline-block md:p-0 hover:underline">Skills</a>
+        <a href="#contact" class="block px-2 py-1 md:inline-block md:p-0 hover:underline">My Links</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="border border-yellow/30 px-4 py-2 mx-[5%] mt-8 md:mx-[10%] text-sm text-yellow bg-yellow/10 rounded-md">
+    <i class="fa fa-circle-info mr-2"></i>Use the navigation bar to navigate through different sections
+  </div>
+
+  <!-- My info -->  
+  <section class="px-[5%] py-16 md:px-[10%] reveal" id="about">
+    <h1 class="text-3xl mb-1 mt-4 text-center">About Me</h1>
+    <p class="text-lg text-center">Wannabe above-average</p>
+
+    <div class="text-lg px-[5%] md:px-[10%] py-8 reveal delay-[200ms] space-y-2">
+      <div class="border border-white/30 border-l-[6px] px-4 py-2 mb-5 text-sm bg-bg-400 rounded-md">
+        I used to play GTA Vice City on this good old ideapad until one day, in 2017, when my sibling sparked my curious mind with the urge to learning to code.
+      </div>
+      <p>
+        I'm <b>Mehedi Rahman Mahi</b>, currently studying general science at 12th grade in Bangladesh. I'm interested in UI designing, competitive programming and computer science. I've been a passionate linux user since 2020 (I use <span class="text-blue">Arch</span> btw). I often code when I'm relaxed, just to destroy my sanity. I'm looking forward to learning more geeky stuff and contributing to FOSS.
+      </p>
+      <p>
+        No, I can't fix printers or hack social media accounts.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- My Projects -->  
+  <section class="px-[5%] py-16 md:px-[10%] reveal" id="project">
+    <h1 class="text-3xl mb-1 mt-4 text-center">Some stuffs I've made</h1>
+    <p class="text-lg text-center">About which I tell <i>her mother</i>.</p>
+
+    <div class="mt-8 flex flex-wrap align-middle items-center justify-center gap-5 reveal delay-[200ms]">
+      <!-- Check `./scripts/github.card.js` to know what's going on here -->
+      <div class="github-card delay-[200ms]" repository="mehedirm6244/sysfex"></div>
+      <div class="github-card delay-[200ms]" repository="mehedirm6244/miserable_xfce"></div>
+      <div class="github-card delay-[200ms]" repository="mehedirm6244/jash"></div>
+    </div>
+  </section>
+
+  <!-- Stuffs I'm used to -->  
+  <section class="px-[5%] py-16 md:px-[10%] reveal" id="skill">
+    <h1 class="text-3xl mb-1 mt-4 text-center">Jack of a few trades</h1>
+    <p class="text-lg text-center mb-8">Master of none</p>
+
+    <div class="flex flex-wrap items-center justify-center align-middle gap-5 reveal delay-200">
+
+      <div class="text-center bg-bg-300 border border-white/30 px-5 py-3 rounded-lg">
+        <div class="flex items-center">
+          <div class="text-3xl mr-2"><i class="devicon-c-plain"></i></div>
+          <div class="font-semibold text-lg">C</div>
+        </div>
+      </div>
+
+      <div class="text-center bg-bg-300 border border-white/30 px-5 py-3 rounded-lg">
+        <div class="flex items-center">
+          <div class="text-3xl mr-2"><i class="devicon-cplusplus-plain"></i></div>
+          <div class="font-semibold text-lg">C++</div>
+        </div>
+      </div>
+
+      <div class="text-center bg-bg-300 border border-white/30 px-5 py-3 rounded-lg">
+        <div class="flex items-center">
+          <div class="text-3xl mr-2"><i class="devicon-archlinux-plain"></i></div>
+          <div class="font-semibold text-md"><span class="text-blue">Arch</span>Linux</div>
+        </div>
+      </div>
+
+      <div class="text-center bg-bg-300 border border-white/30 px-5 py-3 rounded-lg">
+        <div class="flex items-center">
+          <div class="text-3xl mr-2"><i class="devicon-bash-plain"></i></div>
+          <div class="font-semibold text-lg">Bash</div>
+        </div>
+      </div>
+
+      <div class="text-center bg-bg-300 border border-white/30 px-5 py-3 rounded-lg">
+        <div class="flex items-center">
+          <div class="text-3xl mr-2"><i class="devicon-html5-plain"></i></div>
+          <div class="font-semibold text-md">HTML and CSS</div>
+        </div>
+      </div>
+
+      <a href="https://codeforces.com/profile/mehedirm6244">
+        <div class="text-center bg-bg-300 border border-white/30 px-5 py-3 rounded-lg hover:bg-bg-200 hover:scale-105 duration-100">
+          <div class="flex items-center">
+            <div class="text-3xl mr-2"><i class="fa-solid fa-medal"></i></div>
+            <div class="font-semibold text-md">Codeforces <span id="codeforcesRating">...</span></div>
+          </div>
+        </div>
+      </a>
+
+      <div class="text-center bg-bg-300 border border-white/30 px-5 py-3 rounded-lg">
+        <div class="flex items-center">
+          <div class="text-3xl mr-2"><i class="devicon-tailwindcss-original"></i></div>
+          <div class="font-semibold text-md">Tailwind CSS</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- God forgive me pt.2 -->
+  <script>
+    const getCfMaxRating = async () => {
+      let rating, color;
+      const targetDiv = document.getElementById("codeforcesRating");
+
+      const repo_info = await fetch(`https://codeforces.com/api/user.info?handles=mehedirm6244&checkHistoricHandles=false`),
+            json = await repo_info.json();
+      const data = json.result;
+      data.forEach(function (element) {
+        rating = element.rating;
+      })
+
+      // haha er upor possible e na amar jnno
+      if (rating >= 1600) {
+        color = "text-blue";
+      } else if (rating >= 1400) {
+        color = "text-cyan";
+      } else if (rating >= 1200) {
+        color = "text-green";
+      }
+      targetDiv.classList += color;
+      targetDiv.innerHTML = rating;
+    }
+    getCfMaxRating();
+  </script>
+
+  <!-- Contact Me -->  
+  <section class="px-[5%] py-16 md:px-[10%] reveal" id="contact">
+    <h1 class="text-3xl mb-1 mt-4 text-center">My Links</h1>
+    <p class="text-lg text-center">Why would anyone want to connect to me?</p>
+    <div class="mt-8 flex flex-wrap align-middle items-center justify-center gap-5 reveal delay-[200ms]">
+      <a class="flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 w-64 hover:bg-bg-300 duration-100" href="mailto:mehedirm6244@protonmail.com">
+        <button class="bg-bg-200 h-16 w-16 rounded-full border border-white/30 text-center leading-5">
+          <i class="fa fa-envelope text-xl"></i>
+        </button>
+        <div class="px-4 w-48">
+          <p class="text-lg font-semibold">Mail</p>
+          <p class="-mt-1 text-sm truncate">mehedirm6244@protonmail.com</p>
+        </div>
+      </a>
+      <a class="flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 w-64 hover:bg-bg-300 duration-100" href="https://discordapp.com/users/1054038285380497428">
+        <button class="bg-bg-200 h-16 w-16 rounded-full border border-white/30 text-center leading-5">
+          <i class="fa-brands fa-discord text-xl"></i>
+        </button>
+        <div class="px-4 w-48">
+          <p class="text-lg font-semibold">Discord</p>
+        </div>
+      </a>
+      <a class="flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 w-64 hover:bg-bg-300 duration-100" href="https://www.github.com/mehedirm6244">
+        <button class="bg-bg-200 h-16 w-16 rounded-full border border-white/30 text-center leading-5">
+          <i class="fa-brands fa-github text-xl"></i>
+        </button>
+        <div class="px-4 w-48">
+          <p class="text-lg font-semibold">Github</p>
+          <p class="-mt-1 text-sm">mehedirm6244</p>
+        </div>
+      </a>
+      <a class="flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 w-64 hover:bg-bg-300 duration-100" href="https://www.reddit.com/user/mebesus/">
+        <button class="bg-bg-200 h-16 w-16 rounded-full border border-white/30 text-center leading-5">
+          <i class="fa-brands fa-reddit-alien text-xl"></i>
+        </button>
+        <div class="px-4 w-48">
+          <p class="text-lg font-semibold">Reddit</p>
+          <p class="-mt-1 text-sm">mebesus</p>
+        </div>
+      </a>
+      <a class="flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 w-64 hover:bg-bg-300 duration-100" href="https://t.me/mehedirm6244">
+        <button class="bg-bg-200 h-16 w-16 rounded-full border border-white/30 text-center leading-5">
+          <i class="fa-brands fa-telegram text-xl"></i>
+        </button>
+        <div class="px-4 w-48">
+          <p class="text-lg font-semibold">Telegram</p>
+          <p class="-mt-1 text-sm">mehedirm6244</p>
+        </div>
+      </a>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="mt-8 p-8 bg-bg-400 border-t border-white/30">
+    <p class="text-center">
+      Made with <i class="fa fa-heart"></i> by <span class="font-bold">@mehedirm6244</span>
+    </p>
+  </footer>
+
+  <!-- Scroll to top button -->
+  <button class="fixed bottom-6 right-6 h-9 w-9 rounded-full bg-blue/20 text-blue border border-blue/50 backdrop-blur-sm text-center leading-8 translate-x-[100px] duration-500 hover:cursor-pointer hover:-translate-y-2 hover:shadow-md hover:shadow-white/20" id="scrollToTop" onclick="window.scrollTo(0, 0);">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script type="text/javascript">
+    const navlinks = document.getElementById("navlinks");
+    const navbtn = document.getElementById("navbtn");
+    const scrollToTop = document.getElementById("scrollToTop");
+
+    function toggleNavbar() {
+      if (navlinks.classList.contains("hidden") == 1) {
+        navlinks.classList.remove("hidden");
+        navbtn.classList.add("bg-bg-200");
+        navbtn.innerHTML = `<i class="fa fa-xmark"></i>`;
+      } else {
+        navlinks.classList.add("hidden");
+        navbtn.classList.remove("bg-bg-200");
+        navbtn.innerHTML = `<i class="fa fa-bars"></i>`;
+      }
+    }
+
+    window.onscroll = function() {
+      if (document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight) {
+        scrollToTop.classList.remove("translate-x-[100px]")
+      } else {
+        scrollToTop.classList.add("translate-x-[100px]")
+      }
+    }
+
+    window.onload = function() {
+      document.getElementById("loading_screen").style.display = "none";
+    }
+  </script>
+
+  <script src="./scripts/github_card.js"></script>
+  <script src="./scripts/contextmenu.js"></script>
+  <script src="./scripts/animate.js"></script>
+
+</body>
+</html>

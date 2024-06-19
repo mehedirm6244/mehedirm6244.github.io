@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width" initial-scale="1.0">
+  <meta name="author" content="Mehedi Rahman Mahi">
+  <meta name="description" content="Personal website of Mehedi Rahman Mahi">
+  <meta name="keywords" content="Mehedi Rahman Mahi, mehedirm6244, mebesus">
+
+  <title>mehedirm6244: Blogs</title>
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Barlow font from Google API -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Devicon CDN -->
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+  <!-- CSS Only -->
+  <link rel="stylesheet" href="./src/output.css" />
+</head>
+
+<body class="bg-bg-500 text-white selection:bg-blue selection:text-bg-500">
+
+  <!-- Loading screen -->
+  <div id="loading_screen" class="z-50 fixed top-0 left-0 h-screen w-screen bg-bg-500 flex items-center justify-center">
+    <i class="fa fa-gear text-6xl animate-[spin_2s_linear_infinite]"></i>
+  </div>
+
+  <!-- Navigation bar -->
+  <nav class="sticky top-0 left-0 right-0 z-40 p-2 bg-bg-400/90 backdrop-blur-sm border-b border-white/30 flex align-middle items-center justify-between duration-500">
+
+    <!-- Left section -->
+    <div class="flex items-center align-middle justify-between space-x-2">
+      <a href="https://mehedirm6244.github.io/" class="duration-100 rounded-md hover:bg-blue/10 hover:text-blue">
+        <div class="flex align-middle items-center space-x-2 px-3 py-2">
+          <div><img class="h-[32px] rounded-full" src="./assets/pfp.png" alt="Pfp"></div>
+          <div class="text-md font-bold">mehedirm6244</div>
+        </div>
+      </a>
+      <p class="font-semibold text-lightGray">
+        Blogs
+      </p>
+    </div>
+
+    <!-- Right section -->
+    <div class="pr-2">
+
+      <!-- Show this button only on small screens -->
+      <button class="block md:hidden h-8 w-8 rounded-md hover:bg-bg-300 text-center leading-7" id="navbtn" onclick="toggleNavbar()">
+        <i class="fa fa-bars"></i>
+      </button>
+
+      <div class="absolute top-12 right-5 p-2 w-52 bg-bg-400 border rounded-lg border-white/30 hidden md:static md:top-0 md:right-0 md:p-0 md:w-auto md:block md:space-x-3 md:bg-transparent md:border-0" id="navlinks">
+        <!-- <a href="#blogs" class="block px-2 py-1 md:inline-block md:p-0 hover:underline">My Blogs</a> -->
+      </div>
+    </div>
+  </nav>
+
+  <!-- My Blogs -->  
+  <section class="px-[5%] py-16 md:px-[10%] reveal" id="about">
+    <h1 class="text-3xl mb-1 mt-4 text-center">My Blogs</h1>
+    <p class="text-lg text-center">Stuffs I've written for from several reasons to no reason at all</p>
+
+    <div class="mt-8 flex flex-wrap align-middle items-center justify-center gap-5 reveal delay-[200ms]">
+
+      <div class="bg-bg-300 border border-white/30 rounded-lg w-[375px] md:w-[400px] overflow-hidden">
+        <div class="bg-cover" style="background-image: url(./assets/altumcode-dMUt0X3f59Q-unsplash.jpg)">
+          <div class="p-6 md:p-8 h-full w-full bg-bg-500/90">
+        <p class="text-xl md:text-2xl font-semibold mb-1 md:mb-2">CP&&CP (Part 1)</p>
+        <p class="h-12 md:h-14 overflow-auto">
+          CP&&CP stands for "Computer Programming and Competitive Programming"
+        </p>
+      </div>
+      </div>
+      <div class="p-6 md:p-8">
+        <div>
+          Tags: 
+          <span class="bg-white/10 px-2 py-1 rounded">Programming</span> 
+        </div>
+        <div class="mt-4">
+          <a href="https://mehedirm6244.github.io/blogs/cp&&cp_01.html">
+            <button class="text-sm px-4 py-2 border border-blue/20 rounded-md duration-100 bg-blue/10 text-blue hover:bg-blue/20">
+              <i class="fa fa-book-open-reader mr-2"></i>Read
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-bg-300 border border-white/30 rounded-lg w-[375px] md:w-[400px] overflow-hidden">
+        <div class="bg-cover" style="background-image: url(./assets/altumcode-dMUt0X3f59Q-unsplash.jpg)">
+          <div class="p-6 md:p-8 h-full w-full bg-bg-500/90">
+        <p class="text-xl md:text-2xl font-semibold mb-1 md:mb-2">CP&&CP (Part 2)</p>
+        <p class="h-12 md:h-14 overflow-auto">
+          CP&&CP stands for "Computer Programming and Competitive Programming"
+        </p>
+      </div>
+      </div>
+      <div class="p-6 md:p-8">
+        <div>
+          Tags: 
+          <span class="bg-white/10 px-2 py-1 rounded">Programming</span> 
+        </div>
+        <div class="mt-4">
+          <a href="https://mehedirm6244.github.io/blogs/cp&&cp_02.html">
+            <button class="text-sm px-4 py-2 border border-blue/20 rounded-md duration-100 bg-blue/10 text-blue hover:bg-blue/20">
+              <i class="fa fa-book-open-reader mr-2"></i>Read
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  </section>
+  
+  <!-- Footer -->
+  <footer class="mt-8 p-8 bg-bg-400 border-t border-white/30">
+    <p class="text-center">
+      Made with <i class="fa fa-heart"></i> by <span class="font-bold">@mehedirm6244</span>
+    </p>
+  </footer>
+
+  <!-- Scroll to top button -->
+  <button class="fixed bottom-6 right-6 h-9 w-9 rounded-full bg-blue/20 text-blue border border-blue/50 backdrop-blur-sm text-center leading-8 translate-x-[100px] duration-500 hover:cursor-pointer hover:-translate-y-2 hover:shadow-md hover:shadow-white/20" id="scrollToTop" onclick="window.scrollTo(0, 0);">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script type="text/javascript">
+    const navlinks = document.getElementById("navlinks");
+    const navbtn = document.getElementById("navbtn");
+    const scrollToTop = document.getElementById("scrollToTop");
+
+    function toggleNavbar() {
+      if (navlinks.classList.contains("hidden") == 1) {
+        navlinks.classList.remove("hidden");
+        navbtn.classList.add("bg-bg-200");
+        navbtn.innerHTML = `<i class="fa fa-xmark"></i>`;
+      } else {
+        navlinks.classList.add("hidden");
+        navbtn.classList.remove("bg-bg-200");
+        navbtn.innerHTML = `<i class="fa fa-bars"></i>`;
+      }
+    }
+
+    window.onscroll = function() {
+      if (document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight) {
+        scrollToTop.classList.remove("translate-x-[100px]")
+      } else {
+        scrollToTop.classList.add("translate-x-[100px]")
+      }
+    }
+
+    window.onload = function() {
+      document.getElementById("loading_screen").style.display = "none";
+    }
+  </script>
+
+  <script src="./scripts/contextmenu.js"></script>
+  <script src="./scripts/animate.js"></script>
+
+</body>
+</html>
