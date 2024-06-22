@@ -15,7 +15,7 @@ githubCards.forEach(card => {
         <div class="flex align-middle justify-between items-center mb-1 md:mb-2">
             <p class="text-xl md:text-2xl font-semibold">${data.name}</p>
             <button class="text-sm px-4 bg-bg-200 border border-white/20 py-2 rounded-md duration-100 text-white hover:cursor-default">
-              <i class="fa-solid fa-star mr-1"></i><span>${data.stargazers_count}</span>
+              <i class="fa-solid fa-star mr-1 text-yellow"></i><span>${data.stargazers_count}</span>
             </button>
           </div>
           <p class="text-md mb-2 h-12 md:h-14 overflow-auto">
@@ -24,7 +24,7 @@ githubCards.forEach(card => {
           <div class="mt-4">
             <a href="https://github.com/${repo}">
               <button class="text-sm px-4 py-2 border border-blue/20 rounded-md duration-100 bg-blue/10 text-blue hover:bg-blue/20">
-                <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>View on Github
+                <i class="fa-brands fa-github mr-2"></i>View on Github
               </button>
             </a>
           </div>

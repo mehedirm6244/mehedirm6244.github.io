@@ -14,11 +14,11 @@
 }
 
 .reveal {
-  @apply opacity-0;
+  @apply opacity-0 scale-90;
 }
 
 .reveal.active {
-  @apply opacity-100 duration-1000;
+  @apply opacity-100 duration-500 scale-100;
 }
 
 #context-menu {

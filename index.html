@@ -19,14 +19,8 @@
   <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Devicon CDN -->
-  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-
   <!-- CSS Only -->
   <link rel="stylesheet" href="./src/output.css" />
-
-  <!-- Parallax JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 </head>
 
 <body class="bg-bg-500 text-white selection:bg-blue selection:text-bg-500">
@@ -36,68 +30,242 @@
     <i class="fa fa-gear text-6xl animate-[spin_2s_linear_infinite]"></i>
   </div>
 
-  <!-- Too small display? -->
-  <div class="sm:hidden fixed top-0 left-0 w-full bg-red/10 border border-red/30 text-red px-3 py-1">
-    <i class="fa fa-warning mr-2"></i>I love small displays too
-  </div>
-
   <!-- Header -->
-  <section class="p-12 md:p-16 h-screen flex align-middle justify-between items-center bg-fixed bg-cover bg-bottom border-b border-white/30" style="background-image: url('./assets/bg.png');">
+  <section class="h-screen flex align-middle justify-center items-center bg-fixed bg-cover bg-bottom sticky top-0" style="background-image: url('./assets/bg.png');">
 
-    <!-- IDK what this div does now but the layout breaks if I remove it -->
-    <div class="p-2 md:p-8">
-      <div class="w-full md:w-[480px] ">
-        <img class="h-[100px] md:h-[125px] mb-4 md:mb-6 rounded-full reveal" src="./assets/pfp.png" alt="Profile picture">
-        <div class="mt-3 md:mt-0 reveal delay-[200ms]">
-          <p class="text-md font-semibold text-lightGray">Hello, I'm</p>
-          <p class="text-3xl md:text-4xl font-semibold">Mehedi Rahman Mahi</p>
-          <p class="text-xl md:text-2xl">
-            A <span id="typewriter" class="text-green"></span>
-            <span class="animate-blink">_</span>
-          </p>
+    <!-- Profile -->
+    <div class="md:flex align-middle justify-center items-center gap-8 duration-500" id="profile">
+      <img class="h-[120px] md:h-[160px] mb-4 md:mb-0 rounded-full reveal" src="./assets/pfp.png" alt="Profile picture">
 
-          <div class="mt-6 inline-block space-x-2 reveal delay-[400ms]">
-            <a href="https://mehedirm6244.github.io/portfolio.html">
-              <button class="bg-white/5 border border-white/30 px-4 py-2 text-white rounded-md duration-100 hover:bg-white/10">
-                <i class="fa fa-user mr-2"></i>Portfolio
-              </button>
-            </a>
-            <a href="https://mehedirm6244.github.io/blogs.html">
-              <button class="bg-white/5 border border-white/30 px-4 py-2 text-white rounded-md duration-100 hover:bg-white/10">
-                <i class="fa fa-pen mr-2"></i>My Blogs
-              </button>
-            </a>
-          </div>
-      </div>
+      <div class="reveal delay-[200ms]">
+        <p class="text-3xl md:text-4xl font-semibold">Mehedi Rahman Mahi</p>
+        <p class="text-xl md:text-2xl">
+          A <span id="typewriter" class="text-green"></span>
+          <span class="animate-blink">_</span>
+        </p>
 
-      <!-- Parallax JS div -->
-      <div class="hidden sm:flex absolute top-0 right-0 md:h-screen p-14 overflow-hidden align-middle items-start md:items-center">
-        <div class="reveal mr-0 md:mr-[-120px] lg:mr-0">
-          <div id="moon">
-            <div data-depth="0.3"><img src="./assets/moon.svg" class="w-[128px] md:w-[300px]"></div>
-          </div>
-          <div id="clouds">
-            <div data-depth="0.9"><img src="./assets/cloud.svg" class="w-[144px] md:w-[356px] mt-[-48px] md:mt-[-96px]"></div>
-          </div>
+        <div class="mt-4 ml-1 inline-block flex space-x-3 rounded-md reveal delay-[400ms]">
+          <a class="text-sm" href="#about">
+            <button class="bg-blue/20 text-blue h-9 w-9 m-[1px] rounded-full border border-blue/50 text-center leading-8">
+              <i class="fa fa-arrow-down"></i>
+            </button>
+          </a>
+          <a class="text-sm flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 hover:bg-bg-300 duration-100" href="https://mehedirm6244.github.io/blogs.html">
+            <button class="-ml-[1px] bg-yellow/20 text-yellow h-9 w-9 rounded-full border border-yellow/50 text-center leading-8">
+              <i class="fa fa-pencil"></i>
+            </button>
+            <p class="pl-2 pr-3">Blogs</p>
+          </a>
         </div>
       </div>
     </div>
-  </div>
-
   </section>
 
-  <!-- Initialize parallax effect -->
-  <script>
-    var moon = document.getElementById('moon');
-    var parallaxInstanceMoon = new Parallax(moon);
-    var clouds = document.getElementById('clouds');
-    var parallaxInstanceClouds = new Parallax(clouds);
-  </script>
+  <!-- Navigation bar -->
+  <nav class="fixed top-0 left-0 right-0 z-40 flex align-middle items-center justify-between p-2 bg-bg-400/90 backdrop-blur-sm border-b border-white/30 translate-y-[-100px] duration-500" id="navbar">
+
+    <!-- Left section -->
+    <div class="flex items-center align-middle justify-between space-x-2">
+      <a href="https://mehedirm6244.github.io/" class="duration-100 rounded-md hover:bg-blue/10 hover:text-blue">
+        <div class="flex align-middle items-center space-x-2 px-3 py-2">
+          <div><img class="h-[32px] rounded-full" src="./assets/pfp.png" alt="Pfp"></div>
+          <div class="text-md font-bold">mehedirm6244</div>
+        </div>
+      </a>
+      <p class="font-semibold text-lightGray">
+        Portfolio
+      </p>
+    </div>
+
+    <!-- Right section -->
+    <div class="pr-2">
+
+      <!-- Show this button only on small screens -->
+      <button class="block md:hidden h-8 w-8 rounded-md hover:bg-bg-300 text-center leading-7" id="navbtn" onclick="toggleNavbar()">
+        <i class="fa fa-bars"></i>
+      </button>
+
+      <div class="absolute top-12 right-5 p-2 w-52 bg-bg-400 border rounded-lg border-white/30 hidden md:static md:top-0 md:right-0 md:p-0 md:w-auto md:block md:space-x-3 md:bg-transparent md:border-0" id="navlinks">
+        <a href="#about" class="block px-2 py-1 md:inline-block md:p-0 hover:underline">About Me</a>
+        <a href="#project" class="block px-2 py-1 md:inline-block md:p-0 hover:underline">Projects</a>
+        <a href="#skill" class="block px-2 py-1 md:inline-block md:p-0 hover:underline">Skills</a>
+        <a href="#blogs" class="block px-2 py-1 md:inline-block md:p-0 hover:underline">My Blogs</a>
+        <a href="#contact" class="block px-2 py-1 md:inline-block md:p-0 hover:underline">My Links</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Drawer -->
+  <section class="bg-bg-500/60 backdrop-blur-sm sticky top-0 -mt-8  border-t border-white/30 rounded-t-2xl">
+    <!-- Pseudo div pretending to be a drawer pill -->
+    <div class="h-1 w-8 my-3.5 mx-auto bg-white/60 rounded-xl "></div>
+
+    <div class="border border-yellow/30 px-4 py-2 mx-[5%] mt-8 md:mx-[10%] text-sm text-yellow bg-yellow/10 rounded-md">
+      <i class="fa fa-circle-info mr-2"></i>Use the navigation bar on top of the screen to navigate through different sections
+    </div>
+
+    <!-- My info -->  
+    <section class="px-[5%] py-16 md:px-[10%] reveal" id="about">
+      <h1 class="text-3xl mb-1 mt-4 text-center">About Me</h1>
+      <p class="text-lg text-center">Wannabe above-average</p>
+
+      <div class="text-lg px-[5%] md:px-[10%] py-8 reveal delay-[200ms] space-y-2">
+        <p class="reveal">
+          I'm <b>Mehedi Rahman Mahi</b>, currently studying general science at St. Joseph Higher Secondary School, Dhaka, BD. I'm interested in UI designing, competitive programming and computer science. I've been a passionate linux user since 2020 (I use <span class="text-blue">Arch</span> btw). I often code when I'm relaxed, just to destroy my sanity. I'm looking forward to learning more geeky stuff and contributing to FOSS.
+        </p>
+        <p class="reveal">
+          No, I can't fix printers or hack social media accounts.
+        </p>
+      </div>
+    </section>
+
+    <!-- My Projects -->  
+    <section class="px-[5%] py-16 md:px-[10%] reveal" id="project">
+      <h1 class="text-3xl mb-1 mt-4 text-center">Some stuffs I've made</h1>
+      <p class="text-lg text-center">About which I tell <i>her mother</i>.</p>
+
+      <div class="mt-8 flex flex-wrap align-middle items-center justify-center gap-5 reveal delay-[200ms]">
+        <!-- Check `./scripts/github.card.js` to know what's going on here -->
+        <div class="github-card delay-[200ms]" repository="mehedirm6244/sysfex"></div>
+        <div class="github-card delay-[200ms]" repository="mehedirm6244/miserable_xfce"></div>
+        <div class="github-card delay-[200ms]" repository="mehedirm6244/jash"></div>
+      </div>
+    </section>
+
+    <!-- Stuffs I'm used to -->  
+    <section class="px-[5%] py-16 md:px-[10%] reveal" id="skill">
+      <h1 class="text-3xl mb-1 mt-4 text-center">Jack of a few trades</h1>
+      <p class="text-lg text-center mb-8">Master of none</p>
+
+      <div class="space-y-5 mx-[10%] reveal delay-200">
+
+        <!-- Operating systems -->
+        <div class="space-y-5 space-x-5 reveal">
+          <p class="">Operating Systems</p>
+          <div class="skill-card" icon-src="https://img.icons8.com/color/24/linux.png" caption="Arch Linux"></div>
+        </div>
+
+        <!-- Programming Languages -->
+        <div class="space-y-5 space-x-5 reveal">
+          <p class="">Programming Language</p>
+          <div class="skill-card" icon-src="https://img.icons8.com/color/24/c-programming.png" caption="C++"></div>
+          <div class="skill-card" icon-src="https://img.icons8.com/color/24/c-plus-plus-logo.png" caption="C++"></div>
+        </div>
+
+        <!-- Scripting Languages -->
+        <div class="space-y-5 space-x-5 reveal">
+          <p class="">Scripting language</p>
+          <div class="skill-card" icon-src="https://img.icons8.com/color/24/bash.png" caption="Bash"></div>
+        </div>
+
+        <!-- Web dev -->
+        <div class="space-y-5 space-x-5 reveal">
+          <p class="w-32">Web Development</p>
+          <div class="skill-card" icon-src="https://img.icons8.com/color/24/html-5.png" caption="HTML5"></div>
+          <div class="skill-card" icon-src="https://img.icons8.com/color/24/css3.png" caption="CSS3"></div>
+          <div class="skill-card" icon-src="https://img.icons8.com/color/24/tailwind_css.png" caption="Tailwind CSS"></div>
+          <div class="skill-card" icon-src="https://img.icons8.com/color/24/sass.png" caption="SCSS"></div>
+          <div class="skill-card" icon-src="https://img.icons8.com/color/24/javascript.png" caption="Javascript"></div>
+        </div>
+
+        <!-- Misc -->
+        <div class="space-y-5 space-x-5 reveal">
+          <p class="w-32">Misc</p>
+          <div class="skill-card" icon-src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-codeforces-programming-competitions-and-contests-programming-community-logo-color-tal-revivo.png" caption="Codeforces">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- My Blogs -->  
+    <section class="px-[5%] py-16 md:px-[10%] reveal" id="blogs">
+      <h1 class="text-3xl mb-1 mt-4 text-center">My Blogs</h1>
+      <p class="text-lg text-center">Stuffs I've written for from several reasons to no reason at all</p>
+
+      <div class="text-center mt-8 reveal delay-[200ms]">
+        <a href="https://mehedirm6244.github.io/blogs.html">
+          <button class="text-sm px-4 py-2 border border-blue/20 rounded-md duration-100 bg-blue/10 text-blue hover:bg-blue/20">
+            <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>Read my blogs
+          </button>
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact Me -->  
+    <section class="px-[5%] py-16 md:px-[10%] reveal" id="contact">
+      <h1 class="text-3xl mb-1 mt-4 text-center">My Links</h1>
+      <p class="text-lg text-center">Why would anyone want to connect to me?</p>
+      <div class="mt-8 flex flex-wrap align-middle items-center justify-center gap-5 reveal delay-[200ms]">
+        <a class="flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 w-64 hover:bg-bg-300 duration-100" href="mailto:mehedirm6244@protonmail.com">
+          <button class="-ml-[1px] bg-bg-200 h-16 w-16 rounded-full border border-white/30 text-center leading-5">
+            <i class="fa fa-envelope text-xl"></i>
+          </button>
+          <div class="px-4 w-48">
+            <p class="text-lg font-semibold">Mail</p>
+            <p class="-mt-1 text-sm truncate">mehedirm6244@protonmail.com</p>
+          </div>
+        </a>
+        <a class="flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 w-64 hover:bg-bg-300 duration-100" href="https://discordapp.com/users/1054038285380497428">
+          <button class="-ml-[1px] bg-bg-200 h-16 w-16 rounded-full border border-white/30 text-center leading-5">
+            <i class="fa-brands fa-discord text-xl"></i>
+          </button>
+          <div class="px-4 w-48">
+            <p class="text-lg font-semibold">Discord</p>
+          </div>
+        </a>
+        <a class="flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 w-64 hover:bg-bg-300 duration-100" href="https://www.github.com/mehedirm6244">
+          <button class="-ml-[1px] bg-bg-200 h-16 w-16 rounded-full border border-white/30 text-center leading-5">
+            <i class="fa-brands fa-github text-xl"></i>
+          </button>
+          <div class="px-4 w-48">
+            <p class="text-lg font-semibold">Github</p>
+            <p class="-mt-1 text-sm">mehedirm6244</p>
+          </div>
+        </a>
+        <a class="flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 w-64 hover:bg-bg-300 duration-100" href="https://www.reddit.com/user/mebesus/">
+          <button class="-ml-[1px] bg-bg-200 h-16 w-16 rounded-full border border-white/30 text-center leading-5">
+            <i class="fa-brands fa-reddit-alien text-xl"></i>
+          </button>
+          <div class="px-4 w-48">
+            <p class="text-lg font-semibold">Reddit</p>
+            <p class="-mt-1 text-sm">mebesus</p>
+          </div>
+        </a>
+        <a class="flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 w-64 hover:bg-bg-300 duration-100" href="https://t.me/mehedirm6244">
+          <button class="-ml-[1px] bg-bg-200 h-16 w-16 rounded-full border border-white/30 text-center leading-5">
+            <i class="fa-brands fa-telegram text-xl"></i>
+          </button>
+          <div class="px-4 w-48">
+            <p class="text-lg font-semibold">Telegram</p>
+            <p class="-mt-1 text-sm">mehedirm6244</p>
+          </div>
+        </a>
+      </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="mt-8 p-8 bg-bg-400 border-t border-white/30">
+      <p class="text-center">
+        Made with <i class="fa fa-heart"></i> by <span class="font-bold">@mehedirm6244</span><br>
+        Icons from <a href="https://fontawesome.com" class="text-blue hover:underline">FontAwesome</a> and <a href="https://icons8.com" class="text-blue hover:underline">icons8</a>
+      </p>
+    </footer>
+  </section>
+
+  <!-- Scroll to top button -->
+  <button class="fixed bottom-6 right-6 h-9 w-9 rounded-full bg-blue text-bg-500 text-center leading-8 translate-x-[100px] duration-500 hover:cursor-pointer hover:-translate-y-2 hover:shadow-md hover:shadow-white/20" id="scrollToTop" onclick="window.scrollTo(0, 0);">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
 
   <script type="text/javascript">
     var i = 0, j = 0;
+    const profile = document.getElementById("profile");
     const intro = ['student at morning', 'learner at noon', 'coder at midnight'];
     const myName = document.getElementById("typewriter");
+    const navbar = document.getElementById("navbar");
+    const navlinks = document.getElementById("navlinks");
+    const navbtn = document.getElementById("navbtn");
+    const scrollToTop = document.getElementById("scrollToTop");
 
     function typeWriterWrite() {
       if (j < intro[i].length) {
@@ -122,13 +290,49 @@
       }
     }
 
+    function toggleNavbar() {
+      if (navlinks.classList.contains("hidden") == 1) {
+        navlinks.classList.remove("hidden");
+        navbtn.classList.add("bg-bg-200");
+        navbtn.innerHTML = `<i class="fa fa-xmark"></i>`;
+      } else {
+        navlinks.classList.add("hidden");
+        navbtn.classList.remove("bg-bg-200");
+        navbtn.innerHTML = `<i class="fa fa-bars"></i>`;
+      }
+    }
+
+    window.onscroll = function() {
+      if (document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight) {
+        scrollToTop.classList.remove("translate-x-[100px]")
+        navbar.classList.remove("translate-y-[-100px]")
+      } else {
+        scrollToTop.classList.add("translate-x-[100px]")
+        navbar.classList.add("translate-y-[-100px]");
+        if (navlinks.classList.contains("hidden") == 0) {
+          toggleNavbar();
+        }
+      }
+
+      if (document.body.scrollTop > window.innerHeight/3 || document.documentElement.scrollTop > window.innerHeight/3) {
+        profile.classList.add("opacity-0");
+        profile.classList.add("scale-90");
+      } else {
+        profile.classList.remove("opacity-0");
+        profile.classList.remove("scale-90");
+      }
+    };
+
     window.onload = function() {
       document.getElementById("loading_screen").style.display = "none";
+      reveal();
     }
 
     typeWriterWrite();
   </script>
 
+  <script src="./scripts/components/github_card.js"></script>
+  <script src="./scripts/components/skill_card.js"></script>
   <script src="./scripts/contextmenu.js"></script>
   <script src="./scripts/animate.js"></script>
 
