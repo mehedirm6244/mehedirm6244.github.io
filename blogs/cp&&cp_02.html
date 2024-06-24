@@ -29,7 +29,7 @@
 <body class="bg-bg-500 text-white selection:bg-blue selection:text-bg-500">
 
   <!-- Loading screen -->
-  <div id="loading_screen" class="z-50 fixed top-0 left-0 h-screen w-screen bg-bg-500 flex items-center justify-center">
+  <div id="loading_screen" class="z-50 fixed top-0 left-0 h-screen w-screen bg-bg-500 flex items-center justify-center cursor-wait">
     <i class="fa fa-gear text-6xl animate-[spin_2s_linear_infinite]"></i>
   </div>
 
@@ -37,12 +37,17 @@
   <nav class="sticky top-0 left-0 right-0 z-40 flex align-middle items-center justify-between p-2 border-b border-transparent duration-500" id="navbar">
 
     <!-- Left section -->
-    <a href="https://mehedirm6244.github.io/" class="duration-100 rounded-md hover:bg-blue/10 hover:text-blue">
-      <div class="flex align-middle items-center space-x-2 px-3 py-2">
-        <div><img class="h-[32px] rounded-full" src="../assets/pfp.png" alt="Pfp"></div>
-        <div class="text-md font-bold">mehedirm6244</div>
-      </div>
-    </a>
+    <div class="flex items-center align-middle justify-between space-x-2">
+      <a href="https://mehedirm6244.github.io/" class="duration-100 rounded-md hover:bg-blue/10 hover:text-blue">
+        <div class="flex align-middle items-center space-x-2 px-3 py-2">
+          <div><img class="h-[32px] rounded-full" src="../assets/pfp.png" alt="Pfp"></div>
+          <div class="text-md font-bold">mehedirm6244</div>
+        </div>
+      </a>
+      <a href="https://mehedirm6244.github.io/blogs.html" class="font-semibold text-lightGray hover:underline">
+        Blogs
+      </a>
+    </div>
 
     <!-- Right section -->
     <div class="pr-2">
@@ -83,9 +88,6 @@
 
   <!-- Main Content -->
   <section class="px-[5%] py-12 md:px-[10%] space-y-10 text-lg">
-    <p>
-      Also read this on <a href="https://web.facebook.com/share/p/sgHLqxinLZPokAGi/" class="text-blue hover:underline">Facebook</a>
-    </p>
 
     <p>
       <span class="text-3xl">C</span>P&&CP সিরিজটির <a href="https://mehedirm6244.github.io/blogs/cp&&cp_01.html" class="text-blue hover:underline">প্রথম পর্বে</a> কম্পিউটার প্রোগ্রামিং নিয়ে খুবই বেসিক একটি ধারণা দেবার চেষ্টা করা হয়েছে।  এই পর্বের আলোচনা CP&&CP টাইটেলটির দ্বিতীয় অংশ, Competitive Programming নিয়ে।<br>
@@ -134,7 +136,7 @@
   </footer>
 
   <!-- Scroll to top button -->
-  <button class="fixed bottom-6 right-6 h-9 w-9 rounded-full bg-blue text-bg-500 text-center leading-8 translate-x-[100px] duration-500 hover:cursor-pointer hover:-translate-y-2 hover:shadow-md hover:shadow-white/20" id="scrollToTop" onclick="window.scrollTo(0, 0);">
+  <button class="fixed bottom-6 right-6 h-9 w-9 rounded-full bg-cyan text-bg-500 text-center leading-8 translate-x-[100px] duration-500 hover:cursor-pointer hover:-translate-y-2 hover:shadow-md hover:shadow-white/20" id="scrollToTop" onclick="window.scrollTo(0, 0);">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
 

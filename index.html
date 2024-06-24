@@ -8,7 +8,7 @@
   <meta name="description" content="Personal website of Mehedi Rahman Mahi">
   <meta name="keywords" content="Mehedi Rahman Mahi, mehedirm6244, mebesus">
 
-  <title>mehedirm6244</title>
+  <title>mehedirm6244: Portfolio</title>
   <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +26,7 @@
 <body class="bg-bg-500 text-white selection:bg-blue selection:text-bg-500">
 
   <!-- Loading screen -->
-  <div id="loading_screen" class="z-50 fixed top-0 left-0 h-screen w-screen bg-bg-500 flex items-center justify-center">
+  <div id="loading_screen" class="z-50 fixed top-0 left-0 h-screen w-screen bg-bg-500 flex items-center justify-center cursor-wait">
     <i class="fa fa-gear text-6xl animate-[spin_2s_linear_infinite]"></i>
   </div>
 
@@ -34,7 +34,7 @@
   <section class="h-screen flex align-middle justify-center items-center bg-fixed bg-cover bg-bottom sticky top-0" style="background-image: url('./assets/bg.png');">
 
     <!-- Profile -->
-    <div class="md:flex align-middle justify-center items-center gap-8 duration-500" id="profile">
+    <div class="md:flex align-middle justify-center items-center gap-6 duration-500" id="profile">
       <img class="h-[120px] md:h-[160px] mb-4 md:mb-0 rounded-full reveal" src="./assets/pfp.png" alt="Profile picture">
 
       <div class="reveal delay-[200ms]">
@@ -45,12 +45,10 @@
         </p>
 
         <div class="mt-4 ml-1 inline-block flex space-x-3 rounded-md reveal delay-[400ms]">
-          <a class="text-sm" href="#about">
-            <button class="bg-blue/20 text-blue h-9 w-9 m-[1px] rounded-full border border-blue/50 text-center leading-8">
-              <i class="fa fa-arrow-down"></i>
-            </button>
-          </a>
-          <a class="text-sm flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 hover:bg-bg-300 duration-100" href="https://mehedirm6244.github.io/blogs.html">
+          <button class="bg-blue/20 text-blue text-sm h-9 w-9 m-[1px] rounded-full border border-blue/50 text-center leading-8" onclick="window.scrollTo(0, window.innerHeight)">
+            <i class="fa fa-arrow-down"></i>
+          </button>
+          <a class="text-sm flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 hover:bg-bg-300 duration-100 hover:cursor-pointer" href="https://mehedirm6244.github.io/blogs.html">
             <button class="-ml-[1px] bg-yellow/20 text-yellow h-9 w-9 rounded-full border border-yellow/50 text-center leading-8">
               <i class="fa fa-pencil"></i>
             </button>
@@ -96,7 +94,7 @@
   </nav>
 
   <!-- Drawer -->
-  <section class="bg-bg-500/60 backdrop-blur-sm sticky top-0 -mt-8  border-t border-white/30 rounded-t-2xl">
+  <section class="bg-bg-500 sticky top-0 -mt-8  border-t border-white/30 rounded-t-2xl">
     <!-- Pseudo div pretending to be a drawer pill -->
     <div class="h-1 w-8 my-3.5 mx-auto bg-white/60 rounded-xl "></div>
 
@@ -112,6 +110,9 @@
       <div class="text-lg px-[5%] md:px-[10%] py-8 reveal delay-[200ms] space-y-2">
         <p class="reveal">
           I'm <b>Mehedi Rahman Mahi</b>, currently studying general science at St. Joseph Higher Secondary School, Dhaka, BD. I'm interested in UI designing, competitive programming and computer science. I've been a passionate linux user since 2020 (I use <span class="text-blue">Arch</span> btw). I often code when I'm relaxed, just to destroy my sanity. I'm looking forward to learning more geeky stuff and contributing to FOSS.
+        </p>
+        <p class="reveal">
+          Throughout my academic life, I've gained some ECAs through participating in different olympiads related to math, physics and programming. I've also contributed to different olympiads by either actively volunteering or being a problemsetter.
         </p>
         <p class="reveal">
           No, I can't fix printers or hack social media accounts.
@@ -137,29 +138,29 @@
       <h1 class="text-3xl mb-1 mt-4 text-center">Jack of a few trades</h1>
       <p class="text-lg text-center mb-8">Master of none</p>
 
-      <div class="space-y-5 mx-[10%] reveal delay-200">
+      <div class="space-y-4 md:space-y-5 mx-[5%] md:mx-[10%] reveal delay-200">
 
         <!-- Operating systems -->
-        <div class="space-y-5 space-x-5 reveal">
+        <div class="space-x-4 md:space-x-5 space-y-4 md:space-y-5 reveal">
           <p class="">Operating Systems</p>
           <div class="skill-card" icon-src="https://img.icons8.com/color/24/linux.png" caption="Arch Linux"></div>
         </div>
 
         <!-- Programming Languages -->
-        <div class="space-y-5 space-x-5 reveal">
+        <div class="space-x-4 md:space-x-5 space-y-4 md:space-y-5 reveal">
           <p class="">Programming Language</p>
-          <div class="skill-card" icon-src="https://img.icons8.com/color/24/c-programming.png" caption="C++"></div>
+          <div class="skill-card" icon-src="https://img.icons8.com/color/24/c-programming.png" caption="C"></div>
           <div class="skill-card" icon-src="https://img.icons8.com/color/24/c-plus-plus-logo.png" caption="C++"></div>
         </div>
 
         <!-- Scripting Languages -->
-        <div class="space-y-5 space-x-5 reveal">
+        <div class="space-x-4 md:space-x-5 space-y-4 md:space-y-5 reveal">
           <p class="">Scripting language</p>
           <div class="skill-card" icon-src="https://img.icons8.com/color/24/bash.png" caption="Bash"></div>
         </div>
 
         <!-- Web dev -->
-        <div class="space-y-5 space-x-5 reveal">
+        <div class="space-x-4 md:space-x-5 space-y-4 md:space-y-5 reveal">
           <p class="w-32">Web Development</p>
           <div class="skill-card" icon-src="https://img.icons8.com/color/24/html-5.png" caption="HTML5"></div>
           <div class="skill-card" icon-src="https://img.icons8.com/color/24/css3.png" caption="CSS3"></div>
@@ -169,11 +170,12 @@
         </div>
 
         <!-- Misc -->
-        <div class="space-y-5 space-x-5 reveal">
+        <div class="space-x-4 md:space-x-5 space-y-4 md:space-y-5 reveal">
           <p class="w-32">Misc</p>
-          <div class="skill-card" icon-src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-codeforces-programming-competitions-and-contests-programming-community-logo-color-tal-revivo.png" caption="Codeforces">
+          <div class="skill-card hover:cursor-pointer hover:bg-bg-200 duration-100" icon-src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-codeforces-programming-competitions-and-contests-programming-community-logo-color-tal-revivo.png" caption="Codeforces" onclick="window.open('https://codeforces.com/profile/mehedirm6244', '_blank')">
           </div>
         </div>
+
       </div>
     </section>
 
@@ -195,52 +197,16 @@
     <section class="px-[5%] py-16 md:px-[10%] reveal" id="contact">
       <h1 class="text-3xl mb-1 mt-4 text-center">My Links</h1>
       <p class="text-lg text-center">Why would anyone want to connect to me?</p>
+
+      <!-- Contact cards -->
       <div class="mt-8 flex flex-wrap align-middle items-center justify-center gap-5 reveal delay-[200ms]">
-        <a class="flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 w-64 hover:bg-bg-300 duration-100" href="mailto:mehedirm6244@protonmail.com">
-          <button class="-ml-[1px] bg-bg-200 h-16 w-16 rounded-full border border-white/30 text-center leading-5">
-            <i class="fa fa-envelope text-xl"></i>
-          </button>
-          <div class="px-4 w-48">
-            <p class="text-lg font-semibold">Mail</p>
-            <p class="-mt-1 text-sm truncate">mehedirm6244@protonmail.com</p>
-          </div>
-        </a>
-        <a class="flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 w-64 hover:bg-bg-300 duration-100" href="https://discordapp.com/users/1054038285380497428">
-          <button class="-ml-[1px] bg-bg-200 h-16 w-16 rounded-full border border-white/30 text-center leading-5">
-            <i class="fa-brands fa-discord text-xl"></i>
-          </button>
-          <div class="px-4 w-48">
-            <p class="text-lg font-semibold">Discord</p>
-          </div>
-        </a>
-        <a class="flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 w-64 hover:bg-bg-300 duration-100" href="https://www.github.com/mehedirm6244">
-          <button class="-ml-[1px] bg-bg-200 h-16 w-16 rounded-full border border-white/30 text-center leading-5">
-            <i class="fa-brands fa-github text-xl"></i>
-          </button>
-          <div class="px-4 w-48">
-            <p class="text-lg font-semibold">Github</p>
-            <p class="-mt-1 text-sm">mehedirm6244</p>
-          </div>
-        </a>
-        <a class="flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 w-64 hover:bg-bg-300 duration-100" href="https://www.reddit.com/user/mebesus/">
-          <button class="-ml-[1px] bg-bg-200 h-16 w-16 rounded-full border border-white/30 text-center leading-5">
-            <i class="fa-brands fa-reddit-alien text-xl"></i>
-          </button>
-          <div class="px-4 w-48">
-            <p class="text-lg font-semibold">Reddit</p>
-            <p class="-mt-1 text-sm">mebesus</p>
-          </div>
-        </a>
-        <a class="flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 w-64 hover:bg-bg-300 duration-100" href="https://t.me/mehedirm6244">
-          <button class="-ml-[1px] bg-bg-200 h-16 w-16 rounded-full border border-white/30 text-center leading-5">
-            <i class="fa-brands fa-telegram text-xl"></i>
-          </button>
-          <div class="px-4 w-48">
-            <p class="text-lg font-semibold">Telegram</p>
-            <p class="-mt-1 text-sm">mehedirm6244</p>
-          </div>
-        </a>
+        <div class="contact-card" link="mailto:mehedirm6244@protonmail.com" fa-icon="fa fa-envelope text-yellow" title="Mail" subtitle="mehedirm6244@protonmail.com"></div>
+        <div class="contact-card" link="https://discordapp.com/users/1054038285380497428" fa-icon="fa-brands fa-discord text-[#6F84D2]" title="Discord"></div>
+        <div class="contact-card" link="https://www.github.com/mehedirm6244" fa-icon="fa-brands fa-github text-magenta" title="GitHub" subtitle="mehedirm6244"></div>
+        <div class="contact-card" link="https://discordapp.com/users/1054038285380497428" fa-icon="fa-brands fa-reddit-alien text-orange" title="Reddit" subtitle="mebesus"></div>
+        <div class="contact-card" link="https://www.reddit.com/user/mebesus/" fa-icon="fa-brands fa-telegram text-blue" title="Telegram" subtitle="mehedirm6244"></div>
       </div>
+
     </section>
     
     <!-- Footer -->
@@ -253,7 +219,7 @@
   </section>
 
   <!-- Scroll to top button -->
-  <button class="fixed bottom-6 right-6 h-9 w-9 rounded-full bg-blue text-bg-500 text-center leading-8 translate-x-[100px] duration-500 hover:cursor-pointer hover:-translate-y-2 hover:shadow-md hover:shadow-white/20" id="scrollToTop" onclick="window.scrollTo(0, 0);">
+  <button class="fixed bottom-6 right-6 h-9 w-9 rounded-full bg-cyan text-bg-500 text-center leading-8 translate-x-[100px] duration-500 hover:cursor-pointer hover:-translate-y-2 hover:shadow-md hover:shadow-white/20" id="scrollToTop" onclick="window.scrollTo(0, 0);">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
 
@@ -303,6 +269,7 @@
     }
 
     window.onscroll = function() {
+      // Show/Hide navbar 
       if (document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight) {
         scrollToTop.classList.remove("translate-x-[100px]")
         navbar.classList.remove("translate-y-[-100px]")
@@ -313,14 +280,11 @@
           toggleNavbar();
         }
       }
-
-      if (document.body.scrollTop > window.innerHeight/3 || document.documentElement.scrollTop > window.innerHeight/3) {
-        profile.classList.add("opacity-0");
-        profile.classList.add("scale-90");
-      } else {
-        profile.classList.remove("opacity-0");
-        profile.classList.remove("scale-90");
-      }
+      
+      // Transition of Profile
+      var relativeOffset = Math.max(1-(document.documentElement.scrollTop*1.5)/window.innerHeight, 0);
+      profile.style.opacity = relativeOffset;
+      profile.style.scale = Math.min(Math.max(relativeOffset*2.5, 0.6), 1);
     };
 
     window.onload = function() {
@@ -333,6 +297,7 @@
 
   <script src="./scripts/components/github_card.js"></script>
   <script src="./scripts/components/skill_card.js"></script>
+  <script src="./scripts/components/contact_card.js"></script>
   <script src="./scripts/contextmenu.js"></script>
   <script src="./scripts/animate.js"></script>
 

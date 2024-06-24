@@ -8,7 +8,7 @@ skillCards.forEach(card => {
   card.innerHTML = `
     <div class="flex items-center align-middle">
       <div class="mr-2"><img class="h-6 w-6 my-1" src="${icon}"></div>
-      <div class="font-semibold text-lg">${text}</div>
+      <div class="font-semibold text-md">${text}</div>
     </div>
   `;
 });

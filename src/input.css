@@ -13,6 +13,14 @@
   @apply bg-blue;
 }
 
+body {
+  @apply cursor-default;
+}
+
+a:hover, button:hover {
+  @apply cursor-pointer;
+}
+
 .reveal {
   @apply opacity-0 scale-90;
 }

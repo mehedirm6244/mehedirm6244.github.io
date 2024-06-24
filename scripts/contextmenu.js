@@ -7,7 +7,7 @@
 const menuData = [
   {
     text: '<i class="fa-solid fa-copy mr-2"></i>Copy',
-    action: function() { document.execCommand("copy") }
+    action: function() { document.execCommand("copy"); contextMenu.style.visibility = "hidden"; }
   },
   {
     text: '<i class="fa-solid fa-rotate-right mr-2"></i>Reload',
@@ -34,7 +34,7 @@ function drawContextMenu() {
     if (entry.action) {
       button.addEventListener('click', entry.action);
     } else if (entry.link) {
-      button.addEventListener('click', function() { window.location.href = entry.link; });
+      button.addEventListener('click', function() { window.open(entry.link, '_blank'); });
     }
     contextMenu.appendChild(button);
 

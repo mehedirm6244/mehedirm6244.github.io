@@ -10,13 +10,15 @@ module.exports = {
     },
     extend: {
       colors: {
+        // Modified version of the TokyoNight color palette
         red: '#f7768e',
         green: '#9ece6a',
         yellow: '#e0af68',
         blue: '#7aa2f7',
         magenta: '#c58af9',
+        orange: '#ff9e64',
         cyan: '#7dcfff',
-        teal: '#1abc9c',
+        teal: '#41a6b5',
         lightGray: '#a9b1d6',
         white: '#c0caf5',
         bg: {
@@ -40,6 +42,12 @@ module.exports = {
       },
       animation: {
         blink: 'blink 1s infinite',
+      },
+      cursor: {
+        'default': 'url("../assets/cursor/cursor.svg"), default',
+        'pointer': 'url("../assets/cursor/pointer.svg"), pointer',
+        'wait': 'url("../assets/cursor/wait.svg"), wait',
+        'not-allowed': 'url("../assets/cursor/disabled.svg"), not-allowed',
       },
     },
   },
