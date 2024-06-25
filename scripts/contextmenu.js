@@ -15,10 +15,6 @@ const commonMenuEntry = [
     drawLineAfter: true
   },
   {
-    text: '<i class="fa fa-code mr-2"></i>View source',
-    link: 'view-source:' + window.location.href
-  },
-  {
     text: '<i class="fa-brands fa-github mr-2"></i>Source repository',
     link: 'https://github.com/mehedirm6244/mehedirm6244.github.io'
   }
