@@ -1,6 +1,5 @@
 reveal();
 
-// Thanks to https://www.codingsnow.com/2021/01/reveal-webpage-elements-on-scroll-on.html
 window.addEventListener('scroll', reveal);
 
 function reveal() {
