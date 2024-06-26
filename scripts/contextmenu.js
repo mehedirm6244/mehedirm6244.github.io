@@ -6,17 +6,22 @@
 
 const commonMenuEntry = [
   {
-    text: '<i class="fa-solid fa-copy mr-2"></i>Copy',
-    action: function() { document.execCommand("copy"); contextMenu.style.visibility = "hidden"; }
+    text: '<i class="fa fa-arrow-left mr-2"></i>Previous webpage',
+    action: function() { window.history.go(-1); }
   },
   {
-    text: '<i class="fa-solid fa-rotate-right mr-2"></i>Reload',
+    text: '<i class="fa-solid fa-rotate-right mr-2"></i>Reload page',
     action: function() { location.reload() },
     drawLineAfter: true
   },
   {
+    text: '<i class="fa-solid fa-copy mr-2"></i>Copy selection',
+    action: function() { document.execCommand("copy"); contextMenu.style.visibility = "hidden"; },
+    drawLineAfter: true
+  },
+  {
     text: '<i class="fa-brands fa-github mr-2"></i>Source repository',
-    link: 'https://github.com/mehedirm6244/mehedirm6244.github.io'
+    action: function() { window.open('https://github.com/mehedirm6244/mehedirm6244.github.io', '_blank'); }
   }
 ];
 
@@ -30,7 +35,7 @@ const personalizedMenuEntry = [
 ];
 
 // Draw the context menu
-function drawContextMenu(e) {
+function constructContextMenu(e) {
   const contextMenu = document.createElement("div");
   contextMenu.id = "context-menu";
   contextMenu.classList = "z-50 bg-bg-400/90 w-52 backdrop-blur-sm shadow border border-white/30 p-2 rounded-lg select-none";
@@ -38,9 +43,8 @@ function drawContextMenu(e) {
 
   personalizedMenuEntry.forEach(function(entry) {
     var drawLine = false;
-    if (entry.showOnLink && e.target.tagName.toLowerCase() === "a" && e.target.href) {
+    if (entry.showOnLink && isValidLink(e)) {
       drawLine = true;
-      console.log("Nice");
       var button = document.createElement("button");
       button.classList = "px-4 py-1.5 text-sm block w-full text-left rounded hover:text-blue hover:bg-blue/10";
       button.innerHTML = entry.text;
@@ -61,8 +65,6 @@ function drawContextMenu(e) {
     button.innerHTML = entry.text;
     if (entry.action) {
       button.addEventListener('click', entry.action);
-    } else if (entry.link) {
-      button.addEventListener('click', function() { window.open(entry.link, '_blank'); });
     }
     contextMenu.appendChild(button);
 
@@ -74,12 +76,21 @@ function drawContextMenu(e) {
   });
 }
 
-// Destroy context menu
-function destroyContextMenu() {
+// deconstruct context menu
+function deconstructContextMenu() {
   var contextMenu = document.getElementById('context-menu');
   if (!(contextMenu === null)) {
     contextMenu.parentNode.removeChild(contextMenu);
   }
+}
+
+// Check if a button or an anchor is valid
+function isValidLink(e) {
+  if (e.target.tagName.toLowerCase() === "a" && e.target.href) {
+    return true;
+  }
+
+  return false;
 }
 
 // Context menu events
@@ -92,10 +103,10 @@ events.forEach((eventType) => {
     eventType,
     (e) => {
       e.preventDefault();
-      // Destroy any previously drawn context menu
-      destroyContextMenu();
+      // deconstruct any previously drawn context menu
+      deconstructContextMenu();
       // Draw context menu again to check if it's hovering a link or smth
-      drawContextMenu(e);
+      constructContextMenu(e);
       contextMenu = document.getElementById('context-menu');
       let mouseX = e.clientX || e.touches[0].clientX;
       let mouseY = e.clientY || e.touches[0].clientY;
@@ -103,15 +114,15 @@ events.forEach((eventType) => {
       let menuWidth = contextMenu.getBoundingClientRect().width;
       let width = window.innerWidth;
       let height = window.innerHeight;
-      if (width - mouseX <= 192) {
-        contextMenu.style.left = width - menuWidth + "px";
+      if (width - mouseX <= 208) {
+        contextMenu.style.left = width - menuWidth - 8 + "px";
         contextMenu.style.top = mouseY + "px";
       } else {
         contextMenu.style.left = mouseX + "px";
         contextMenu.style.top = mouseY + "px";
       }
-      if (height - mouseY <= 192) {
-        contextMenu.style.top = mouseY - menuHeight + "px";
+      if (height - mouseY <= 208) {
+        contextMenu.style.top = mouseY - menuHeight - 8 + "px";
       }
       contextMenu.style.visibility = "visible";
     },
@@ -122,6 +133,6 @@ events.forEach((eventType) => {
 
 document.addEventListener("click", function (e) {
   if (!contextMenu.contains(e.target)) {
-    destroyContextMenu();
+    deconstructContextMenu();
   }
 });

@@ -45,7 +45,7 @@
         </p>
 
         <div class="mt-4 ml-1 inline-block flex space-x-3 rounded-md reveal delay-[400ms]">
-          <button class="bg-blue/20 text-blue text-sm h-9 w-9 m-[1px] rounded-full border border-blue/50 text-center leading-8" onclick="window.scrollTo(0, window.innerHeight)">
+          <button class="bg-blue/20 text-blue text-sm h-9 w-9 m-[1px] rounded-full border border-blue/50 text-center leading-8 hover:bg-blue/30 duration-100" onclick="window.scrollTo(0, window.innerHeight)">
             <i class="fa fa-arrow-down"></i>
           </button>
           <a class="text-sm flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 hover:bg-bg-300 duration-100 hover:cursor-pointer" href="https://mehedirm6244.github.io/blogs.html">
@@ -99,7 +99,7 @@
     <div class="h-1 w-8 my-3.5 mx-auto bg-white/60 rounded-xl "></div>
 
     <div class="border border-yellow/30 px-4 py-2 mx-[5%] mt-8 md:mx-[10%] text-sm text-yellow bg-yellow/10 rounded-md">
-      <i class="fa fa-circle-info mr-2"></i>Use the navigation bar on top of the screen to navigate through different sections
+      <i class="fa fa-circle-info mr-2"></i>Use the navigation bar on top of the screen to navigate through different sections. Right click or hold long enough for the context menu to pop up.
     </div>
 
     <!-- My info -->  
@@ -282,9 +282,11 @@
       }
       
       // Transition of Profile
-      var relativeOffset = Math.max(1-(document.documentElement.scrollTop*1.5)/window.innerHeight, 0);
-      profile.style.opacity = relativeOffset;
-      profile.style.scale = Math.min(Math.max(relativeOffset*2.5, 0.6), 1);
+      if (document.body.scrollTop <= window.innerHeight || document.documentElement.scrollTop <= window.innerHeight) {
+        var relativeOffset = Math.max(1-(document.documentElement.scrollTop*1.5)/window.innerHeight, 0);
+        profile.style.opacity = relativeOffset;
+        profile.style.scale = Math.min(Math.max(relativeOffset*2.5, 0.6), 1);
+      }
     };
 
     window.onload = function() {

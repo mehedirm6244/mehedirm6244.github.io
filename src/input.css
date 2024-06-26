@@ -10,6 +10,9 @@
   @apply bg-bg-600 w-2 h-2;
 }
 ::-webkit-scrollbar-thumb {
+  @apply bg-white;
+}
+::-webkit-scrollbar-thumb:hover {
   @apply bg-blue;
 }
 
