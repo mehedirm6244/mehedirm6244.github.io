@@ -96,7 +96,7 @@
   <!-- Drawer -->
   <section class="bg-bg-500 sticky top-0 -mt-8  border-t border-white/30 rounded-t-2xl">
     <!-- Pseudo div pretending to be a drawer pill -->
-    <div class="h-1 w-8 my-3.5 mx-auto bg-white/60 rounded-xl "></div>
+    <div class="h-1 w-8 md:w-12 lg:w-16 my-3.5 mx-auto bg-white/60 rounded-xl"></div>
 
     <div class="border border-yellow/30 px-4 py-2 mx-[5%] mt-8 md:mx-[10%] text-sm text-yellow bg-yellow/10 rounded-md">
       <i class="fa fa-circle-info mr-2"></i>Use the navigation bar on top of the screen to navigate through different sections. Right click or hold long enough for the context menu to pop up.
@@ -112,7 +112,7 @@
           I'm <b>Mehedi Rahman Mahi</b>, currently studying general science at St. Joseph Higher Secondary School, Dhaka, BD. I'm interested in UI designing, competitive programming and computer science. I've been a passionate linux user since 2020 (I use <span class="text-blue">Arch</span> btw). I often code when I'm relaxed, just to destroy my sanity. I'm looking forward to learning more geeky stuff and contributing to FOSS.
         </p>
         <p class="reveal">
-          Throughout my academic life, I've gained some ECAs through participating in different olympiads related to math, physics and programming. I've also contributed to different olympiads by either actively volunteering or being a problemsetter.
+          Throughout my academic life, I've gained some ECAs through participating in different olympiads related to math, physics and programming. I've also contributed to several non-profitable science based organizations through actively volunteering.
         </p>
         <p class="reveal">
           No, I can't fix printers or hack social media accounts.
@@ -285,7 +285,7 @@
       if (document.body.scrollTop <= window.innerHeight || document.documentElement.scrollTop <= window.innerHeight) {
         var relativeOffset = Math.max(1-(document.documentElement.scrollTop*1.5)/window.innerHeight, 0);
         profile.style.opacity = relativeOffset;
-        profile.style.scale = Math.min(Math.max(relativeOffset*2.5, 0.6), 1);
+        profile.style.scale = Math.min(Math.max(relativeOffset*3, 0.6), 1);
       }
     };
 

@@ -2,8 +2,7 @@ const githubCards = document.querySelectorAll('.github-card');
 
 githubCards.forEach(card => {
   const repo = card.getAttribute('repository');
-  card.classList += " bg-bg-300 border border-white/30 p-6 md:p-8 rounded-lg\
-                      sm:w-96 hover:bg-bg-200 hover:cursor-pointer duration-100";
+  card.classList += " bg-bg-300 border border-white/30 p-6 md:p-8 rounded-lg w-screen sm:w-96";
 
   fetch(`https://api.github.com/repos/${repo}`, {
     headers: {

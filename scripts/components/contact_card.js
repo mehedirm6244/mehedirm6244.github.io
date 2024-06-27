@@ -16,7 +16,7 @@ contactCards.forEach(card => {
           <i class="${fa_icon} text-2xl"></i>
         </button>
         <div class="px-4 w-48">
-          <p class="text-lg font-semibold">${title}</p>
+          <p class="text-md font-semibold">${title}</p>
           <p class="-mt-1 text-sm truncate">${subtitle}</p>
         </div>
       </div>

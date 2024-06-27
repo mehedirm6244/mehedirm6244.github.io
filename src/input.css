@@ -24,6 +24,10 @@ a:hover, button:hover {
   @apply cursor-pointer;
 }
 
+img {
+  @apply pointer-events-none;
+}
+
 .reveal {
   @apply opacity-0 scale-90;
 }
