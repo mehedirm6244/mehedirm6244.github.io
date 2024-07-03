@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Barlow font from Google API -->
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -41,7 +41,7 @@
       <a href="https://mehedirm6244.github.io/" class="duration-100 rounded-md hover:bg-blue/10 hover:text-blue">
         <div class="flex align-middle items-center space-x-2 px-3 py-2">
           <div><img class="h-[32px] rounded-full" src="./assets/pfp.png" alt="Pfp"></div>
-          <div class="text-md font-bold">mehedirm6244</div>
+          <div class="text-md font-semibold">mehedirm6244</div>
         </div>
       </a>
       <p class="font-semibold text-lightGray">
@@ -65,69 +65,25 @@
 
   <!-- My Blogs -->  
   <section class="px-[5%] py-16 md:px-[10%] reveal" id="about">
-    <h1 class="text-3xl mb-1 mt-4 text-center">My Blogs</h1>
+    <h1 class="text-3xl mb-1 text-center">My Blogs</h1>
     <p class="text-lg text-center">Stuffs I've written for from several reasons to no reason at all</p>
+
+    <!-- Search blogs according to name or tag -->
+    <div class="flex justify-center mt-6">
+      <div class="bg-bg-400 rounded-full border border-white/30 p-2 focus-within:border-blue focus-within:bg-bg-300 focus-within:shadow duration-100">
+        <button class="bg-blue h-7 w-7 rounded-full text-bg-500 hover:cursor-default"><i class="fa fa-search text-sm -translate-y-px text-center"></i></button>
+        <input type="search" id="searchbar" placeholder="Search blogs by title..." class="ml-2 w-64 bg-bg-400 focus:bg-bg-300 placeholder:text-lightGray">
+      </div>
+    </div>
 
     <div class="mt-8 flex flex-wrap align-middle items-center justify-center gap-5 reveal delay-[200ms]">
 
-      <div class="bg-bg-300 border border-white/30 rounded-lg w-[375px] md:w-[400px] overflow-hidden">
-        <div class="bg-cover" style="background-image: url(./assets/altumcode-dMUt0X3f59Q-unsplash.jpg)">
-          <div class="p-6 md:p-8 h-full w-full bg-bg-500/90">
-        <p class="text-xl md:text-2xl font-semibold mb-1 md:mb-2">CP&&CP (Part 1)</p>
-        <p class="h-12 md:h-14 overflow-auto">
-          CP&&CP stands for "Computer Programming and Competitive Programming"
-        </p>
-      </div>
-      </div>
-      <div class="p-6 md:p-8">
-        <div>
-          Tags: 
-          <span class="bg-white/10 px-2 py-1 rounded">Programming</span> 
-        </div>
-        <div class="mt-4">
-          <a href="https://mehedirm6244.github.io/blogs/cp&&cp_01.html">
-            <button class="text-sm px-4 py-2 border border-blue/20 rounded-md duration-100 bg-blue/10 text-blue hover:bg-blue/20">
-              <i class="fa fa-book-open-reader mr-2"></i>Read
-            </button>
-          </a>
-        </div>
-      </div>
+      <div class="blog-card" link="https://mehedirm6244.github.io/blogs/cp&&cp_01.html" title="CP&&CP (Part 1)" description='CP&&CP stands for "Computer Programming and Competitive Programming"' cover-image="./assets/altumcode-dMUt0X3f59Q-unsplash.jpg" tags="Programming" language="Bengali"></div>
+
+      <div class="blog-card" link="https://mehedirm6244.github.io/blogs/cp&&cp_02.html" title="CP&&CP (Part 2)" description='CP&&CP stands for "Computer Programming and Competitive Programming"' cover-image="./assets/altumcode-dMUt0X3f59Q-unsplash.jpg" tags="Programming" language="Bengali"></div>
+
     </div>
-
-    <div class="bg-bg-300 border border-white/30 rounded-lg w-[375px] md:w-[400px] overflow-hidden">
-        <div class="bg-cover" style="background-image: url(./assets/altumcode-dMUt0X3f59Q-unsplash.jpg)">
-          <div class="p-6 md:p-8 h-full w-full bg-bg-500/90">
-        <p class="text-xl md:text-2xl font-semibold mb-1 md:mb-2">CP&&CP (Part 2)</p>
-        <p class="h-12 md:h-14 overflow-auto">
-          CP&&CP stands for "Computer Programming and Competitive Programming"
-        </p>
-      </div>
-      </div>
-      <div class="p-6 md:p-8">
-        <div>
-          Tags: 
-          <span class="bg-white/10 px-2 py-1 rounded">Programming</span> 
-        </div>
-        <div class="mt-4">
-          <a href="https://mehedirm6244.github.io/blogs/cp&&cp_02.html">
-            <button class="text-sm px-4 py-2 border border-blue/20 rounded-md duration-100 bg-blue/10 text-blue hover:bg-blue/20">
-              <i class="fa fa-book-open-reader mr-2"></i>Read
-            </button>
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
   </section>
-  
-  <!-- Footer -->
-  <footer class="mt-8 p-8 bg-bg-400 border-t border-white/30">
-    <p class="text-center">
-      Made with <i class="fa fa-heart"></i> by <span class="font-bold">@mehedirm6244</span>
-    </p>
-  </footer>
 
   <!-- Scroll to top button -->
   <button class="fixed bottom-6 right-6 h-9 w-9 rounded-full bg-cyan text-bg-500 text-center leading-8 translate-x-[100px] duration-500 hover:cursor-pointer hover:-translate-y-2 hover:shadow-md hover:shadow-white/20" id="scrollToTop" onclick="window.scrollTo(0, 0);">
@@ -162,8 +118,26 @@
     window.onload = function() {
       document.getElementById("loading_screen").style.display = "none";
     }
+
+    // Search through blogs by name
+    const searchInput = document.getElementById("searchbar");
+    // Defined in ./scripts/components/blog_card.js
+    // const blogCards = document.getElementsByClassName("blog-card");
+
+    searchInput.addEventListener("keyup", function() {
+      const searchTerm = this.value.toLowerCase();
+      for (const blogCard of blogCards) {
+        const blogTitle = blogCard.getAttribute("title");
+        if (blogTitle.toLowerCase().includes(searchTerm)) {
+          blogCard.style.display = "block";
+        } else {
+          blogCard.style.display = "none";
+        }
+      }
+    });
   </script>
 
+  <script src="./scripts/components/blog_card.js"></script>
   <script src="./scripts/contextmenu.js"></script>
   <script src="./scripts/animate.js"></script>
 

@@ -48,6 +48,7 @@ module.exports = {
         'pointer': 'url("../assets/cursor/pointer.svg"), pointer',
         'wait': 'url("../assets/cursor/wait.svg"), wait',
         'not-allowed': 'url("../assets/cursor/disabled.svg"), not-allowed',
+        'text': 'url("../assets/cursor/text.png"), text',
       },
     },
   },

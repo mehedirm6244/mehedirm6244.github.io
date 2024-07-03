@@ -16,12 +16,30 @@
   @apply bg-blue;
 }
 
+/* clears the ‘X’ from Internet Explorer */
+input[type=search]::-ms-clear,
+input[type=search]::-ms-reveal {
+  @apply hidden h-0 w-0;
+}
+
+/* clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  @apply hidden h-0 w-0;
+}
+
 body {
   @apply cursor-default;
 }
 
 a:hover, button:hover {
   @apply cursor-pointer;
+}
+
+input[type="search"]:hover {
+  @apply cursor-text;
 }
 
 img {
@@ -34,8 +52,4 @@ img {
 
 .reveal.active {
   @apply opacity-100 duration-500 scale-100;
-}
-
-#context-menu {
-  @apply fixed invisible;
 }
