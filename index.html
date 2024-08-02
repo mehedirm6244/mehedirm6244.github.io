@@ -31,36 +31,27 @@
   </div>
 
   <!-- Header -->
-  <section class="h-screen flex align-middle justify-center items-center bg-fixed bg-cover bg-bottom sticky top-0" style="background-image: url('./assets/bg.png');">
+  <section class="h-screen flex align-middle justify-center items-center bg-fixed bg-cover bg-bottom sticky top-0" style="background-image: url('./assets/save.png');">
 
     <!-- Profile -->
     <div class="md:flex align-middle justify-center items-center gap-6 duration-500" id="profile">
-      <img class="h-[120px] md:h-[160px] mb-4 md:mb-0 rounded-full reveal" src="./assets/pfp.png" alt="Profile picture">
+      <img class="h-[120px] md:h-[160px] lg:h-[175px] mb-4 md:mb-0 rounded-full reveal" src="./assets/pfp.png" alt="Profile picture">
 
       <div class="reveal delay-[200ms]">
-        <p class="text-3xl md:text-4xl font-semibold">Mehedi Rahman Mahi</p>
-        <p class="text-xl md:text-2xl">
+        <p class="text-3xl md:text-4xl lg:text-5xl mb-2">Mehedi Rahman Mahi</p>
+        <!-- <p class="text-xl md:text-2xl">
           A <span id="typewriter" class="text-green"></span>
           <span class="animate-blink">_</span>
+        </p> -->
+        <p class="text-xl text-red font-semibold">Help the Bangladeshi Students</p>
+        <p class="text-lg">Why the <span class="font-semibold text-red">blood</span> of my brothers on the street?</p>
         </p>
-
-        <div class="mt-4 ml-1 inline-block flex space-x-3 rounded-md reveal delay-[400ms]">
-          <button class="bg-blue/20 text-blue text-sm h-9 w-9 m-[1px] rounded-full border border-blue/50 text-center leading-8 hover:bg-blue/30 duration-100" onclick="window.scrollTo(0, window.innerHeight)">
-            <i class="fa fa-arrow-down"></i>
-          </button>
-          <a class="text-sm flex align-middle justify-self-start items-center rounded-full bg-bg-400 border border-white/30 hover:bg-bg-300 duration-100 hover:cursor-pointer" href="https://mehedirm6244.github.io/blogs.html">
-            <button class="-ml-[1px] bg-yellow/20 text-yellow h-9 w-9 rounded-full border border-yellow/50 text-center leading-8">
-              <i class="fa fa-pencil"></i>
-            </button>
-            <p class="pl-2 pr-3">Blogs</p>
-          </a>
-        </div>
       </div>
     </div>
   </section>
 
   <!-- Navigation bar -->
-  <nav class="fixed top-0 left-0 right-0 z-40 flex align-middle items-center justify-between p-2 bg-bg-400/90 backdrop-blur-sm border-b border-white/30 translate-y-[-100px] duration-500" id="navbar">
+  <nav class="fixed top-0 left-0 right-0 z-40 flex align-middle items-center justify-between px-6 py-4 bg-transparent border-b border-transparent duration-300" id="navbar">
 
     <!-- Left section -->
     <div class="flex items-center align-middle justify-between space-x-2">
@@ -87,16 +78,16 @@
         <a href="#about" class="block px-2 py-1 md:inline-block md:p-0 hover:underline">About Me</a>
         <a href="#project" class="block px-2 py-1 md:inline-block md:p-0 hover:underline">Projects</a>
         <a href="#skill" class="block px-2 py-1 md:inline-block md:p-0 hover:underline">Skills</a>
-        <a href="#blogs" class="block px-2 py-1 md:inline-block md:p-0 hover:underline">My Blogs</a>
-        <a href="#contact" class="block px-2 py-1 md:inline-block md:p-0 hover:underline">My Links</a>
+        <a href="#blogs" class="block px-2 py-1 md:inline-block md:p-0 hover:underline">Blogs</a>
+        <a href="#contact" class="block px-2 py-1 md:inline-block md:p-0 hover:underline">Contact</a>
       </div>
     </div>
   </nav>
 
   <!-- Drawer -->
-  <section class="bg-bg-500 sticky top-0 -mt-8  border-t border-white/30 rounded-t-2xl">
+  <section class="bg-bg-500 sticky top-0 -mt-8  border-t border-white/30">
     <!-- Pseudo div pretending to be a drawer pill -->
-    <div class="h-1 w-8 md:w-12 lg:w-16 my-3.5 mx-auto bg-white/60 rounded-xl"></div>
+    <div class="h-0.5 w-8 md:w-12 lg:w-16 my-3.5 mx-auto bg-white/60 rounded-full"></div>
 
     <div class="border border-yellow/30 px-4 py-2 mx-[5%] mt-8 md:mx-[10%] text-sm text-yellow bg-yellow/10 rounded-md">
       <i class="fa fa-circle-info mr-2"></i>Use the navigation bar on top of the screen to navigate through different sections. Right click or hold long enough for the context menu to pop up.
@@ -109,7 +100,7 @@
 
       <div class="text-lg px-[5%] md:px-[10%] py-8 reveal delay-[200ms] space-y-2">
         <p class="reveal">
-          I'm <b>Mehedi Rahman Mahi</b>, currently studying general science at St. Joseph Higher Secondary School, Dhaka, BD. I'm interested in UI designing, competitive programming and computer science. I've been a passionate linux user since 2020 (I use <span class="text-blue">Arch</span> btw). I often code when I'm relaxed, just to destroy my sanity. I'm looking forward to learning more geeky stuff and contributing to FOSS.
+          I'm <span class="font-semibold">Mehedi Rahman Mahi</span>, currently studying general science at St. Joseph Higher Secondary School, Dhaka, BD. I'm interested in UI designing, competitive programming and computer science. I've been a passionate linux user since 2020 (I use <span class="text-blue">Arch</span> btw). I often code when I'm relaxed, just to destroy my sanity. I'm looking forward to learning more geeky stuff and contributing to FOSS.
         </p>
         <p class="reveal">
           Throughout my academic life, I've gained some ECAs through participating in different olympiads related to math, physics and programming. I've also contributed to several non-profitable science based organizations through actively volunteering.
@@ -129,7 +120,6 @@
         <!-- Check `./scripts/github.card.js` to know what's going on here -->
         <div class="github-card delay-[200ms]" repository="mehedirm6244/sysfex"></div>
         <div class="github-card delay-[200ms]" repository="mehedirm6244/miserable_xfce"></div>
-        <div class="github-card delay-[200ms]" repository="mehedirm6244/jash"></div>
       </div>
     </section>
 
@@ -195,8 +185,8 @@
 
     <!-- Contact Me -->  
     <section class="px-[5%] py-16 md:px-[10%] reveal" id="contact">
-      <h1 class="text-3xl mb-1 text-center">My Links</h1>
-      <p class="text-lg text-center">Why would anyone want to connect to me?</p>
+      <h1 class="text-3xl mb-1 text-center">Contact Me</h1>
+      <p class="text-lg text-center">Why would anyone want to?</p>
 
       <!-- Contact cards -->
       <div class="mt-8 flex flex-wrap align-middle items-center justify-center gap-5 reveal delay-[200ms]">
@@ -224,11 +214,12 @@
   </button>
 
   <script type="text/javascript">
-    var i = 0, j = 0;
+    var i = 0, j = 0, navbarHeight;
     const profile = document.getElementById("profile");
     const intro = ['student at morning', 'learner at noon', 'coder at midnight'];
     const myName = document.getElementById("typewriter");
     const navbar = document.getElementById("navbar");
+    navbarHeight = navbar.offsetHeight + 16;
     const navlinks = document.getElementById("navlinks");
     const navbtn = document.getElementById("navbtn");
     const scrollToTop = document.getElementById("scrollToTop");
@@ -270,31 +261,35 @@
 
     window.onscroll = function() {
       // Show/Hide navbar 
-      if (document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight) {
+      if (document.body.scrollTop > window.innerHeight - navbarHeight || document.documentElement.scrollTop > window.innerHeight - navbarHeight) {
         scrollToTop.classList.remove("translate-x-[100px]")
-        navbar.classList.remove("translate-y-[-100px]")
+        navbar.classList.replace("py-4", "p-2");
+        navbar.classList.remove("px-6");
+        navbar.classList.replace("bg-transparent", "bg-bg-400/90");
+        navbar.classList.replace("border-transparent", "border-white/30");
+        navbar.classList.add("backdrop-blur-sm");
       } else {
         scrollToTop.classList.add("translate-x-[100px]")
-        navbar.classList.add("translate-y-[-100px]");
-        if (navlinks.classList.contains("hidden") == 0) {
-          toggleNavbar();
-        }
+        navbar.classList.replace("p-2", "py-4");
+        navbar.classList.add("px-6");
+        navbar.classList.replace("bg-bg-400/90", "bg-transparent");
+        navbar.classList.replace("border-white/30", "border-transparent");
+        navbar.classList.remove("backdrop-blur-sm");
       }
       
       // Transition of Profile
       if (document.body.scrollTop <= window.innerHeight || document.documentElement.scrollTop <= window.innerHeight) {
-        var relativeOffset = Math.max(1-(document.documentElement.scrollTop*1.5)/window.innerHeight, 0);
+        var relativeOffset = Math.max(1 - (document.documentElement.scrollTop * 1.5) / window.innerHeight, 0);
         profile.style.opacity = relativeOffset;
-        profile.style.scale = Math.min(Math.max(relativeOffset*3, 0.6), 1);
+        profile.style.transform = "translateY(" + -(1 - relativeOffset) * window.innerHeight / 5 + "px)";
       }
     };
 
     window.onload = function() {
       document.getElementById("loading_screen").style.display = "none";
       reveal();
+      typeWriterWrite();
     }
-
-    typeWriterWrite();
   </script>
 
   <script src="./scripts/components/github_card.js"></script>

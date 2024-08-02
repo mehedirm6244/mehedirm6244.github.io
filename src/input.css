@@ -7,7 +7,7 @@
 }
 
 ::-webkit-scrollbar {
-  @apply bg-bg-600 w-2 h-2;
+  @apply bg-bg-600 w-1.5 h-1.5;
 }
 ::-webkit-scrollbar-thumb {
   @apply bg-white;
