@@ -32,11 +32,6 @@ blogCards.forEach(card => {
   coverImageWrapper.appendChild(p_title);
   coverImageWrapper.appendChild(p_description);
 
-  const languageInfo = document.createElement("p");
-  languageInfo.classList = "text-sm mt-1";
-  languageInfo.innerHTML = `<i class="fa fa-globe mr-2"></i>${lang}`;
-  coverImageWrapper.appendChild(languageInfo);
-
   let tagsDiv = document.createElement("div");
   tagsDiv.classList = "space-x-1 space-y-1 mt-4";
   tagsArray.forEach(function(tag) {

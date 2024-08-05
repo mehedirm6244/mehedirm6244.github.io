@@ -19,9 +19,6 @@
   <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Devicon CDN -->
-  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-
   <!-- CSS Only -->
   <link rel="stylesheet" href="../src/output.css" />
 </head>
@@ -34,7 +31,7 @@
   </div>
 
   <!-- Navigation bar -->
-  <nav class="sticky top-0 left-0 right-0 z-40 flex align-middle items-center justify-between p-2 border-b border-transparent duration-500" id="navbar">
+  <nav class="fixed top-0 left-0 right-0 z-40 flex align-middle items-center justify-between px-6 py-4 bg-transparent border-b border-transparent duration-300" id="navbar">
 
     <!-- Left section -->
     <div class="flex items-center align-middle justify-between space-x-2">
@@ -52,63 +49,84 @@
     <!-- Right section -->
     <div class="pr-2">
 
-      <!-- Show this button only on small screens -->
-      <button class="block md:hidden h-8 w-8 rounded-md hover:bg-bg-300 text-center leading-7" id="navbtn" onclick="toggleNavbar()">
-        <i class="fa fa-bars"></i>
+      <!-- Sticky sidebar toggle -->
+      <button class="block md:hidden h-8 w-8 rounded-md hover:bg-bg-300 text-center leading-7" id="stickyNavigationToggle">
+        <i class="fa-solid fa-ellipsis"></i>
       </button>
-
-      <div class="absolute top-12 right-5 p-2 w-52 bg-bg-400 border rounded-lg border-white/30 hidden md:static md:top-0 md:right-0 md:p-0 md:w-auto md:block md:space-x-3 md:bg-transparent md:border-0" id="navlinks">
-        <a href="https://github.com/mehedirm6244">
-          <button class="text-xl px-2 py-1 text-white rounded-md duration-100 hover:bg-magenta/10 hover:text-magenta">
-            <i class="fa-brands fa-github"></i>
-          </button>
-        </a>
-      </div>
 
     </div>
   </nav>
 
   <!-- Banner -->
-  <div class="relative h-72 lg:h-80 md:mx-6 lg:mx-10 md:mt-2 md:rounded-lg shadow-2xl bg-cover bg-center overflow-hidden reveal" style="background-image: url(../assets/altumcode-dMUt0X3f59Q-unsplash.jpg)">
+  <header class="sticky top-0 relative h-[22rem] lg:h-[24rem] bg-cover bg-center overflow-hidden reveal" style="background-image: url(../assets/altumcode-dMUt0X3f59Q-unsplash.jpg)" id="banner">
     <!-- Banner content -->
-    <div class="h-full w-full bg-gradient-to-r from-bg-500/90 to-bg-700/50 flex align-middle justify-between items-center">
-      <div class="md:w-[60%] px-8 md:px-16">
-        <p class="text-3xl md:text-4xl mb-1 font-semibold">CP&&CP (Part 2)</p>
-        <p class="text-lg mb-4">CP&&CP stands for "Computer Programming and Competitive Programming"</p>
-        <p class="text-md mb-1">
-          <i class="fa fa-pen mr-2"></i><a href="https://mehedirm6244.github.io" class="text-blue hover:underline">Mehedi Rahman Mahi</a>
-        </p>
-        <p class="text-md mb-1"><i class="fa fa-calendar mr-2"></i>19 November, 2023</p>
-        <p class="text-md"><i class="fa fa-clock mr-2 mb-4"></i>Read time: 3 mins</p>
-        (Photo by <a href="https://unsplash.com/@altumcode?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" class="text-blue">AltumCode</a> on <a href="https://unsplash.com/photos/macbook-pro-dMUt0X3f59Q?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" class="text-blue">Unsplash</a>)
+    <div class="h-full w-full bg-gradient-to-r from-bg-500/90 to-bg-700/70 flex align-middle justify-between items-center">
+      <div class="md:w-[60%] px-8 md:px-16 lg:px-20 mx-auto">
+        <p class="text-4xl md:text-6xl mb-1 text-center tracking-wide">CP&&CP:02</p>
+        <p class="text-lg md:text-xl mt-2 text-center">Computer Programming and Competitive Programming</p>
+        <p class="text-sm absolute bottom-0 right-0 m-4">
+        Background by <a href="https://unsplash.com/@altumcode?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" class="text-blue">AltumCode</a> on <a href="https://unsplash.com/photos/macbook-pro-dMUt0X3f59Q?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" class="text-blue">Unsplash</a></p>
   
       </div>
     </div>
+  </header>
+
+<div class="sticky top-0 bg-bg-500 border-t border-white/30">
+
+  <!-- Pseudo div pretending to be a drawer pill -->
+  <div class="h-0.5 w-8 md:w-12 lg:w-16 my-3.5 mx-auto bg-white/60 rounded-full"></div>
+
+  <div class="block md:hidden border border-yellow/30 px-4 py-2 mx-[5%] md:mx-[10%] text-sm text-yellow bg-yellow/10 rounded-md">
+    <i class="fa fa-circle-info mr-2"></i>Use the menu icon at the navigation bar to jump to different chapters.
   </div>
 
-  <!-- Main Content -->
-  <section class="px-[7%] py-12 md:px-[15%] space-y-10 text-lg">
+  <div class="md:flex md:flex-row justify-between px-[5%] py-12">
 
-    <p class="first-letter:text-5xl first-letter:font-semibold first-letter:mr-2 first-letter:float-left">
+    <!-- Navigation -->
+    <div class="fixed hidden z-50 p-4 rounded-lg border border-white/30 top-12 right-12 bg-bg-400 md:block md:bg-transparent md:z-10 md:h-0 md:max-h-screen md:p-0 md:border-0 md:sticky md:top-24 md:right-0 w-72 md:min-w-[256px] lg:min-w-[288px]" id="stickyNavigation">
+      <p class="font-semibold text-lg px-2 md:text-xl md:px-0 mb-2 sticky top-0 md:bg-bg-500">
+        <i class="fa fa-book-open mr-2"></i>Chapters
+      </p>
+      <ul class="flex flex-col px-2 my-3" id="stickyNavigationList">
+        <li class="md:border-l border-lightGray/20 py-1 md:px-3 md:py-2">
+          <a href="#section_1">কম্পিটিটিভ প্রোগ্রামিং জিনিসটা আসলে কি?</a>
+        </li>
+        <li class="md:border-l border-lightGray/20 py-1 md:px-3 md:py-2">
+          <a href="#section_2">কম্পিটিটিভ প্রোগ্রামিং আর সাধারণ প্রোগ্রামিং এর পার্থক্য কোথায়?</a>
+        </li>
+        <li class="md:border-l border-lightGray/20 py-1 md:px-3 md:py-2">
+          <a href="#section_3">কম্পিটিটিভ প্রোগ্রামিং কেনো করবো?</a>
+        </li>
+      </ul>
+    </div>
+
+  <!-- Main Content -->
+  <section class="px-8 space-y-10 text-lg" id="blog">
+    <p>
+      <i class="fa fa-pen mr-2"></i><a href="https://mehedirm6244.github.io" class="text-blue hover:underline">Mehedi Rahman Mahi</a><br>
+      <i class="fa fa-calendar mr-2"></i>19 November, 2023
+    </p>
+
+    <p class="first-letter:text-5xl first-letter:mr-2 first-letter:float-left">
       CP&&CP সিরিজটির <a href="https://mehedirm6244.github.io/blogs/cp&&cp_01.html" class="text-blue hover:underline">প্রথম পর্বে</a> কম্পিউটার প্রোগ্রামিং নিয়ে খুবই বেসিক একটি ধারণা দেবার চেষ্টা করা হয়েছে।  এই পর্বের আলোচনা CP&&CP টাইটেলটির দ্বিতীয় অংশ, Competitive Programming নিয়ে।<br>
       <i>"কম্পিটিটিভ প্রোগ্রামিং"</i> টার্মটাই বলে দেয় যে এটা প্রোগ্রামিং করার প্রতিযোগিতা বিষয়ক কিছু - কে কত দ্রুত বা কত ভালো প্রোগ্রাম তৈরি করতে পারে বা এরকম কিছু‍‍‍‍‍ একটা হয়তো। বিষয়টা কিন্তু আসলে পুরোপুরি এরকম না। কম্পিটিটিভ প্রোগ্রামিং এর আলাদা একটা উদ্দেশ্য আছে: চিন্তাশক্তি, যুক্তি এবং ইমপ্লিমেন্টেশন স্কিল বাড়ানো; কোনো লজিক্যাল প্রবলেমকে কিভাবে সিম্পলিফাই করে সমাধান ইমপ্লিমেন্ট  করা যায় (আরকি কোড করা যায়) সেটার চর্চা করা। সফটওয়্যার অপটিমাইজেশনে এই চর্চা অনেক কাজে আসে, তাই বিভিন্ন টেক-রিলেটেড ইন্টারভিউতে কম্পিটিটিভ প্রোগ্রামিং এর অভিজ্ঞতাকে অনেক গুরুত্বের সাথে দেখা হয়।
     </p>
 
-    <div class="space-y-3 reveal">
+    <div class="space-y-3 reveal" id="section_1">
       <p class="border-l-4 border-blue px-4 py-2 text-xl font-semibold mb-2">কম্পিটিটিভ প্রোগ্রামিং জিনিসটা আসলে কি?</p>
       <p>
         এটা এক ধরণের মাইন্ড-স্পোর্ট, অনেকটা গণিতের মতো। তোমাকে কিছু প্রবলেম দেওয়া হবে, সেগুলো যুক্তি এবং আ্যালগোরিদম (প্রবলেম সলভ করার ধারাবাহিক প্রক্রিয়াকে আ্যালগোরিদম বলা হয়) ব্যবহার করে ইমপ্লিমেন্ট করতে হবে (খেয়াল করো এখানে কেবল সমাধান বের করাটাই কিন্তু যথেষ্ট না, সেই সমাধানটা ইমপ্লিমেন্টও করতে হবে! তাই বুদ্ধির পাশাপাশি কোডিং স্কিলও দরকার)। যদি তোমার কোডটা নির্দিষ্ট কনস্ট্রেইনের ভেতর (একটা সময়সীমার মধ্যে আর লিমিটেড মেমোরি ব্যবহার করে; এটা প্রবলেমেই বলে দেওয়া থাকে) সঠিক আউটপুট দিতে পারে তাহলে তুমি স্কোর পাবে, অন্যথায় না (ভুল আউটপুট দিলে তো না-ই)। আজকাল প্রায়শই বিভিন্ন জায়গায় অনলাইনে বা অন-সাইটে কম্পিটিটিভ প্রোগ্রামিং এর উপর কনটেস্ট আয়োজিত হচ্ছে। কনটেস্টগুলো সোলো বা টিম বেজ্ড হতে পারে। স্কুল-কলেজ পড়ুয়া বাচ্চাকাচ্চাদের জন্য সবচেয়ে বড় প্রোগ্রামিং কনটেস্ট হচ্ছে IOI (International Olympiad in Informatics) এবং বড়দের জন্য ICPC (International Collegiate Programming Contest)।
       </p>
     </div>
 
-    <div class="space-y-3 reveal">
+    <div class="space-y-3 reveal" id="section_2">
       <p class="border-l-4 border-blue px-4 py-2 text-xl font-semibold mb-2">কম্পিটিটিভ প্রোগ্রামিং আর সাধারণ প্রোগ্রামিং এর পার্থক্য কোথায়?</p>
       <p>
         কম্পিউটার প্রোগ্রামিং নিয়ে অলরেডি গত পর্বে আলোচনা করা হয়েছে। স্বাভাবিকভাবে প্রোগ্রামিং এর কাজ নানান ধরণের সফটওয়্যার বানানো (web development, mobile app development, data analysis, game development ইত্যাদি)। অন্যদিকে, কম্পিটিটিভ প্রোগ্রামিং এর ফোকাস পয়েন্ট হচ্ছে প্রবলেম সলভিং।  কম্পিউটারের জন্য কোনো সফটওয়্যার বানানোর  সময় কিছু স্ট্যান্ডার্ড বা দিকনির্দেশনা মেনে চলা হয়, যেন পরবর্তীতে সেই সফটওয়্যারটার ডেভেলপমেন্ট এবং মেইনটেইনেন্সে কোনো অসুবিধা না হয় (যেমনতেমন করে কোড করলে তুমি নিজেই দু-তিন সপ্তাহ পর নিজের কোড বুঝবেনা, বাকিদের কথা তো বাদই দিলাম!)। কম্পিটিটিভ প্রোগ্রামিং এর বেলায় এমন কোনো ধরাবাধা স্ট্যান্ডার্ড নেই, কোড কাজ করলেই হলো 😛 তবে কোডটা এফিশিয়েন্ট হওয়া মাস্ট, নাহলে কনস্ট্রেইনের ভেতর তোমার প্রোগ্রামটা কাজ করবেনা। মোদ্দাকথায়, কম্পিউটার প্রোগ্রামিং এবং কম্পিটিটিভ প্রোগ্রামিং উভয়ই কোড করার সাথে রিলেটেড হলেও এদের উদ্দেশ্য, শর্ত, স্কিল, এবং প্রোগ্রামিং এনভায়রনমেন্ট (পরবর্তী পর্বে আলোচ্য) আলাদা।
       </p>
     </div>
 
-    <div class="space-y-3 reveal">
+    <div class="space-y-3 reveal" id="section_3">
       <p class="border-l-4 border-blue px-4 py-2 text-xl font-semibold">কম্পিটিটিভ প্রোগ্রামিং কেনো করবো?</p>
       <p>
         It's fun. যারা গণিত বা ফিজিক্স অলিম্পিয়াড নিয়ে গুতোগুতি করো আশা করা যায় তোমরা কম্পিটিটিভ প্রোগ্রামিংটাকেও পছন্দ করবে। এবার কাজের কথায় আসি: সফটওয়্যার বানাতে হলে কোডিং স্কিলের পাশাপাশি কম্পিটিটিভ প্রোগ্রামিং এর অভিজ্ঞতাকেও এত গুরুত্ব দেওয়া হয় কেনো? মনে করো তুমি এবং তোমার এক বন্ধু একই কাজের জন্য দুজন দুটি প্রোগ্রাম লিখলে।  তোমার প্রোগ্রামটি কাজ করতে ৫ মিনিট সময় এবং ৬৪ মেগাবাইট মেমোরি নিলো, যেখানে তোমার বন্ধুর কোডের জন্য মাত্র ১ মিনিট সময় এবং ৫মেগাবাইট মেমোরি দরকার হচ্ছে। দুজনের প্রোগ্রামই কাজটা ঠিকঠাক করলেও, তোমার প্রোগ্রাম নিয়ে কিন্তু কেউ খুশি থাকবে না, কারণ তোমার প্রোগ্রাম টা যথেষ্ট অপটিমাইজ্ড নয়। তোমার এবং তোমার বন্ধুর কোড চেক করলে দেখা যাবে হয়তো তুমি যে কাজ করতে ১০০০ টি অপারেশন চালাচ্ছো, তোমার বন্ধু যুক্তি ও বুদ্ধি খাটিয়ে সেই একই কাজ ৫০ টি অপারেশনের মধ্যেই সম্পন্ন করেছে, তাই তোমার বন্ধুর প্রোগ্রাম এত ফাস্ট! এক্ষেত্রে কম্পিটিটিভ প্রোগ্রামিং এর চর্চা তোমার বন্ধুর কাজে এসেছে। কারণ, কম্পিটিটিভ প্রোগ্রামিং কেবল প্রবলেম সলভিং না; প্রবলেমটাকে লজিক্যালি তবে কত সহজভাবে সমাধান করা যায় তা-ও শেখায়।
@@ -127,6 +145,7 @@
       </p>
     </div>
   </section>
+</div>
   
   <!-- Footer -->
   <footer class="mt-8 p-8 bg-bg-400 border-t border-white/30">
@@ -134,28 +153,47 @@
       Made with <i class="fa fa-heart"></i> by <span class="font-semibold">@mehedirm6244</span><br>
     </p>
   </footer>
+</div>
 
   <!-- Scroll to top button -->
   <button class="fixed bottom-6 right-6 h-9 w-9 rounded-full bg-cyan text-bg-500 text-center leading-8 translate-x-[100px] duration-500 hover:cursor-pointer hover:-translate-y-2 hover:shadow-md hover:shadow-white/20" id="scrollToTop" onclick="window.scrollTo(0, 0);">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
 
-  <script type="text/javascript">
+<script type="text/javascript">
     const navbar = document.getElementById("navbar");
-    const navlinks = document.getElementById("navlinks");
+    const banner = document.getElementById("banner");
     const navbtn = document.getElementById("navbtn");
     const scrollToTop = document.getElementById("scrollToTop");
+    const stickyNavigation = document.getElementById("stickyNavigation");
+    const stickyNavigationToggle = document.getElementById("stickyNavigationToggle");
+    const links = document.querySelectorAll('#stickyNavigationList a');
+    const divs = document.querySelectorAll('div[id^="section_"]');
 
-    function toggleNavbar() {
-      if (navlinks.classList.contains("hidden") == 1) {
-        navlinks.classList.remove("hidden");
-        navbtn.classList.add("bg-bg-200");
-        navbtn.innerHTML = `<i class="fa fa-xmark"></i>`;
+    stickyNavigationToggle.onclick = function() {
+      if (stickyNavigation.classList.contains("hidden") == 1) {
+        stickyNavigation.classList.remove("hidden");
+        stickyNavigationToggle.innerHTML = `<i class="fa fa-xmark"></i>`;
       } else {
-        navlinks.classList.add("hidden");
-        navbtn.classList.remove("bg-bg-200");
-        navbtn.innerHTML = `<i class="fa fa-bars"></i>`;
+        stickyNavigation.classList.add("hidden");
+        stickyNavigationToggle.innerHTML = `<i class="fa fa-ellipsis"></i>`;
       }
+    }
+
+    function checkScroll() {
+      divs.forEach(div => {
+        const rect = div.getBoundingClientRect();
+        const linkId = div.id.replace('section_', ''); // Extract the number from the div ID
+
+        const link = document.querySelector(`#stickyNavigationList li a[href="#section_${linkId}"]`);
+        if (rect.top <= window.innerHeight/2) {
+          link.classList.add('text-blue');
+          link.parentElement.classList.replace('border-lightGray/20', 'border-blue');
+        } else {
+          link.classList.remove('text-blue');
+          link.parentElement.classList.replace('border-blue', 'border-lightGray/20');
+        }
+      });
     }
 
     window.onscroll = function() {
@@ -165,21 +203,27 @@
         scrollToTop.classList.add("translate-x-[100px]")
       }
 
-      if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
-        navbar.classList.add("bg-bg-400/90");
+      if (document.body.scrollTop > banner.offsetHeight - navbar.offsetHeight || document.documentElement.scrollTop > banner.offsetHeight - navbar.offsetHeight) {
+        navbar.classList.replace("py-4", "p-2");
+        navbar.classList.remove("px-6");
+        navbar.classList.replace("bg-transparent", "bg-bg-400/90");
+        navbar.classList.replace("border-transparent", "border-white/30");
         navbar.classList.add("backdrop-blur-sm");
-        navbar.classList.remove("border-transparent");
-        navbar.classList.add("border-white/30");
       } else {
-        navbar.classList.remove("bg-bg-400/90");
+        navbar.classList.replace("p-2", "py-4");
+        navbar.classList.add("px-6");
+        navbar.classList.replace("bg-bg-400/90", "bg-transparent");
+        navbar.classList.replace("border-white/30", "border-transparent");
         navbar.classList.remove("backdrop-blur-sm");
-        navbar.classList.add("border-transparent");
-        navbar.classList.remove("border-white/30");
       }
+
+      checkScroll();
     };
 
     window.onload = function() {
       document.getElementById("loading_screen").style.display = "none";
+      reveal();
+      checkScroll();
     }
   </script>
 

@@ -31,20 +31,18 @@
   </div>
 
   <!-- Header -->
-  <section class="h-screen flex align-middle justify-center items-center bg-fixed bg-cover bg-bottom sticky top-0" style="background-image: url('./assets/save.png');">
+  <section class="h-screen flex align-middle justify-center items-center bg-fixed bg-cover bg-bottom sticky top-0" style="background-image: url('./assets/bg.png');">
 
     <!-- Profile -->
-    <div class="md:flex align-middle justify-center items-center gap-6 duration-500" id="profile">
+    <div class="p-4 sm:p-0 md:flex align-middle justify-center items-center gap-6 duration-500" id="profile">
       <img class="h-[120px] md:h-[160px] lg:h-[175px] mb-4 md:mb-0 rounded-full reveal" src="./assets/pfp.png" alt="Profile picture">
 
       <div class="reveal delay-[200ms]">
-        <p class="text-3xl md:text-4xl lg:text-5xl mb-2">Mehedi Rahman Mahi</p>
-        <!-- <p class="text-xl md:text-2xl">
+        <p class="text-3xl md:text-4xl lg:text-5xl">Mehedi Rahman Mahi</p>
+        <p class="text-xl md:text-2xl">
           A <span id="typewriter" class="text-green"></span>
           <span class="animate-blink">_</span>
-        </p> -->
-        <p class="text-xl text-red font-semibold">Help the Bangladeshi Students</p>
-        <p class="text-lg">Why the <span class="font-semibold text-red">blood</span> of my brothers on the street?</p>
+        </p>
         </p>
       </div>
     </div>
@@ -260,7 +258,6 @@
     }
 
     window.onscroll = function() {
-      // Show/Hide navbar 
       if (document.body.scrollTop > window.innerHeight - navbarHeight || document.documentElement.scrollTop > window.innerHeight - navbarHeight) {
         scrollToTop.classList.remove("translate-x-[100px]")
         navbar.classList.replace("py-4", "p-2");
@@ -281,7 +278,6 @@
       if (document.body.scrollTop <= window.innerHeight || document.documentElement.scrollTop <= window.innerHeight) {
         var relativeOffset = Math.max(1 - (document.documentElement.scrollTop * 1.5) / window.innerHeight, 0);
         profile.style.opacity = relativeOffset;
-        profile.style.transform = "translateY(" + -(1 - relativeOffset) * window.innerHeight / 5 + "px)";
       }
     };
 
