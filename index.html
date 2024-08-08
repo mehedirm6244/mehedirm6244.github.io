@@ -11,16 +11,11 @@
   <title>mehedirm6244: Portfolio</title>
   <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Barlow font from Google API -->
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-
   <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- CSS Only -->
-  <link rel="stylesheet" href="./src/output.css" />
+  <link rel="stylesheet" href="./styles/global.css" />
 </head>
 
 <body class="bg-bg-500 text-white selection:bg-blue selection:text-bg-500">
@@ -31,11 +26,11 @@
   </div>
 
   <!-- Header -->
-  <section class="h-screen flex align-middle justify-center items-center bg-fixed bg-cover bg-bottom sticky top-0" style="background-image: url('./assets/bg.png');">
+  <section class="h-screen flex align-middle justify-center items-center bg-fixed bg-cover bg-bottom sticky top-0" style="background-image: url('./images/bg.png');">
 
     <!-- Profile -->
     <div class="p-4 sm:p-0 md:flex align-middle justify-center items-center gap-6 duration-500" id="profile">
-      <img class="h-[120px] md:h-[160px] lg:h-[175px] mb-4 md:mb-0 rounded-full reveal" src="./assets/pfp.png" alt="Profile picture">
+      <img class="h-[120px] md:h-[160px] lg:h-[175px] mb-4 md:mb-0 rounded-full reveal" src="./images/pfp.png" alt="Profile picture">
 
       <div class="reveal delay-[200ms]">
         <p class="text-3xl md:text-4xl lg:text-5xl">Mehedi Rahman Mahi</p>
@@ -55,7 +50,7 @@
     <div class="flex items-center align-middle justify-between space-x-2">
       <a href="https://mehedirm6244.github.io/" class="duration-100 rounded-md hover:bg-blue/10 hover:text-blue">
         <div class="flex align-middle items-center space-x-2 px-3 py-2">
-          <div><img class="h-[32px] rounded-full" src="./assets/pfp.png" alt="Pfp"></div>
+          <div><img class="h-[32px] rounded-full" src="./images/pfp.png" alt="Pfp"></div>
           <div class="text-md font-semibold">mehedirm6244</div>
         </div>
       </a>
@@ -94,7 +89,7 @@
     <!-- My info -->  
     <section class="px-[5%] py-16 md:px-[10%] reveal" id="about">
       <h1 class="text-3xl mb-1 text-center">About Me</h1>
-      <p class="text-lg text-center">Wannabe above-average</p>
+      <p class="text-lg text-center">I have no idea what I'm doing</p>
 
       <div class="text-lg px-[5%] md:px-[10%] py-8 reveal delay-[200ms] space-y-2">
         <p class="reveal">
@@ -173,7 +168,7 @@
       <p class="text-lg text-center">Stuffs I've written for from several reasons to no reason at all</p>
 
       <div class="text-center mt-8 reveal delay-[200ms]">
-        <a href="https://mehedirm6244.github.io/blogs.html">
+        <a href="https://mehedirm6244.github.io/pages/blogs.html">
           <button class="text-sm px-4 py-2.5 rounded-full font-semibold duration-100 bg-lightGray text-bg-500 hover:bg-white">
             <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>Read my blogs
           </button>
@@ -276,8 +271,7 @@
       
       // Transition of Profile
       if (document.body.scrollTop <= window.innerHeight || document.documentElement.scrollTop <= window.innerHeight) {
-        var relativeOffset = Math.max(1 - (document.documentElement.scrollTop * 1.5) / window.innerHeight, 0);
-        profile.style.opacity = relativeOffset;
+        profile.style.opacity = Math.max(1 - (document.documentElement.scrollTop * 1.5) / window.innerHeight, 0);
       }
     };
 

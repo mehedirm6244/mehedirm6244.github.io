@@ -1,152 +1,118 @@
 /*
-  For contextmenu
-  Add this script to any page for brand new useless custom
-  context menu which looks cool at least
+  Script for creating custom context menu
+  Used on `https://mehedirm6244.github.io/`
+  This is a bad practice to override the default context menu but at least it is consistent with
+  the overall UI of the website
 */
 
-const commonMenuEntry = [
+const commonMenuItems = [
   {
-    text: '<i class="fa-solid fa-copy mr-2"></i>Copy selection',
-    action: function() {
-      document.execCommand("copy");
-      contextMenu.style.visibility = "hidden";
-    },
-    drawSeperator: true
+    text: '<i class="fa-solid fa-copy mr-2.5"></i>Copy selection',
+    action: () => navigator.clipboard.writeText(window.getSelection().toString()).then(() => destroyContextMenu()),
+    drawSeparator: true
   },
   {
-    text: '<i class="fa-solid fa-rotate-right mr-2"></i>Reload page',
-    action: function() { location.reload() },
+    text: '<i class="fa-solid fa-rotate-right mr-2.5"></i>Reload page',
+    action: () => location.reload()
   },
   {
-    text: '<i class="fa-brands fa-github mr-2"></i>Source repository',
-    action: function() {
-      window.open('https://github.com/mehedirm6244/mehedirm6244.github.io', '_blank');
-    }
+    text: '<i class="fa-brands fa-github mr-2.5"></i>Source repository',
+    action: () => window.open('https://github.com/mehedirm6244/mehedirm6244.github.io', '_blank')
   }
 ];
+
+// Utility function to create buttons
+function createMenuButton(entry) {
+  const button = document.createElement("button");
+  button.classList = "px-4 py-1.5 text-sm block w-full text-left rounded hover:bg-white/10";
+  button.innerHTML = entry.text;
+  button.addEventListener('click', entry.action);
+
+  return button;
+}
 
 // Draw the context menu
 function constructContextMenu(e) {
   const contextMenu = document.createElement("div");
   contextMenu.id = "context-menu";
-  contextMenu.classList = "z-50 bg-bg-400/90 w-52 backdrop-blur-sm shadow border \
-                           border-white/30 p-2 rounded-lg select-none fixed";
+  contextMenu.classList = "z-50 bg-bg-400/90 w-56 backdrop-blur-sm shadow-lg border border-white/30 p-2 rounded-lg select-none fixed";
   document.body.appendChild(contextMenu);
 
-  // Stuff to do when right clicked on a potential link
-  var link = scrapLink(e);
-  if (!(link === null)) {
-    const linkMenuEntry = [
+  const link = scrapLink(e);
+  if (link) {
+    const linkMenuEntries = [
       {
-        text: '<i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>Copy link',
-        action: function() {
-          navigator.clipboard.write([
-            new ClipboardItem({
-              'text/plain': new Blob([link], { type: 'text/plain' })
-            })
-          ]);
-          contextMenu.style.visibility = "hidden";
-        }
+        text: '<i class="fa-solid fa-arrow-up-right-from-square mr-2.5"></i>Copy link',
+        action: () => navigator.clipboard.writeText(link).then(() => destroyContextMenu())
       },
       {
-        text: '<i class="fa fa-plus mr-2"></i>Open in new tab',
-        action: function() {
-          window.open(link, '_blank');
-        }
+        text: '<i class="fa fa-plus mr-2.5"></i>Open in new tab',
+        action: () => window.open(link, '_blank')
       }
     ];
 
-    linkMenuEntry.forEach(function(entry) {
-      var button = document.createElement("button");
-      button.classList = "px-4 py-1.5 text-sm block w-full text-left rounded hover:bg-white/10";
-      button.innerHTML = entry.text;
-      button.addEventListener('click', entry.action);
-      contextMenu.appendChild(button);
-    });
-
-    // Draw seperator
-    var seperator = document.createElement("div");
-    seperator.classList = "border-t border-white/30 m-2";
-    contextMenu.appendChild(seperator);
+    linkMenuEntries.forEach(entry => contextMenu.appendChild(createMenuButton(entry)));
+    drawSeparator(contextMenu);
   }
 
-  // Common menu entries
-  commonMenuEntry.forEach(function(entry) {
-    var button = document.createElement("button");
-    button.classList = "px-4 py-1.5 text-sm block w-full text-left rounded hover:bg-white/10";
-    button.innerHTML = entry.text;
-    if (entry.action) {
-      button.addEventListener('click', entry.action);
-    }
-    contextMenu.appendChild(button);
-
-    if (entry.drawSeperator === true) {
-      var seperator = document.createElement("div");
-      seperator.classList = "border-t border-white/30 m-2";
-      contextMenu.appendChild(seperator);
+  commonMenuItems.forEach(entry => {
+    contextMenu.appendChild(createMenuButton(entry));
+    if (entry.drawSeparator) {
+      drawSeparator(contextMenu);
     }
   });
+
+  positionContextMenu(e, contextMenu);
 }
 
-// deconstruct context menu
-function deconstructContextMenu() {
-  var contextMenu = document.getElementById('context-menu');
-  if (!(contextMenu === null)) {
+function drawSeparator(menu) {
+  const separator = document.createElement("div");
+  separator.classList = "border-t border-white/20 mx-6 my-2";
+  menu.appendChild(separator);
+}
+
+// Hide the context menu
+function destroyContextMenu() {
+  const contextMenu = document.getElementById('context-menu');
+  if (contextMenu) {
     contextMenu.parentNode.removeChild(contextMenu);
   }
 }
 
-// Check if a button or an anchor is valid
+// Scrap link from event target
 function scrapLink(e) {
-  const targetElement = event.target;
-  let currentElement = targetElement;
-
-  // Sorry
+  let currentElement = e.target;
   while (currentElement) {
     if (currentElement.tagName.toLowerCase() === "a") {
       return currentElement.href;
     }
     currentElement = currentElement.parentElement;
   }
-
   return null;
 }
 
-// Context menu events
-// Inspired from https://dev.to/shantanu_jana/custom-right-click-context-menu-in-javascript-4112
-let contextMenu = document.getElementById("context-menu");
+// Position the context menu
+function positionContextMenu(e, contextMenu) {
+  const mouseX = e.clientX || e.touches?.[0].clientX;
+  const mouseY = e.clientY || e.touches?.[0].clientY;
+  const { height: menuHeight, width: menuWidth } = contextMenu.getBoundingClientRect();
+  const { innerWidth: width, innerHeight: height } = window;
 
+  contextMenu.style.left = (width - mouseX <= menuWidth) ? `${width - menuWidth - 8}px` : `${mouseX}px`;
+  contextMenu.style.top = (height - mouseY <= menuHeight) ? `${mouseY - menuHeight - 8}px` : `${mouseY}px`;
+  contextMenu.style.visibility = "visible";
+}
+
+// Context menu events
 document.addEventListener("contextmenu", (e) => {
   e.preventDefault();
-  // deconstruct any previously drawn context menu
-  deconstructContextMenu();
-  // Draw context menu again to check if it's hovering a link or smth
+  destroyContextMenu();
   constructContextMenu(e);
-  contextMenu = document.getElementById('context-menu');
+}, { passive: false });
 
-  let mouseX = e.clientX || e.touches[0].clientX;
-  let mouseY = e.clientY || e.touches[0].clientY;
-  let menuHeight = contextMenu.getBoundingClientRect().height;
-  let menuWidth = contextMenu.getBoundingClientRect().width;
-  let width = window.innerWidth;
-  let height = window.innerHeight;
-
-  if (width - mouseX <= 208) {
-    contextMenu.style.left = width - menuWidth - 8 + "px";
-    contextMenu.style.top = mouseY + "px";
-  } else {
-    contextMenu.style.left = mouseX + "px";
-    contextMenu.style.top = mouseY + "px";
-  }
-  if (height - mouseY <= menuHeight) {
-    contextMenu.style.top = mouseY - menuHeight - 8 + "px";
-  }
-  contextMenu.style.visibility = "visible";
-  },
-{ passive: false });
-
-document.addEventListener("click", function (e) {
-  if (!contextMenu.contains(e.target)) {
-    deconstructContextMenu();
+document.addEventListener("click", function(e) {
+  const contextMenu = document.getElementById("context-menu");
+  if (contextMenu && !contextMenu.contains(e.target)) {
+    destroyContextMenu();
   }
 });

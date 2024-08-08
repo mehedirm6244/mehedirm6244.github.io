@@ -2,7 +2,7 @@
 My personal website written using some basic stuffs
 I'm not a serious coder
 
-### Make tailwindcss do the work for you
+### Use TailwindCSS
 ```
-npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
+npx tailwindcss -i ./styles/input.css -o ./styles/global.css --watch
 ```

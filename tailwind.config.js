@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./*.html', './blogs/*.html', './scripts/*.js', './scripts/components/*.js'],
+  content: ['./*.html', './**/*.html', './scripts/*.js', './scripts/components/*.js'],
   theme: {
     screens: {
       sm: '400px',
@@ -33,6 +33,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Barlow', 'sans-serif'],
+        mono: ['Inconsolata', 'monospace'],
       },
       keyframes: {
         blink: {
