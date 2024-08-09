@@ -162,26 +162,22 @@
     const scrollToTop = document.getElementById("scrollToTop");
     const stickyNavigation = document.getElementById("stickyNavigation");
     const stickyNavigationToggle = document.getElementById("stickyNavigationToggle");
-    const links = document.querySelectorAll('#stickyNavigationList a');
-    const divs = document.querySelectorAll('div[id^="section_"]');
+    const blogSections = document.querySelectorAll('div[id^="section_"]');
 
     stickyNavigationToggle.onclick = function() {
-      if (stickyNavigation.classList.contains("hidden") == 1) {
-        stickyNavigation.classList.remove("hidden");
-        stickyNavigationToggle.innerHTML = `<i class="fa fa-xmark"></i>`;
-      } else {
-        stickyNavigation.classList.add("hidden");
-        stickyNavigationToggle.innerHTML = `<i class="fa fa-ellipsis"></i>`;
-      }
+      stickyNavigation.classList.toggle("hidden");
+      stickyNavigationToggle.innerHTML = stickyNavigation.classList.contains("hidden")
+        ? `<i class="fa fa-ellipsis"></i>`
+        : `<i class="fa fa-xmark"></i>`;
     }
 
-    function checkScroll() {
-      divs.forEach(div => {
-        const rect = div.getBoundingClientRect();
-        const linkId = div.id.replace('section_', ''); // Extract the number from the div ID
+    function updateActiveNavigation() {
+      blogSections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        const linkId = section.id.replace('section_', '');
+        const link = document.querySelector(`#stickyNavigationList a[href="#section_${linkId}"]`);
 
-        const link = document.querySelector(`#stickyNavigationList li a[href="#section_${linkId}"]`);
-        if (rect.top <= window.innerHeight/2) {
+        if (rect.top <= window.innerHeight / 2) {
           link.classList.add('text-blue');
           link.parentElement.classList.replace('border-lightGray/20', 'border-blue');
         } else {
@@ -192,33 +188,27 @@
     }
 
     window.onscroll = function() {
-      if (document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight) {
-        scrollToTop.classList.remove("translate-x-[100px]")
-      } else {
-        scrollToTop.classList.add("translate-x-[100px]")
-      }
+      const scrolled = document.body.scrollTop || document.documentElement.scrollTop;
+      const navbarThreshold = banner.offsetHeight - navbar.offsetHeight;
 
-      if (document.body.scrollTop > banner.offsetHeight - navbar.offsetHeight || document.documentElement.scrollTop > banner.offsetHeight - navbar.offsetHeight) {
-        navbar.classList.replace("py-4", "p-2");
-        navbar.classList.remove("px-6");
-        navbar.classList.replace("bg-transparent", "bg-bg-400/90");
-        navbar.classList.replace("border-transparent", "border-white/30");
-        navbar.classList.add("backdrop-blur-sm");
-      } else {
-        navbar.classList.replace("p-2", "py-4");
-        navbar.classList.add("px-6");
-        navbar.classList.replace("bg-bg-400/90", "bg-transparent");
-        navbar.classList.replace("border-white/30", "border-transparent");
-        navbar.classList.remove("backdrop-blur-sm");
-      }
+      scrollToTop.classList.toggle("translate-x-[100px]", scrolled <= window.innerHeight);
 
-      checkScroll();
+      navbar.classList.toggle("py-4", scrolled <= navbarThreshold);
+      navbar.classList.toggle("p-2", scrolled > navbarThreshold);
+      navbar.classList.toggle("px-6", scrolled <= navbarThreshold);
+      navbar.classList.toggle("bg-transparent", scrolled <= navbarThreshold);
+      navbar.classList.toggle("bg-bg-400/90", scrolled > navbarThreshold);
+      navbar.classList.toggle("border-transparent", scrolled <= navbarThreshold);
+      navbar.classList.toggle("border-white/30", scrolled > navbarThreshold);
+      navbar.classList.toggle("backdrop-blur-sm", scrolled > navbarThreshold);
+
+      updateActiveNavigation();
     };
 
     window.onload = function() {
       document.getElementById("loading_screen").style.display = "none";
       reveal();
-      checkScroll();
+      updateActiveNavigation();
     }
   </script>
 

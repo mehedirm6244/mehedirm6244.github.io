@@ -207,71 +207,63 @@
   </button>
 
   <script type="text/javascript">
-    var i = 0, j = 0, navbarHeight;
     const profile = document.getElementById("profile");
-    const intro = ['student at morning', 'learner at noon', 'coder at midnight'];
-    const myName = document.getElementById("typewriter");
+    const typewriter = document.getElementById("typewriter");
     const navbar = document.getElementById("navbar");
-    navbarHeight = navbar.offsetHeight + 16;
     const navlinks = document.getElementById("navlinks");
     const navbtn = document.getElementById("navbtn");
     const scrollToTop = document.getElementById("scrollToTop");
 
+    const typewriterString = ['student at morning', 'learner at noon', 'coder at midnight'];
+    const navbarHeight = navbar.offsetHeight + 16;
+    var typewriterStringIndex = 0, typewriterStringLen = 0;
+
     function typeWriterWrite() {
-      if (j < intro[i].length) {
-        myName.innerHTML += intro[i].charAt(j);
-        j++;
+      if (typewriterStringLen < typewriterString[typewriterStringIndex].length) {
+        typewriter.textContent += typewriterString[typewriterStringIndex].charAt(typewriterStringLen);
+        typewriterStringLen++;
         setTimeout(typeWriterWrite, 100);
       } else {
         setTimeout(function() {
-          i = (i+1) % intro.length;
-          j = 0;
+          typewriterStringIndex = (typewriterStringIndex + 1) % typewriterString.length;
+          typewriterStringLen = 0;
           typeWriterErase();
         }, 2000);
       }
     }
 
     function typeWriterErase() {
-      myName.innerHTML = myName.innerHTML.substring(0, myName.innerHTML.length - 1)
-      if (myName.innerHTML.length == 0) {
-        setTimeout(typeWriterWrite, 50);
-      } else {
-        setTimeout(typeWriterErase, 50);
-      }
+      typewriter.textContent = typewriter.textContent.slice(0, -1);
+      setTimeout((typewriter.innerHTML.length == 0)? typeWriterWrite : typeWriterErase, 50);
     }
 
     function toggleNavbar() {
-      if (navlinks.classList.contains("hidden") == 1) {
-        navlinks.classList.remove("hidden");
-        navbtn.classList.add("bg-bg-200");
-        navbtn.innerHTML = `<i class="fa fa-xmark"></i>`;
-      } else {
-        navlinks.classList.add("hidden");
-        navbtn.classList.remove("bg-bg-200");
-        navbtn.innerHTML = `<i class="fa fa-bars"></i>`;
-      }
+      navlinks.classList.toggle("hidden");
+      navbtn.classList.toggle("bg-bg-200");
+      navbtn.innerHTML = navlinks.classList.contains("hidden")
+        ? `<i class="fa fa-bars"></i>`
+        : `<i class="fa fa-xmark"></i>`;
     }
 
     window.onscroll = function() {
-      if (document.body.scrollTop > window.innerHeight - navbarHeight || document.documentElement.scrollTop > window.innerHeight - navbarHeight) {
-        scrollToTop.classList.remove("translate-x-[100px]")
-        navbar.classList.replace("py-4", "p-2");
-        navbar.classList.remove("px-6");
-        navbar.classList.replace("bg-transparent", "bg-bg-400/90");
-        navbar.classList.replace("border-transparent", "border-white/30");
-        navbar.classList.add("backdrop-blur-sm");
-      } else {
-        scrollToTop.classList.add("translate-x-[100px]")
-        navbar.classList.replace("p-2", "py-4");
-        navbar.classList.add("px-6");
-        navbar.classList.replace("bg-bg-400/90", "bg-transparent");
-        navbar.classList.replace("border-white/30", "border-transparent");
-        navbar.classList.remove("backdrop-blur-sm");
-      }
+      const scrolled = document.body.scrollTop || document.documentElement.scrollTop;
+      const threshold = window.innerHeight - navbarHeight;
+
+      scrollToTop.classList.toggle("translate-x-[100px]", scrolled <= threshold);
+
+      navbar.classList.toggle("py-4", scrolled <= threshold);
+      navbar.classList.toggle("px-6", scrolled <= threshold);
+      navbar.classList.toggle("border-transparent", scrolled <= threshold);
+      navbar.classList.toggle("bg-transparent", scrolled <= threshold);
+
+      navbar.classList.toggle("p-2", scrolled > threshold);
+      navbar.classList.toggle("bg-bg-400/90", scrolled > threshold);
+      navbar.classList.toggle("border-white/30", scrolled > threshold);
+      navbar.classList.toggle("backdrop-blur-sm", scrolled > threshold);
       
       // Transition of Profile
-      if (document.body.scrollTop <= window.innerHeight || document.documentElement.scrollTop <= window.innerHeight) {
-        profile.style.opacity = Math.max(1 - (document.documentElement.scrollTop * 1.5) / window.innerHeight, 0);
+      if (scrolled <= window.innerHeight) {
+        profile.style.opacity = Math.max(1 - (scrolled * 1.5) / window.innerHeight, 0);
       }
     };
 

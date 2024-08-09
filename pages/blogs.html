@@ -69,46 +69,34 @@
   <script type="text/javascript">
     const navbar = document.getElementById("navbar");
     const scrollToTop = document.getElementById("scrollToTop");
+    const searchInput = document.getElementById("searchbar");
+    const blogCards = document.querySelectorAll(".blog-card");
 
     window.onscroll = function() {
-      if (document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight) {
-        scrollToTop.classList.remove("translate-x-[100px]")
-      } else {
-        scrollToTop.classList.add("translate-x-[100px]")
-      }
+      const scrolled = document.body.scrollTop || document.documentElement.scrollTop;
 
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        navbar.classList.replace("py-4", "p-2");
-        navbar.classList.remove("px-6");
-        navbar.classList.replace("bg-transparent", "bg-bg-400/90");
-        navbar.classList.replace("border-transparent", "border-white/30");
-        navbar.classList.add("backdrop-blur-sm");
-      } else {
-        navbar.classList.replace("p-2", "py-4");
-        navbar.classList.add("px-6");
-        navbar.classList.replace("bg-bg-400/90", "bg-transparent");
-        navbar.classList.replace("border-white/30", "border-transparent");
-        navbar.classList.remove("backdrop-blur-sm");
-      }
+      scrollToTop.classList.toggle("translate-x-[100px]", scrolled <= window.innerHeight);
+
+      navbar.classList.toggle("py-4", scrolled <= 20);
+      navbar.classList.toggle("px-6", scrolled <= 20);
+      navbar.classList.toggle("bg-transparent", scrolled <= 20);
+      navbar.classList.toggle("border-transparent", scrolled <= 20);
+
+      navbar.classList.toggle("p-2", scrolled > 20);
+      navbar.classList.toggle("bg-bg-400/90", scrolled > 20);
+      navbar.classList.toggle("border-white/30", scrolled > 20);
+      navbar.classList.toggle("backdrop-blur-sm", scrolled > 20);
     }
 
     window.onload = function() {
       document.getElementById("loading_screen").style.display = "none";
     }
 
-    // Search through blogs by name
-    const searchInput = document.getElementById("searchbar");
-    const blogCards = document.getElementsByClassName("blog-card");
-
     searchInput.addEventListener("keyup", function() {
       const searchTerm = this.value.toLowerCase();
       for (const blogCard of blogCards) {
         const blogTitle = blogCard.getAttribute("title");
-        if (blogTitle.toLowerCase().includes(searchTerm)) {
-          blogCard.style.display = "block";
-        } else {
-          blogCard.style.display = "none";
-        }
+        blogCard.style.display = blogTitle.toLowerCase().includes(searchTerm) ? "block" : "none";
       }
     });
   </script>
