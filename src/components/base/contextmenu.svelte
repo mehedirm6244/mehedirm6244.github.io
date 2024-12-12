@@ -82,7 +82,7 @@
 <div bind:this={contextMenu} class="z-50 bg-bg-100 w-56 shadow-md p-2 rounded-lg select-none fixed">
   {#each menuItems as menuItem}
     {#if (menuItem.requireLink && clickStatus.href) || (menuItem.requireTextInput && clickStatus.isTextInput) || menuItem.showByDefault}
-    <button class="px-4 py-1 font-base block w-full text-left rounded hover:bg-white/10" on:click={menuItem.action}>
+    <button class="px-4 py-1 block w-full text-left rounded hover:bg-white/10" on:click={menuItem.action}>
       {menuItem.text}
     </button>
     {/if}

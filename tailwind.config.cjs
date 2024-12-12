@@ -33,8 +33,14 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['Barlow', 'sans-serif'],
-        mono: ['Inconsolata', 'monospace'],
+        sans: ['Inter', 'sans-serif'],
+      },
+      fontSize: {
+        xs: ['0.75rem', { lineHeight: '1.25', variable: '--opsz 12' }],
+        sm: ['0.875rem', { lineHeight: '1.5', variable: '--opsz 14' }],
+        base: ['1rem', { lineHeight: '1.5', variable: '--opsz 16' }],
+        lg: ['1.125rem', { lineHeight: '1.5', variable: '--opsz 18' }],
+        xl: ['1.25rem', { lineHeight: '1.75', variable: '--opsz 20' }],
       },
       keyframes: {
         blink: {
@@ -46,9 +52,9 @@ module.exports = {
         blink: 'blink 1s infinite',
       },
       cursor: {
-        'default': 'url("../src/assets/cursors/default.svg"), default',
-        'pointer': 'url("../src/assets/cursors/pointer.svg"), pointer',
-        'text': 'url("../src/assets/cursors/text.svg"), text',
+        'default': 'url("/cursors/default.svg"), default',
+        'pointer': 'url("/cursors/pointer.svg"), pointer',
+        'text': 'url("/cursors/text.svg"), text',
       },
     },
   },

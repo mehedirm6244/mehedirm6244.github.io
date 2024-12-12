@@ -34,13 +34,13 @@
   });
 </script>
 
-<div class="bg-bg-400 p-6 md:p-7 rounded-lg shadow-sm hover:shadow-lg duration-100 sm:w-80" use:reveal={useReveal}>
-  <div class="text-lg font-medium flex items-center truncate">
+<div class="bg-bg-400 p-6 md:p-7 rounded-lg shadow-sm hover:shadow-lg duration-100 sm:w-[304px]" use:reveal={useReveal}>
+  <div class="font-medium flex items-center truncate">
     <img src={ownerAvatar} class="h-6 w-6 rounded-full mr-2">
     <a href="https://github.com/{repo}" target="_blank" class="hover:underline">{repoName}</a>
   </div>
-  <p class="text-md h-14 overflow-auto text-gray mt-1">{repoDesc}</p>
-  <div class="mt-2 space-x-4 text-sm text-white">
+  <p class="text-sm h-[60px] overflow-auto text-gray mt-2">{repoDesc}</p>
+  <div class="mt-2 space-x-4 text-xs text-white">
     <button class="hover:cursor-default">
       <Code size={16} strokeWidth={2.5} class="inline-block mr-1 -mt-0.5 text-blue" />{repoLang}
     </button>

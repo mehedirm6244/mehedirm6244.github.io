@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-  import { ArrowUp } from "lucide-svelte";
+  import { ArrowUp } from 'lucide-svelte';
 
   let hideButton = true;
 
