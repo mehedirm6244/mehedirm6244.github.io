@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playwrite+NO:wght@100..400&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: 'Inter', sans-serif;
+  --font-fancy: 'Playwrite NO', sans-serif;
+
+  --color-slate-750: #283548;
+}
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  *:focus {
+    @apply outline-2 outline-blue-200;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-1 bg-slate-900
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-blue-200
+  }
+
+  ::selection {
+    @apply bg-blue-200/20 text-blue-200
+  }
+
+  html {
+    @apply scroll-smooth
+  }
+
+  body {
+    @apply bg-slate-700 text-blue-200
+  }
+
+  body::-webkit-scrollbar {
+    @apply hidden
+  }
+
+  button {
+    @apply active:scale-90;
+  }
+
+  a {
+    @apply text-blue-300 hover:underline
+  }
+}
+
+@layer utility {
+  .wave {
+    animation-name: wave-animation;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    transform-origin: 70% 70%;
+    display: inline-block;
+  }
+
+  @keyframes wave-animation {
+      0% { transform: rotate( 0.0deg) }
+     10% { transform: rotate(14.0deg) }
+     20% { transform: rotate(-8.0deg) }
+     30% { transform: rotate(14.0deg) }
+     40% { transform: rotate(-4.0deg) }
+     50% { transform: rotate(10.0deg) }
+     60% { transform: rotate( 0.0deg) }
+    100% { transform: rotate( 0.0deg) }
+  }
+}
