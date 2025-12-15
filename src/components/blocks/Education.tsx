@@ -5,19 +5,19 @@ function Education() {
   type EduInfoType = {
     institute: string,
     time: string,
-    comment?: string
+    degree: string,
   }
 
   const EducationInfo : EduInfoType[] = [
     {
-      institute: "Rajshahi University of Engineering & Technology (RUET)",
+      institute: "Rajshahi University of Engineering & Technology",
       time: "2025 - Now",
-      comment: "BSc. in Electrical and Computer Engineering"
+      degree: "BSc. in Electrical & Computer Engineering (ECE)"
     },
     {
-      institute: "St. Joseph Higher Secondary School, Dhaka-1207",
-      time: "2023-2024",
-      comment: "Higher Secondary Certificate Exam - 2024"
+      institute: "St. Joseph Higher Secondary School, Dhaka",
+      time: "2024",
+      degree: "Higher Secondary Certificate"
     }
   ]
   
@@ -32,12 +32,12 @@ function Education() {
         Education
       </p>
 
-      <ol className="relative border-s border-default space-y-6">
+      <ol className="relative border-s border-blue-200/60 space-y-1">
         {EducationInfo.map((edu, idx) => (
-          <li className={`pt-3 ms-4 space-y-1
-            ${idx==0? 'pt-2' : ''} ${idx===EducationInfo.length - 1? 'pb-2' : ''}`}
+          <li className={`ms-2 space-y-1
+            `}
           >
-            <div className="absolute w-3 h-3 bg-slate-700 rounded-full mt-0.5
+            <div className="absolute w-3 h-3 bg-slate-700 rounded-full mt-3.5
               -start-1.5 border border-buffer">
             </div>
 
@@ -50,13 +50,14 @@ function Education() {
                 delay: idx * 0.2,
                 ease: "easeOut",
               }}
+              className="px-4 py-3 hover:bg-slate-700 hover:shadow rounded-md"
             >
               <p className="text-xs text-blue-200/80">
                 <Clock className="inline -mt-0.5 mr-1" size={16} strokeWidth={1.5} />
                 {edu.time}
               </p>
-              <p className="text-blue-100">{edu.institute}</p>
-              {edu.comment && <p className="text-sm">{edu.comment}</p>}
+              <p className="text-blue-100">{edu.degree}</p>
+              <p className="text-sm">{edu.institute}</p>
             </motion.div>
           </li>
         ))}

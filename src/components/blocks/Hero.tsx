@@ -49,7 +49,7 @@ function Hero() {
         </Title>
 
         <p className="font-sans text-center sm:text-lg">
-          EECS undergrad | Passionately lazy
+          Passionately transforming <i className="text-blue-100">what-if</i> into <i className="text-blue-100">I see</i>
         </p>
       </div>
 
